@@ -44,10 +44,27 @@
         </div>    
     </nav>
     <div class="container">
+<<<<<<< HEAD
         <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat;background-position: center;background-size: cover;">
             <h1 style="color: white;">Cluby</h1>
             <p class="lead" style="color: white; text-align: justify;"><strong>¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</strong></p>
             
+=======
+        <div class="jumbotron">
+            <h1>hello</h1>
+            <p class="lead">In today's world internet is the most popular way of connecting with the people. At <a href="https://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential web development technologies along with real life practice examples, so that you can create your own website to connect with the people around the world.</p>
+            <p><a href="https://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
+        </div>
+        <div class="row">
+           <!--Grid column-->
+           <div class="col-lg-4 col-md-6 col-xl-6 mb-4">
+
+             <img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-fluid mb-4 imgbase" alt=""
+             data-wow-delay="0.1s">
+
+         </div>
+         <div class="col-lg-4 col-md-6 col-xl-6 mb-4">
+>>>>>>> 35cc1877e2082937535fb495ae6252f4798b467d
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
