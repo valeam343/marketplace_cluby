@@ -188,10 +188,11 @@
                 url  : '{{URL::to('search')}}',
                 data : {'search' : $value},
                 success: function(data){
+                    console.log(data);
                     $("#idrow").html(data);
                     $("#nombreMenu").empty();
-                    $("#nombreMenu").append('<option>'+data+'</option');
                     
+                                        
                 },error: function (data){
                     console.log("error: ", data);
                 }
