@@ -11,10 +11,8 @@
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','homeController@show');
+
 Route::get('actividad', function () {
     return view('actividad');
 });
@@ -24,6 +22,3 @@ Route::get('categoria', function () {
 Route::get('index', function () {
     return view('index');
 });
-=======
-Route::get('/','homeController@show');
->>>>>>> 726661568c3196238b00f43d556e31c468457099
