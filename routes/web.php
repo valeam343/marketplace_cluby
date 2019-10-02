@@ -12,3 +12,5 @@
 */
 
 Route::get('/','homeController@show');
+
+Route::get('search','homeController@filtrar')->name('search');
