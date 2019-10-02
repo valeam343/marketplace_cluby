@@ -11,6 +11,7 @@
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,3 +24,6 @@ Route::get('categoria', function () {
 Route::get('index', function () {
     return view('index');
 });
+=======
+Route::get('/','homeController@show');
+>>>>>>> 726661568c3196238b00f43d556e31c468457099

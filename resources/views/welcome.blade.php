@@ -122,6 +122,16 @@
         <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-6 col-lg-4 col-xl-3">
+        @foreach ($categorias as $cat)
+            <p>El id es {{ $cat->idCategoria }}</p>
+            <p>nombre: {{$cat->nombre}}</p>
+            <p>imagen: {{$cat->image}}</p>
+        @endforeach
+    </div>
+</div>
 <hr>
 <footer>
     <div class="row">
