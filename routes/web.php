@@ -20,3 +20,6 @@ Route::get('actividad', function () {
 Route::get('categoria', function () {
     return view('categoria');
 });
+Route::get('index', function () {
+    return view('index');
+});
