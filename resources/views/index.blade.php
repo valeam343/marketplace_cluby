@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <style type="text/css">
-        .imgbase{
+        .img-fluid{
             width: 100%;
             height: 90%;
             max-height: 0 auto;
@@ -46,11 +46,33 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-5 col-md-5 col-xl-5 mb-5">
-                <p>kkkgj</p>
-                
+            <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                        <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
+                        <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." style="height: 100%">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
+                        <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." style="height: 100%">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                        <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                        <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
+                        <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." style="height: 100%">
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-7 col-md-7 col-xl-7 mb-7">
+            <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
                 <p>Cluby es la aplicación que ayuda a cosas que hacer con sus hijos. Ya
                     sea que esté organizando un evento comunitario único o que sea
                     propietario de un negocio con muchos sitios y actividades para
@@ -69,14 +91,12 @@
                 estés con nuestra cómoda aplicación móvil.</p>
             </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-
-                <p>kkkgj</p>
+                <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-
-                <p>kkkgj</p>
+                <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
             </div>
             <div class="col-lg-9 col-md-9 col-xl-9 mb-9">
                 <p>DISEÑADO PARA EL PADRE MODERNO
