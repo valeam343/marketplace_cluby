@@ -42,7 +42,54 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <h1>TEXTO 1</h1>
+                <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="100%">
+                <hr>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Locación
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <h2>Precio</h2>
+                    <input type="range" class="custom-range" name="range">
+                </div>
+                <hr>
+                <div class="form-group">
+                    <h2>Horario</h2>
+                    <input type="range" class="form-control-range" name="range">
+                </div>
+                <hr>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Edad
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Actividad
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+                <hr>
+
+
+
             </div>
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
                 <div class="card">
@@ -52,60 +99,50 @@
                         </div>
                         <div class="col">
                             <div class="card-block px-2">
-                                <h4 class="card-title">Actividad 1</h4>
-                                <p class="card-text">Descriptionsadfasdfasdgasdgas</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                <br>
-                                <!--menus de informacion en la vista de actividad-->
-                                <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo">Informacion</button>
-                                <div id="demo" class="collapse">
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                </div>
-                                <br>
-                                <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo1">Reseñas</button>
-                                <div id="demo1" class="collapse">
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                </div>
-                                <br>
-                                <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo2">Contactos</button>
-                                <div id="demo2" class="collapse">
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                    Lorem ipsum dolor text....
-                                </div>
-                                <br>
-                                <button class="btn btn-outline-info" data-toggle="collapse" data-target="#mapa">Mapa</button>
-                                <div id="mapa" class="collapse">
-                                    <div class="row">
-
-                                    </div>
-                                </div>
+                                <h4 class="card-title">Nombre actividad</h4>
+                                <p class="card-text">Descripcion de actividad</p>
+                                <a href="#" class="btn btn-primary">Link actividad</a>
                                 <br>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer w-100 text-muted">Footer 1</div>
+                </div>
+                <hr>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="card-header border-0">
+                            <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Nombre actividad</h4>
+                                <p class="card-text">Descripcion de actividad</p>
+                                <a href="#" class="btn btn-primary">Link actividad</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="card-header border-0">
+                            <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Nombre actividad</h4>
+                                <p class="card-text">Descripcion de actividad</p>
+                                <a href="#" class="btn btn-primary">Link actividad</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <hr>
             </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.841543229201!2d-86.8407483858515!3d21.1587033887072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b5a12c21f7f%3A0x1d7b3859bbd68665!2sSanti%20Soluciones!5e0!3m2!1ses-419!2smx!4v1569953466974!5m2!1ses-419!2smx" width="100%" height="600px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.841543229201!2d-86.8407483858515!3d21.1587033887072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b5a12c21f7f%3A0x1d7b3859bbd68665!2sSanti%20Soluciones!5e0!3m2!1ses-419!2smx!4v1569953466974!5m2!1ses-419!2smx" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </div>
 
