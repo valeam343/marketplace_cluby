@@ -55,10 +55,10 @@
                             <hr>
                             <p class="card-text">Description de actividad</p>
                             <hr>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">Notas</a>
                             <hr>
                             <!--menus de informacion en la vista de actividad-->
-                            <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo">Informacion</button>
+                            <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo">Requerimientos</button>
                             <div id="demo" class="collapse">
                                 Lorem ipsum dolor text....
                                 Lorem ipsum dolor text....
@@ -80,22 +80,10 @@
                                 Lorem ipsum dolor text....
                             </div>
                             <hr>
-                            <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo2">Contactos</button>
-                            <div id="demo2" class="collapse">
-                                Lorem ipsum dolor text....
-                                Lorem ipsum dolor text....
-                                Lorem ipsum dolor text....
-                                Lorem ipsum dolor text....
-                                Lorem ipsum dolor text....
-                                Lorem ipsum dolor text....
-                                Lorem ipsum dolor text....
-                            </div>
-                            <hr>
                             <button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo3">Mapa</button>
                             <div id="demo3" class="collapse">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.841543229201!2d-86.8407483858515!3d21.1587033887072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b5a12c21f7f%3A0x1d7b3859bbd68665!2sSanti%20Soluciones!5e0!3m2!1ses-419!2smx!4v1569953466974!5m2!1ses-419!2smx" width="100%" height="600px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                             </div>
-                            <hr>
                         </div>
                     </div>
                 </div>

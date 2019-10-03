@@ -61,7 +61,7 @@
                 <hr>
                 <div class="form-group">
                     <h2>Precio</h2>
-                    <input type="range" class="custom-range" name="range">
+                    <input type="range" class="custom-range" name="range" min="0" max="100">
                 </div>
                 <hr>
                 <div class="form-group">

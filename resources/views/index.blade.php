@@ -98,6 +98,7 @@
             </div>
         </div>
         <hr>
+        <br>
         <div class="row">
             <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
                 <br>
@@ -112,6 +113,7 @@
             </div>
         </div>
         <hr>
+        <br>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
                 <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
@@ -126,6 +128,7 @@
             </div>
         </div>
         <hr>
+        <br>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12 mb-12">
                 <p id="texto4"><strong>PREGUNTAS FRECUENTES</strong></p>
@@ -136,7 +139,7 @@
                 <p id="texto4">¿Necesito tener seguro?<br>
                     El Seguro de protección para las experiencias cubre la mayoría de las actividades incluidas en una experiencia,
                     excepto algunas cosas como volar o conducir. Puede ser que tengas que contratar un seguro independiente si tu
-                experiencia incluye estas actividades. Más información</p>
+                experiencia incluye estas actividades. <a href="#" btn-primary>Más información</a></p>
                 <p id="texto4">¿Puedo ser organizador en compañía de alguien más?<br>
                     Si quieres organizar tu experiencia en conjunto con un coanfitrión, asegúrate de mencionar su nombre en la
                     página de la experiencia para los huéspedes sepan con quién estarán. Es necesario que esa persona también
