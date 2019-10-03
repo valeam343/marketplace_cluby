@@ -4,6 +4,10 @@ html, body{
 	font-family: 'Montserrat';
 	scroll-behavior: smooth;
 }
+p{
+	text-align: justify;
+	font-size: 1.2em;
+}
 .img-fluid{
 	width: 100%;
 	height: 90%;
@@ -11,4 +15,35 @@ html, body{
 }
 #img4{
 	height: 100%;
+}
+#divheader{
+	width: 100%;
+	max-height: auto;
+	background-color: #460056;
+	color: white;
+}
+#subheader{
+}
+#textoheader1{
+	font-size: 2.1em;
+	text-align: center;
+
+}
+#textoheader2{
+	font-size: 5em;
+	margin-top: -4%;
+	text-align: center;
+}
+#texto1{
+	padding-top: 30%;
+}
+#texto2{
+	padding-left: 15%;
+}
+#texto3{
+	padding-right: 15%;
+}
+#texto4{
+	padding-left: 10%;
+	padding-right: 10%;
 }

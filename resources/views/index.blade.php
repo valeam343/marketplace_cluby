@@ -32,13 +32,34 @@
             </div>
         </div>    
     </nav>
+    <div class="container-fluid" id="divheader">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container" id="subheader">
+            <p id="textoheader1">PUBLICA TU ACTIVIDAD</p>
+            <p id="textoheader2"><strong>EN CLUBY</strong></p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-xl-12 mb-12">
-                <p>kkkgj</p>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
@@ -66,66 +87,62 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-                <p>Cluby es la aplicación que ayuda a cosas que hacer con sus hijos. Ya
+                <p id="texto1"><strong>Cluby</strong> es la aplicación que ayuda a cosas que hacer con sus hijos. Ya
                     sea que esté organizando un evento comunitario único o que sea
                     propietario de un negocio con muchos sitios y actividades para
-                    gritar, su inclusión en Acorn ayudará a las familias a encontrarlo.
-                    Todo lo que puedas imaginar para los niños, desde festivales, clases
+                gritar, su inclusión en Acorn ayudará a las familias a encontrarlo.</p>
+                <p>Todo lo que puedas imaginar para los niños, desde festivales, clases
                     de fútbol y proyecciones de películas, hasta clases de cerámica,
                     pantomimas y juegos suaves. Además, puede enumerar servicios
                 como planificación de fiestas o información cotidiana como horarios de apertura en el patio de recreo.</p>
             </div>
         </div>
+        <hr>
         <div class="row">
-            <div class="col-lg-9 col-md-9 col-xl-9 mb-9">
-                <p>TÚ PONES LAS REGLAS
-                    Establece la frecuencia que convenga (diaria, semanal o mensual), fija el
+            <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                <br>
+                <br>
+                <p id="texto2"><strong>TÚ PONES LAS REGLAS</strong><p>
+                <p id="texto2">Establece la frecuencia que convenga (diaria, semanal o mensual), fija el
                     precio y el tamaño del grupo, administra todos los detalles estés donde
                 estés con nuestra cómoda aplicación móvil.</p>
             </div>
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
                 <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
             </div>
         </div>
+        <hr>
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
                 <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="...">
             </div>
-            <div class="col-lg-9 col-md-9 col-xl-9 mb-9">
-                <p>DISEÑADO PARA EL PADRE MODERNO
-                    El mal software no debería ser una barrera para que los niños accedan a
+            <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                <br>
+                <p id="texto3"><strong>DISEÑADO PARA EL PADRE MODERNO</strong></p>
+                <p id="texto3">El mal software no debería ser una barrera para que los niños accedan a
                     actividades como la suya. Con un diseño móvil sensible, una integración
                     perfecta en su sitio web y una interfaz encantadora tanto para padres
                 como para proveedores, somos su mejor amigo en el negocio.</p>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12 mb-12">
-                <p>PREGUNTAS FRECUENTES
-                    ¿Tengo que organizar la experiencia un mínimo de veces?
-                    Puedes organizar experiencias tan seguido como quieras. Tienes toda la libertad de ajustar las fechas y los horarios hasta encontrar lo que más te convenga.
-                    ¿Puedo establecer número mínimo de participantes para cada experiencia?
-                    El número mínimo de participantes que puedes recibir en cada una de tus experiencias es 1.
-                    ¿Necesito tener seguro?
+                <p id="texto4"><strong>PREGUNTAS FRECUENTES</strong></p>
+                <p id="texto4">¿Tengo que organizar la experiencia un mínimo de veces?<br>
+                    Puedes organizar experiencias tan seguido como quieras. Tienes toda la libertad de ajustar las fechas y los horarios hasta encontrar lo que más te convenga.</p>
+                <p id="texto4">¿Puedo establecer número mínimo de participantes para cada experiencia?<br>
+                    El número mínimo de participantes que puedes recibir en cada una de tus experiencias es 1.</p>
+                <p id="texto4">¿Necesito tener seguro?<br>
                     El Seguro de protección para las experiencias cubre la mayoría de las actividades incluidas en una experiencia,
                     excepto algunas cosas como volar o conducir. Puede ser que tengas que contratar un seguro independiente si tu
-                    experiencia incluye estas actividades. Más información
-                    ¿Puedo ser organizador en compañía de alguien más?
+                experiencia incluye estas actividades. Más información</p>
+                <p id="texto4">¿Puedo ser organizador en compañía de alguien más?<br>
                     Si quieres organizar tu experiencia en conjunto con un coanfitrión, asegúrate de mencionar su nombre en la
                     página de la experiencia para los huéspedes sepan con quién estarán. Es necesario que esa persona también
                 tenga un perfil en Cluby</p>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
         <hr>
         <footer>
             <div class="row">
