@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+html, body{
+	font-family: 'Montserrat';
+	font-family: 'Montserrat';
+	scroll-behavior: smooth;
+}
+.img-fluid{
+	width: 100%;
+	height: 90%;
+	max-height: 0 auto;
+}
+#img4{
+	height: 100%;
+}

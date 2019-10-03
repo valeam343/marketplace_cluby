@@ -16,6 +16,10 @@
             max-height: 0 auto;
         }
     </style>
+
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
@@ -65,6 +69,18 @@
                     <input type="range" class="form-control-range" name="range">
                 </div>
                 <hr>
+                <div class="form-group">
+                    <h2>Fecha</h2>
+                    <input id="datepicker" width="100%" />
+                    <script>
+                        $('#datepicker').datepicker();
+                    </script>
+                </div>
+                <hr>
+
+
+
+
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         Edad
