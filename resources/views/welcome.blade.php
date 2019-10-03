@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Bootstrap 4 Responsive Layout Example</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+    @include('layouts.head')
     <style type="text/css">
         .imgbase{
             width: 100%;
@@ -23,26 +11,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div class="container">
-            <a href="#" class="navbar-brand mr-3">Cluby</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Servicios</a>
-                    <a href="#" class="nav-item nav-link">Acerca de.</a>
-                    <a href="#" class="nav-item nav-link">Contacto</a>
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link">Registrar</a>
-                    <a href="#" class="nav-item nav-link">Login</a>
-                </div>
-            </div>
-        </div>    
-    </nav>
+    @include('layouts.header')
     <div class="container">
         <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat;background-position: center;background-size: cover;">
             <h1 style="color: white;">Cluby</h1>
@@ -62,37 +31,37 @@
 
     </div>
     <div class="row">
-     <!--Grid column-->
-     <div class="col-lg-4 col-md-6 col-xl-6 mb-4">
+       <!--Grid column-->
+       <div class="col-lg-6 col-md-12 col-xl-6 mb-4">
 
-       <img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-fluid mb-4 imgbase" alt=""
-       data-wow-delay="0.1s">
+         <img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-fluid mb-4 imgbase" alt=""
+         data-wow-delay="0.1s">
 
-   </div>
-   <div class="col-lg-4 col-md-6 col-xl-6 mb-4">
+     </div>
+     <div class="col-lg-6 col-md-12 col-xl-6 mb-4">
 
-       <img src="https://img.freepik.com/vector-gratis/interior-aula-escuela-universidad-concepto-educativo-pizarra-tabla_1441-1694.jpg?size=626&ext=jpg" class="img-fluid mb-4 imgbase" alt=""
-       data-wow-delay="0.2s">
+         <img src="https://img.freepik.com/vector-gratis/interior-aula-escuela-universidad-concepto-educativo-pizarra-tabla_1441-1694.jpg?size=626&ext=jpg" class="img-fluid mb-4 imgbase" alt=""
+         data-wow-delay="0.2s">
 
-   </div>
-</div>
-<!--Grid column-->
-<div class="row">
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-       <img class="img-fluid imgbase mb-4" src="https://images.activityhero.com/activity_photo/31117/large/940baeac-7fd2-497a-85fb-737709d5b20b.jpg">
-   </div>
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-       <img class="img-fluid imgbase mb-4" src="http://assets.activityhero.com/home/39f6025c-988a-4473-bb57-3127529182ef.jpg">
-   </div>
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-       <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/94b6789b-c601-4f1e-825c-5bd25e4ac020.jpg">
-   </div>
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-       <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/scholarship.jpg">
-   </div>
-</div>
+     </div>
+ </div>
+ <!--Grid column-->
+ <div class="row">
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+         <img class="img-fluid imgbase mb-4" src="https://images.activityhero.com/activity_photo/31117/large/940baeac-7fd2-497a-85fb-737709d5b20b.jpg">
+     </div>
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+         <img class="img-fluid imgbase mb-4" src="http://assets.activityhero.com/home/39f6025c-988a-4473-bb57-3127529182ef.jpg">
+     </div>
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+         <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/94b6789b-c601-4f1e-825c-5bd25e4ac020.jpg">
+     </div>
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+         <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/scholarship.jpg">
+     </div>
+ </div>
 
-<div class="row">
+ <div class="row">
     <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card">
           <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="card-img-top" alt="...">
@@ -159,16 +128,7 @@
 
 <hr>
 <footer>
-    <div class="row">
-        <div class="col-md-6">
-            <p>Copyright © 2019 Tutorial Republic</p>
-        </div>
-        <div class="col-md-6 text-md-right">
-            <a href="#" class="text-dark">Terms of Use</a> 
-            <span class="text-muted mx-2">|</span> 
-            <a href="#" class="text-dark">Privacy Policy</a>
-        </div>
-    </div>
+    @include('layouts.footer')
 </footer>
 </div>
 <script type="text/javascript">
@@ -190,7 +150,7 @@
                     $("#idrow").html(data);
                     $("#nombreMenu").empty();
                     
-                                        
+
                 },error: function (data){
                     console.log("error: ", data);
                 }
