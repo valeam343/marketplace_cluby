@@ -2,8 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('layouts.head')
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     @include('layouts.header')
@@ -48,7 +46,7 @@
                 <br>
                 <br>
                 <br>
-                <img src="{{asset('img/emoti.svg')}}" width="10%"> Locacion
+                <img src="{{asset('img/pin.svg')}}" width="10%"> Locacion
                 <br>
                 <br>
                 <img src="{{asset('img/emoti.svg')}}" width="10%"> Edad
@@ -68,8 +66,8 @@
             </div>
         </div>
         <footer>
-         @include('layouts.footer')
-     </footer>
- </div>
+           @include('layouts.footer')
+        </footer>
+    </div>
 </body>
 </html>

@@ -3,15 +3,13 @@
 <head>
     @include('layouts.head')
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAn-Cyw_k9cYTjctHrvmFvPSGrSGEWj0qU"></script>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         var marcadores = [];
-         function mapaGoogle(){
+        function mapaGoogle(){
             var localidades = [
-                ['León', 42.603, -5.577],
-                ['Salamanca', 40.963, -5.669],
-                ['Zamora', 41.503, -5.744]
+            ['León', 42.603, -5.577],
+            ['Salamanca', 40.963, -5.669],
+            ['Zamora', 41.503, -5.744]
             ];
             var mapa = new google.maps.Map(document.getElementById('mapa'), {
                 zoom: 7,
@@ -22,28 +20,26 @@
             var marcador, i;
             for (i = 0; i < localidades.length; i++){
                 marcador = new google.maps.Marker({position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
-                map: mapa
+                    map: mapa
                 });
                 marcadores.push(marcador);
                 limites.extend(marcador.position);
                 google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
-                return function() {
-                    infowindow.setContent(localidades[i][0]);
-                    infowindow.open(mapa, marcador);
+                    return function() {
+                        infowindow.setContent(localidades[i][0]);
+                        infowindow.open(mapa, marcador);
                     }
                 })(marcador, i));
             }
-        mapa.fitBounds(limites);
-    }
-    google.maps.event.addDomListener(window, 'load', mapaGoogle);
-</script>
-<style type="text/css">
-    #mapa{
-      height: 100%;
-  }
-</style>
-
-
+            mapa.fitBounds(limites);
+        }
+        google.maps.event.addDomListener(window, 'load', mapaGoogle);
+    </script>
+    <style type="text/css">
+        #mapa{
+          height: 100%;
+        }
+    </style>
 </head>
 <body>
     @include('layouts.header')
@@ -155,15 +151,9 @@
                 <hr>
             </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-
                 <div id="mapa"></div>
-
             </div>
         </div>
-
-
-        <!--FOOTER-->
-        <hr>
         <footer>
             @include('layouts.footer')
         </footer>

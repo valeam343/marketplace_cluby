@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark mb-3" style="background-color: #2e4da0">
+<nav class="navbar navbar-expand-md navbar-dark mb-3" style="background-color: #2e4da0; height: 56px;">
     <div class="container-fluid">
         <a href="#" class="navbar-brand mr-3"><h4><strong>Cluby</strong></h4></a>
        
@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <form >
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" style="margin-top: 10px;">
                         <div class="input-group-prepend">
                           <img src="{{asset('img/search.svg')}}">
                         </div>
