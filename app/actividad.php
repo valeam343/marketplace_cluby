@@ -8,4 +8,5 @@ class actividad extends Model
 {
     //
     protected $primaryKey = 'idActividad';
+    protected $table = 'actividades';
 }

@@ -7,8 +7,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
+<<<<<<< HEAD
                 <form >
+<<<<<<< HEAD
                     <div class="input-group mb-3" style="margin-top: 10px;">
+=======
+=======
+                <form>
+>>>>>>> rama_valentin
+                    <div class="input-group mb-3">
+>>>>>>> 7e1abb8785388d6fac86d7a4ad980425b5371d14
                         <div class="input-group-prepend">
                           <img src="{{asset('img/search.svg')}}">
                         </div>
@@ -31,9 +39,14 @@
                   </div>
                 <a href="#" class="nav-item nav-link">Guardado</a>
                 <a href="#" class="nav-item nav-link">Mensajes</a>
+<<<<<<< HEAD
                 <div style="border-left: 2px solid; color: white;"></div>
                 <span>&nbsp;&nbsp;</span><img src="{{asset('img/shop.svg')}}" width="5%">
             
+=======
+                <div style="border-left: 2px solid;"></div>
+                <span>&nbsp;&nbsp;</span><img src="{{asset('img/cart.svg')}}">
+>>>>>>> rama_valentin
         </div>
     </div>    
 </nav>
