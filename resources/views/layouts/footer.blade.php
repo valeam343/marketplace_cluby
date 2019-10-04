@@ -1,4 +1,3 @@
-<hr>
 <div class="row" style="background-color: #e5e5e5;">
 	<br>
 	<br>

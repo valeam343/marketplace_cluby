@@ -157,6 +157,7 @@
                     tenga un perfil en Cluby</p>
             </div>
         </div>
+        <hr>
         <footer>
             @include('layouts.footer')
         </footer>
