@@ -16,12 +16,11 @@ Route::get('/','homeController@show');
 
 Route::get('search','homeController@filtrar')->name('search');
 Route::get('searchs','homeController@filtrar2')->name('searchs');
-Route::get('actividad', function () {
-    return view('actividad');
-});
+Route::get('actividad/{nombre}','actividadController@show');
 Route::get('categoria', function () {
     return view('categoria');
 });
+
 Route::get('index', function () {
     return view('index');
 });
