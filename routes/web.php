@@ -15,7 +15,7 @@ Route::get('/','homeController@show');
 
 
 Route::get('search','homeController@filtrar')->name('search');
-
+Route::get('searchs','homeController@filtrar2')->name('searchs');
 Route::get('actividad', function () {
     return view('actividad');
 });
