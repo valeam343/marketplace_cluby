@@ -45,11 +45,11 @@
     @include('layouts.header')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px;">
                 <br>
-                <p><a href="#">CLEAR</a></p>
+                <p><a href="#" class="text-light">CLEAR</a></p>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
                         Locación
                     </button>
                     <div class="dropdown-menu">
@@ -58,17 +58,17 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </div>
-                <hr>
+                <hr style="background-color: white;">
                 <div class="form-group">
                     <h2>Precio</h2>
                     <input type="range" class="custom-range" name="range" min="0" max="100">
                 </div>
-                <hr>
+                <hr style="background-color: white;">
                 <div class="form-group">
                     <h2>Horario</h2>
                     <input type="range" class="form-control-range" name="range">
                 </div>
-                <hr>
+                <hr style="background-color: white;">
                 <div class="form-group">
                     <h2>Fecha</h2>
                     <input id="datepicker" width="100%" />
@@ -76,9 +76,9 @@
                         $('#datepicker').datepicker();
                     </script>
                 </div>
-                <hr>
+                <hr style="background-color: white;">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
                         Edad
                     </button>
                     <div class="dropdown-menu">
@@ -87,9 +87,9 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </div>
-                <hr>
+                <hr style="background-color: white;">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
                         Actividad
                     </button>
                     <div class="dropdown-menu">
@@ -98,10 +98,9 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </div>
-                <hr>
             </div>
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-                <div class="card">
+                <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0">
                             <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
@@ -117,7 +116,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card">
+                <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0">
                             <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
@@ -133,7 +132,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="card">
+                <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0">
                             <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
@@ -151,7 +150,7 @@
                 <hr>
             </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <div id="mapa"></div>
+                <div id="mapa" style="border-radius: 10px 0px 0px 10px;"></div>
             </div>
         </div>
         <footer>
