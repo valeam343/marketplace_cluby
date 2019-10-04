@@ -7,7 +7,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <form style="padding-top: 6px;">
+                <form>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <img src="{{asset('img/search.svg')}}">
@@ -33,7 +33,6 @@
                 <a href="#" class="nav-item nav-link">Mensajes</a>
                 <div style="border-left: 2px solid;"></div>
                 <span>&nbsp;&nbsp;</span><img src="{{asset('img/cart.svg')}}">
-            
         </div>
     </div>    
 </nav>

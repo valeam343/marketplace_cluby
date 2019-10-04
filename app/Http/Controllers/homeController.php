@@ -9,9 +9,30 @@ class homeController extends Controller
     //
 
 	public function show(){
+		try {
+			$categorias = \App\categoria::all();
+			$client = new \GuzzleHttp\Client();
+			$request = $client->get('http://127.0.0.1:8000/actividades');
+			$response = $request->getBody();
+			$content = $response->getContents();
 
-		$categorias = \App\categoria::all();
-		return view('welcome', compact('categorias'));
+			$arr = json_decode($content, TRUE);
+			//echo json_encode($categorias);
+			//$res = str_replace("\\", "", $response);
+			
+			return view('welcome', compact('arr'));
+		} catch (Exception $e) {
+			echo "Exception: ".$e->getMessage();
+		}
+		
+	}
+
+	public function filtrar2(Request $request){
+		$search = $request->get('term');
+
+		$result = \App\actividad::where('nombre', 'LIKE', '%'. $search. '%')->get();
+
+		return response()->json($result);
 	}
 
 	public function filtrar(Request $request){

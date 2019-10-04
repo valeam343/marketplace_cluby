@@ -20,7 +20,6 @@
     <div class="col-md-6 text-md-right">
         <form>
           <div class="form-group">
-            
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
             <small id="emailHelp" class="form-text text-muted">No compartirémos tu información con terceros.</small>
           </div>
