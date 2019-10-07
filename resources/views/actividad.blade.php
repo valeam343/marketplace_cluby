@@ -6,7 +6,9 @@
     <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
     <style type="text/css">
-
+      .checked {
+        color: orange;
+      }
       * {
         box-sizing: border-box;
       }
@@ -83,7 +85,11 @@
                 </script>
                 <hr>
                 <h1>MAPA</h1>
-                
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
                 <hr>
                 <h1>RESEÑAS</h1>
                 <hr>

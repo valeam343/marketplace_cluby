@@ -3,6 +3,9 @@
 <head>
     @include('layouts.head')
     <style type="text/css">
+        .checked {
+          color: orange;
+        }
         .imgbase{
             width: 100%;
             height: 90%;
@@ -143,6 +146,11 @@
             <div class="card-body">
                 <h5 class="card-title">{{$cat['nombre'] }}</h5>
                 <p class="card-text">{{$cat['descripcion']}}</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
                 <a href="{{URL::to('actividad/'.$cat['idActividad'])}}" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
