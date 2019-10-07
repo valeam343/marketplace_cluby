@@ -11,13 +11,13 @@ class actividadController extends Controller
     public function show($nombre){
 
     	
-    	$actividad = \App\actividad::where('nombre', 'LIKE', '%'.$nombre.'%')->get();
-    	//echo "nombre: ". $nombre;
-    	$act = json_decode($actividad, TRUE);
-    	//echo print_r($act);
-    	
+    	$client = new \GuzzleHttp\Client();
+        $request = $client->get('http://192.168.1.98:8000/actividades/'.$nombre);
+        $response = $request->getBody();
+        $content = $response->getContents();
+        $act = json_decode($content, TRUE);
     	//return response()->json($actividad);
-    	return view('actividad')->with(['act' => $act]);
+        return view('actividad')->with(['act' => $act]);
     }
 
 

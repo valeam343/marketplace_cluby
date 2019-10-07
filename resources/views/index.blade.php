@@ -56,14 +56,12 @@
         <br>
         <br>
         <br>
-        <br>
         <div class="container" id="subheader">
             <p id="textoheader1">PUBLICA TU ACTIVIDAD</p>
             <p id="textoheader2"><strong>EN CLUBY</strong></p>
         </div>
         <br>
-        <br>
-        <br>
+        <center><button type="submit" class="btn btn-outline-info btn-lg" style="color: white; border-color: white;">Empezar</button>&nbsp;<button type="submit" class="btn btn-outline-info btn-lg" style="color: white; border-color: white;">Más Información</button></center>
         <br>
         <br>
         <br>
@@ -154,10 +152,11 @@
                     <p id="texto4">¿Puedo ser organizador en compañía de alguien más?<br>
                         Si quieres organizar tu experiencia en conjunto con un coanfitrión, asegúrate de mencionar su nombre en la
                         página de la experiencia para los huéspedes sepan con quién estarán. Es necesario que esa persona también
-                    tenga un perfil en Cluby</p>
+                    tenga un perfil en Cluby.</p>
             </div>
         </div>
-        <hr>
+        <br>
+        <center><button type="button" class="btn btn-raised btn-info">Empezar</button></center>
         <footer>
             @include('layouts.footer')
         </footer>

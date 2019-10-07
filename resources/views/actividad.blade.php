@@ -27,9 +27,7 @@
                 @endforeach
                 <h5>Notas</h5>
                 <p>Some Text</p>
-                <hr>
-                <h2>Fecha</h2>
-                <input id="datepicker" width="100%" />
+                <h2>Fecha</h2>                <input id="datepicker" width="100%" />
                 <script>
                     $('#datepicker').datepicker();
                 </script>

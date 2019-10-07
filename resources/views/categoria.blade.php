@@ -2,44 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('layouts.head')
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAn-Cyw_k9cYTjctHrvmFvPSGrSGEWj0qU"></script>
-    <script type="text/javascript">
-        var marcadores = [];
-        function mapaGoogle(){
-            var localidades = [
-            ['León', 42.603, -5.577],
-            ['Salamanca', 40.963, -5.669],
-            ['Zamora', 41.503, -5.744]
-            ];
-            var mapa = new google.maps.Map(document.getElementById('mapa'), {
-                zoom: 7,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            var limites = new google.maps.LatLngBounds();
-            var infowindow = new google.maps.InfoWindow();
-            var marcador, i;
-            for (i = 0; i < localidades.length; i++){
-                marcador = new google.maps.Marker({position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
-                    map: mapa
-                });
-                marcadores.push(marcador);
-                limites.extend(marcador.position);
-                google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
-                    return function() {
-                        infowindow.setContent(localidades[i][0]);
-                        infowindow.open(mapa, marcador);
-                    }
-                })(marcador, i));
-            }
-            mapa.fitBounds(limites);
-        }
-        google.maps.event.addDomListener(window, 'load', mapaGoogle);
-    </script>
-    <style type="text/css">
-        #mapa{
-          height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
 </head>
 <body>
     @include('layouts.header')
@@ -150,7 +118,23 @@
                 <hr>
             </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <div id="mapa" style="border-radius: 10px 0px 0px 10px;"></div>
+                <div id="mapid" style="border-radius: 10px 0px 0px 10px; height: 600px;"></div>
+                <script>
+                    var mymap = L.map('mapid').setView([40.963, -5.669], 7);
+                    var marker = L.marker([42.603, -5.577]).addTo(mymap);
+                    var mark = L.marker([40.963, -5.669]).addTo(mymap);
+                    var mark = L.marker([41.503, -5.744]).addTo(mymap);
+
+
+
+                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RheXRydWUxMCIsImEiOiJjazFncGh6ZjgxNzY3M2NzMXRuMWtqeDV2In0.IwvdiWj2SxkTIP_IdysbiA', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox.streets',
+                        accessToken: 'your.mapbox.access.token'
+                    }).addTo(mymap);
+
+                </script>
             </div>
         </div>
         <footer>

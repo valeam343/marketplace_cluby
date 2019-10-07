@@ -50,44 +50,44 @@
         </div>
         <hr>
         <div class="row">
-         <!--Grid column-->
+           <!--Grid column-->
+           <div class="col-lg-6 col-md-12 col-xl-6 hover11">
+
+             <img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-fluid imgbase" alt=""
+             data-wow-delay="0.1s">
+             <h2 class="txt">Cursos</h2>
+
+         </div>
          <div class="col-lg-6 col-md-12 col-xl-6 hover11">
 
-           <img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-fluid imgbase" alt=""
-           data-wow-delay="0.1s">
-           <h2 class="txt">Cursos</h2>
+             <img src="https://img.freepik.com/vector-gratis/interior-aula-escuela-universidad-concepto-educativo-pizarra-tabla_1441-1694.jpg?size=626&ext=jpg" class="img-fluid  imgbase" alt=""
+             data-wow-delay="0.2s">
+             <h2 class="txt">Clases</h2>
 
-       </div>
-       <div class="col-lg-6 col-md-12 col-xl-6 hover11">
+         </div>
+     </div>
+     <!--Grid column-->
+     <div class="row">
+        <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+         <img class="img-fluid imgbase mb-4" src="https://images.activityhero.com/activity_photo/31117/large/940baeac-7fd2-497a-85fb-737709d5b20b.jpg">
+         <h2 class="txt">Manualidades</h2>
 
-           <img src="https://img.freepik.com/vector-gratis/interior-aula-escuela-universidad-concepto-educativo-pizarra-tabla_1441-1694.jpg?size=626&ext=jpg" class="img-fluid  imgbase" alt=""
-           data-wow-delay="0.2s">
-           <h2 class="txt">Clases</h2>
+     </div>
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+         <img class="img-fluid imgbase mb-4" src="http://assets.activityhero.com/home/39f6025c-988a-4473-bb57-3127529182ef.jpg">
+         <h2 class="txt">Banda</h2>
+     </div>
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+         <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/94b6789b-c601-4f1e-825c-5bd25e4ac020.jpg">
+         <h2 class="txt">Mejores actividades del Año</h2>
+     </div>
+     <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+         <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/scholarship.jpg">
+         <h2 class="txt">Becas</h2>
+     </div>
+ </div>
 
-       </div>
-   </div>
-   <!--Grid column-->
-   <div class="row">
-    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-       <img class="img-fluid imgbase mb-4" src="https://images.activityhero.com/activity_photo/31117/large/940baeac-7fd2-497a-85fb-737709d5b20b.jpg">
-       <h2 class="txt">Manualidades</h2>
-
-   </div>
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-       <img class="img-fluid imgbase mb-4" src="http://assets.activityhero.com/home/39f6025c-988a-4473-bb57-3127529182ef.jpg">
-       <h2 class="txt">Banda</h2>
-   </div>
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-       <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/94b6789b-c601-4f1e-825c-5bd25e4ac020.jpg">
-       <h2 class="txt">Mejores actividades del Año</h2>
-   </div>
-   <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-       <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/scholarship.jpg">
-       <h2 class="txt">Becas</h2>
-   </div>
-</div>
-
-<div class="row">
+ <div class="row">
     <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card">
           <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="card-img-top" alt="...">
@@ -139,11 +139,11 @@
     @foreach ($arr as $cat)
     <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card">
-            <a href="{{URL::to('actividad/'.$cat['nombre'])}}"><img src="{{asset($cat['imagen'])}}" class="card-img-top" alt="..."></a>
+            <a href="{{URL::to('actividad/'.$cat['idActividad'])}}"><img src="{{asset($cat['imagen'])}}" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h5 class="card-title">{{$cat['nombre'] }}</h5>
                 <p class="card-text">{{$cat['descripcion']}}</p>
-                <a href="{{URL::to('actividad/'.$cat['nombre'])}}" class="btn btn-primary">Go somewhere</a>
+                <a href="{{URL::to('actividad/'.$cat['idActividad'])}}" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
@@ -152,15 +152,14 @@
 </div>
 
 
-<hr>
 <footer>
     @include('layouts.footer')
 </footer>
 </div>
 <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
+src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+crossorigin="anonymous"></script>
 <script type="text/javascript">
     $.ajaxSetup({
       headers: {
@@ -199,14 +198,14 @@
                     },
                     dataType: "json",
                     success: function(data){
-                     var resp = $.map(data,function(obj){
+                       var resp = $.map(data,function(obj){
                         console.log(obj.image);
                         return obj.nombre;
                     }); 
 
-                     response(resp);
-                 }
-             });
+                       response(resp);
+                   }
+               });
             },
             minLength: 1
         });

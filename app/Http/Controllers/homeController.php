@@ -12,7 +12,7 @@ class homeController extends Controller
 		try {
 			$categorias = \App\categoria::all();
 			$client = new \GuzzleHttp\Client();
-			$request = $client->get('http://127.0.0.1:8000/actividades');
+			$request = $client->get('http://192.168.1.98:8000/actividades');
 			$response = $request->getBody();
 			$content = $response->getContents();
 
