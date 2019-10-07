@@ -139,11 +139,11 @@
     @foreach ($arr as $cat)
     <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card">
-            <a href="{{URL::to('actividad/'.$cat['nombre'])}}"><img src="{{asset($cat['imagen'])}}" class="card-img-top" alt="..."></a>
+            <a href="{{URL::to('actividad/'.$cat['idActividad'])}}"><img src="{{asset($cat['imagen'])}}" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h5 class="card-title">{{$cat['nombre'] }}</h5>
                 <p class="card-text">{{$cat['descripcion']}}</p>
-                <a href="{{URL::to('actividad/'.$cat['nombre'])}}" class="btn btn-primary">Go somewhere</a>
+                <a href="{{URL::to('actividad/'.$cat['idActividad'])}}" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
@@ -157,6 +157,7 @@
     @include('layouts.footer')
 </footer>
 </div>
+
 <script type="text/javascript">
     $.ajaxSetup({
       headers: {
