@@ -56,7 +56,12 @@ class homeController extends Controller
 						<div class="card-body">
 						<h5 class="card-title">'.$actividad->nombre.'</h5>
 						<p class="card-text">'.$actividad->descripcion.'</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+						<center><a href="#" class="btn btn-primary">Go somewhere</a></center>
 						</div>
 						</div>
 						</div>';

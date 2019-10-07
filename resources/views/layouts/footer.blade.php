@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> rama_valentin
 <hr>
 <div class="row" style="background-color: #e5e5e5;">
 	<br>
@@ -33,4 +37,8 @@
 		</form>
 	</div>
 
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> rama_valentin

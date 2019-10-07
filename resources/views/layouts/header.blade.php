@@ -33,6 +33,13 @@
                 <a href="#" class="nav-item nav-link">Mensajes</a>
                 <div style="border-left: 2px solid; color: white;"></div>
                 <span>&nbsp;&nbsp;</span><img src="{{asset('img/shop.svg')}}" width="5%">
+<<<<<<< HEAD
         </div>
     </div>    
 </nav>
+=======
+            
+        </div>
+    </div>    
+</nav>
+>>>>>>> rama_valentin

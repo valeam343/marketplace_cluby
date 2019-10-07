@@ -3,6 +3,9 @@
 <head>
     @include('layouts.head')
     <style type="text/css">
+        .checked {
+          color: orange;
+        }
         .imgbase{
             width: 100%;
             height: 90%;
@@ -143,6 +146,14 @@
             <div class="card-body">
                 <h5 class="card-title">{{$cat['nombre'] }}</h5>
                 <p class="card-text">{{$cat['descripcion']}}</p>
+<<<<<<< HEAD
+=======
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+>>>>>>> rama_valentin
                 <a href="{{URL::to('actividad/'.$cat['idActividad'])}}" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
@@ -156,10 +167,14 @@
     @include('layouts.footer')
 </footer>
 </div>
+<<<<<<< HEAD
 <script
 src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
 integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
 crossorigin="anonymous"></script>
+=======
+
+>>>>>>> rama_valentin
 <script type="text/javascript">
     $.ajaxSetup({
       headers: {
