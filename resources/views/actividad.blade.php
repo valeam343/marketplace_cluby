@@ -144,8 +144,6 @@
            @include('layouts.footer')
        </footer>
    </div>
-<<<<<<< HEAD
-=======
    <script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
    <script type="text/javascript">
      $('.myslider').slick({
@@ -188,6 +186,5 @@
          ]
        });
      </script>
->>>>>>> rama_valentin
 </body>
 </html>

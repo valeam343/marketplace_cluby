@@ -12,6 +12,13 @@
 <body>
     @include('layouts.header')
     <div class="container-fluid">
+        <center>
+            @foreach($cat as $categoria)
+            <h1><strong>
+                {{$categoria['nombre']}}
+            </strong></h1>
+            @endforeach
+        </center>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px;">
                 <br>
@@ -67,23 +74,28 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
+                @foreach($act as $ac)
                 <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0">
+                            <a href="{{URL::to('/actividad/'.$ac->idActividad)}}">
                             <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
+                            </a>
                         </div>
                         <div class="col">
                             <div class="card-block px-2">
-                                <h4 class="card-title">Nombre actividad</h4>
-                                <p class="card-text">Descripcion de actividad</p>
-                                <a href="#" class="btn btn-primary">Link actividad</a>
+                                <h4 class="card-title">{{$ac->nombre}}</h4>
+                                <p class="card-text">{{$ac->descripcion}}</p>
+                                <a href="{{URL::to('/actividad/'.$ac->idActividad)}}" class="btn btn-primary">Link actividad</a>
                                 <br>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
+                @endforeach
                 <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0">
