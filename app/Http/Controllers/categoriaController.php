@@ -11,7 +11,7 @@ class categoriaController extends Controller
     public function show($id){
     	try {
     			$client = new \GuzzleHttp\Client();
-    		    $request = $client->get('http://192.168.1.98:8000/actividades/'.$id);
+    		    $request = $client->get('http://192.168.1.137:8000/actividades/'.$id);
     		    $response = $request->getBody();
     		    $content = $response->getContents();
     		    $cat = json_decode($content, TRUE);

@@ -12,7 +12,7 @@ class actividadController extends Controller
 
 
     	$client = new \GuzzleHttp\Client();
-        $request = $client->get('http://192.168.1.98:8000/actividades/'.$nombre);
+        $request = $client->get('http://192.168.1.137:8000/actividades/'.$nombre);
         $response = $request->getBody();
         $content = $response->getContents();
         $act = json_decode($content, TRUE);
