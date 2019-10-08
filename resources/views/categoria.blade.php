@@ -81,7 +81,7 @@
                     <div class="row no-gutters">
                         <div class="card-header border-0">
                             <a href="{{URL::to('/actividad/'.$ac->idActividad)}}">
-                            <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
+                            <img src="{{asset($ac->imagen)}}" alt="..." width="250px">
                             </a>
                         </div>
                         <div class="col">
@@ -96,38 +96,7 @@
                 </div>
                 <hr>
                 @endforeach
-                <div class="card" style="border-radius: 10px;">
-                    <div class="row no-gutters">
-                        <div class="card-header border-0">
-                            <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
-                        </div>
-                        <div class="col">
-                            <div class="card-block px-2">
-                                <h4 class="card-title">Nombre actividad</h4>
-                                <p class="card-text">Descripcion de actividad</p>
-                                <a href="#" class="btn btn-primary">Link actividad</a>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="card" style="border-radius: 10px;">
-                    <div class="row no-gutters">
-                        <div class="card-header border-0">
-                            <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2019/01/18/Recortada/img_psola_20190118-094418_imagenes_lv_terceros_dragon-ball-super-broly-kbVE-U454190467686qgF-992x558@LaVanguardia-Web.jpg" class="img-fluid" alt="..." width="250px">
-                        </div>
-                        <div class="col">
-                            <div class="card-block px-2">
-                                <h4 class="card-title">Nombre actividad</h4>
-                                <p class="card-text">Descripcion de actividad</p>
-                                <a href="#" class="btn btn-primary">Link actividad</a>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
+                
             </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
                 <div id="mapid" style="border-radius: 10px 0px 0px 10px; height: 600px;"></div>
@@ -136,9 +105,6 @@
                     var marker = L.marker([42.603, -5.577]).addTo(mymap);
                     var mark = L.marker([40.963, -5.669]).addTo(mymap);
                     var mark = L.marker([41.503, -5.744]).addTo(mymap);
-
-
-
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RheXRydWUxMCIsImEiOiJjazFncGh6ZjgxNzY3M2NzMXRuMWtqeDV2In0.IwvdiWj2SxkTIP_IdysbiA', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                         maxZoom: 18,

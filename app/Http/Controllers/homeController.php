@@ -50,9 +50,9 @@ class homeController extends Controller
 
 					foreach ($actividades as $key => $actividad) {
     			# code...
-						$output .= '<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card">
-						<img src="#" class="card-img-top" alt="...">
+						$output .= '<div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch">
+						<div class="card" style = "margin-top: 10px; margin-bottom: 10px;">
+						<img src="'.$actividad->imagen.'" style="height: 200px;" class="card-img-top" alt="...">
 						<div class="card-body">
 						<h5 class="card-title">'.$actividad->nombre.'</h5>
 						<p class="card-text">'.$actividad->descripcion.'</p>
