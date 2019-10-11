@@ -2,8 +2,20 @@
   .navbar{
     padding: 0;
   }
+  input[type=text]:focus:not([readonly]) + label {
+              color: white; 
+          }
+
+          input[type=text]:focus:not([readonly]) {
+              border-bottom: 1px solid white;
+              box-shadow: 0 1px 0 0 white; 
+
+          }
+          a.nav-item.nav-link{
+            max-height: 29px;
+          }
 </style>
-<nav class="navbar navbar-expand-md navbar-dark mb-3" style="background-color: #2e4da0;">
+<nav class="navbar navbar-expand-md navbar-dark mb-3" id="nab" style="background-color: #2e4da0;">
   <div class="container-fluid">
     <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>Cluby</strong></h4></a>
 
@@ -13,18 +25,18 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav">
         <form >
-          <div class="input-group mb-3" style="margin-top: 10px;">
+          <div class="input-group input-group-sm mb-3" style="margin-top: 10px;">
             <div class="input-group-prepend">
               <img src="{{asset('img/search.svg')}}">
             </div>
-            <input type="text" class="form-control" placeholder="Username">
+            <input type="text" class="form-control" placeholder="Username" >
           </div>
         </form>
       </div>  
       <div class="navbar-nav ml-auto">
         <div class="d-flex">
           <div class="dropdown mr-1">
-            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" style="color: white; font-size: 100%;">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" style="color: white; font-size: 90%;">
               Perfil
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">

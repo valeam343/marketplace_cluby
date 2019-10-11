@@ -15,7 +15,7 @@ class homeController extends Controller
 			$request = $client->get('http://192.168.1.73:8000/actividades');
 			$response = $request->getBody();
 			$content = $response->getContents();
-
+			
 			$arr = json_decode($content, TRUE);
 			//echo json_encode($categorias);
 			//$res = str_replace("\\", "", $response);
@@ -40,7 +40,7 @@ class homeController extends Controller
 			if ($request->ajax()) {
     			# code...
 
-				$output = "";
+				$output = array();
 
 				$actividades = DB::table('actividades')->where('nombre','LIKE', '%'.$request->search."%")->get();
 
@@ -50,9 +50,11 @@ class homeController extends Controller
 
 					foreach ($actividades as $key => $actividad) {
     			# code...
-						$output .= '<div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch">
-						<div class="card" style = "margin-top: 10px; margin-bottom: 10px;">
-						<img src="'.$actividad->imagen.'" style="height: 200px;" class="card-img-top" alt="...">
+						$outputs = '<div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px; margin-bottom: 10px;">
+						<div class="card">
+						<a href =":url">
+						<img src="'.$actividad->imagen.'" style="height: 200px;" class="responsive">
+						</a>
 						<div class="card-body">
 						<h5 class="card-title">'.$actividad->nombre.'</h5>
 						<p class="card-text">'.$actividad->descripcion.'</p>
@@ -65,9 +67,11 @@ class homeController extends Controller
 						</div>
 						</div>
 						</div>';
+						array_push($output, $outputs);
+
 					}
 
-					return Response($output);
+					return response($output);
 				}
 			}
 		} catch (Exception $e) {

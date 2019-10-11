@@ -8,6 +8,20 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
+    <style type="text/css">
+        div.gj-slider{
+            width: 100%!important;
+            z-index: 2!important;
+        }
+        .gj-datepicker-md [role=right-icon]{
+            color: white;
+        }
+        .gj-textbox-md {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+
+    </style>
 </head>
 <body>
     @include('layouts.header')
@@ -22,7 +36,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px;">
                 <br>
-                <p><a href="#" class="text-light">CLEAR</a></p>
+                <p><a href="#" class="btn btn-outline-light">CLEAR</a></p>
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
                         Locación
@@ -35,32 +49,25 @@
                 </div>
                 <hr style="background-color: white;">
                 <div class="form-group">
-                    <h2>Precio</h2>
-                    <input type="range" class="custom-range" name="range" min="0" max="100">
+                    <p>Precio</p>
+                    <input id="sliderx" width="300" />
+                    Valor: <span id="valuex"></span>
                 </div>
                 <hr style="background-color: white;">
                 <div class="form-group">
-                    <h2>Horario</h2>
-                    <input type="range" class="form-control-range" name="range">
+                    <p>Horario</p>
+                    <input id="slider" width="300" />
+                    Valor: <span id="value"></span>
                 </div>
                 <hr style="background-color: white;">
                 <div class="form-group">
-                    <h2>Fecha</h2>
+                    <p>Fecha</p>
                     <input id="datepicker" width="100%" />
-                    <script>
-                        $('#datepicker').datepicker();
-                    </script>
                 </div>
                 <hr style="background-color: white;">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
-                        Edad
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
+                   <p>Edad</p>
+
                 </div>
                 <hr style="background-color: white;">
                 <div class="dropdown">
@@ -73,15 +80,79 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </div>
+                <hr style="background-color: white;">
+                <center>
+                    <button type="button" class="btn btn-outline-light">Clase</button>
+                    <button type="button" class="btn btn-outline-light">Curso</button>
+                </center>
+                
             </div>
+            <!--
+            <div class="col-lg-6 col-md-6 col-xl-3 mb-3">
+                <div id="accordion">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="">
+                          <h5>Collapsible Group Item #0</h5>
+                        </h5>
+                      </div>
+                        <div class="card-body">
+                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        </div>
+                    </div>
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          Collapsible Group Item #1
+                        </button>
+                      </h5>
+                    </div>
 
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Collapsible Group Item #2
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h5 class="">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Collapsible Group Item #3
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        -->
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
                 @foreach($act as $ac)
                 <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0">
                             <a href="{{URL::to('/actividad/'.$ac->idActividad)}}">
-                            <img src="{{asset($ac->imagen)}}" alt="..." width="250px">
+                                <img src="{{asset($ac->imagen)}}" alt="..." width="250px">
                             </a>
                         </div>
                         <div class="col">
@@ -115,9 +186,22 @@
                 </script>
             </div>
         </div>
-        <footer>
-            @include('layouts.footer')
-        </footer>
+            
     </div>
+    <script type="text/javascript">
+        $('#sliderx').slider({
+            slide: function (e, value) {
+                document.getElementById('valuex').innerText = value;
+            }
+        });
+
+        $('#slider').slider({
+            slide: function (e, value) {
+                document.getElementById('value').innerText = value;
+            }
+        });
+        $('#datepicker').datepicker();
+    </script>
 </body>
+@include('layouts.footer')
 </html>
