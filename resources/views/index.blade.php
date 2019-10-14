@@ -7,7 +7,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #460056; height: 56px;">
         <div class="container-fluid">
-            <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>Cluby</strong></h4></a>
+            <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>cluby</strong></h4></a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>

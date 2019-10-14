@@ -17,7 +17,7 @@
 </style>
 <nav class="navbar navbar-expand-md navbar-dark mb-3" id="nab" style="background-color: #2e4da0;">
   <div class="container-fluid">
-    <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>Cluby</strong></h4></a>
+    <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>cluby</strong></h4></a>
 
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>

@@ -5,47 +5,49 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
     <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBUqmvY7XlADAbFLiCVIMplOoCqz4UCejI"></script>
+
     <style type="text/css">
       .checked {
         color: orange;
-      }
-      * {
+    }
+    * {
         box-sizing: border-box;
-      }
-      .slider {
+    }
+    .slider {
         width: 90%;
         margin: 100px auto;
-      }
-      .slick-slide {
+    }
+    .slick-slide {
         margin: 0px 20px;
-      }
-      .slider.variable-width{
+    }
+    .slider.variable-width{
         width:100%;
-      }
-      .slick-prev:before,
-      .slick-next:before {
+    }
+    .slick-prev:before,
+    .slick-next:before {
         color: red;
-
-      }
-
-      .slick-slide img{
+    }
+    .slick-slide img{
         max-width: 100%;
         width: auto!important;
-      }
-      .slick-slide {
+    }
+    .slick-slide {
         transition: all ease-in-out .3s;
         opacity: 1;
-      }
-      
-      .slick-active {
+    }
+    .slick-active {
         opacity: 1;
-      }
-      .slick-current {
+    }
+    .slick-current {
         opacity: 1;
-      }
-
-
-    </style>
+    }
+    *{ margin:0; padding: 0; }
+    #mapa{
+      height: 400px;
+  }
+</style>
 </head>
 <body>
     @include('layouts.header')
@@ -54,42 +56,42 @@
             @foreach ($act as $ac) 
             <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
                 <img src="{{asset($ac['imagen'])}}" class="img-fluid" alt="..." width="100%">
-                <h1>Evaluacion General</h1>
+                <h5><strong>Evaluacion General</strong></h5>
             </div>
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-                
-                <h2><strong>
-                {{$ac['nombre']}}
-                </strong></h2>
+                <h1><strong>
+                    {{$ac['nombre']}}
+                </strong></h1>
                 <br>
-                <h5>Descripción</h5>
+                <h3>Descripción</h3>
                 <p>{{$ac['descripcion']}}</p>
                 <br>
-                <h5>Ciudad</h5>
+                <h3>Ciudad</h3>
                 <p>{{$ac['city']}}</p>
                 <hr>
                 @endforeach
-                <h5>Notas</h5>
+                <h3>Notas</h3>
                 <p>Some Text</p>
-                <h2>Fecha</h2>                <input id="datepicker" width="100%" />
+                <h3>Fecha</h3>                <input id="datepicker" width="100%" />
                 <script>
                     $('#datepicker').datepicker();
                 </script>
                 <hr>
-                <h2>Fecha</h2>
+                <h3>Fecha</h3>
                 <input id="datepicker1" width="100%" />
                 <script>
                     $('#datepicker1').datepicker();
                 </script>
                 <hr>
-                <h1>MAPA</h1>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+                <h3>MAPA</h3>
+                <div id="mapa"></div>
                 <hr>
-                <h1>RESEÑAS</h1>
+                <h3>RESEÑAS</h3>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
                 <hr>
             </div>
             <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
@@ -113,41 +115,41 @@
             </div>
         </div>
         <div class="container-fluid">
-              <div class="row">
-                <div class="col-sm" id="slider">
-                  <div class="slider-area slider">
-                   <div class="slider variable-width myslider ">
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                    </div>
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                    </div>
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                    </div>
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                    </div>
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                    </div>
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                    </div>
-                  </div>
-                </div>
+          <div class="row">
+            <div class="col-sm" id="slider">
+              <div class="slider-area slider">
+               <div class="slider variable-width myslider ">
+                <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
               </div>
-            </div>
-        </div>
-        <footer>
-           @include('layouts.footer')
-       </footer>
-   </div>
-   <script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
-   <script type="text/javascript">
-     $('.myslider').slick({
-       dots: false,
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<footer>
+   @include('layouts.footer')
+</footer>
+</div>
+<script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
+ $('.myslider').slick({
+   dots: false,
        //variableWidth: true,
        infinite: true,
        speed: 300,
@@ -163,15 +165,15 @@
            slidesToScroll: 4,
            infinite: true,
            dots: false
-         }
-       },
-       {
-         breakpoint: 480,
-         settings: {
-           slidesToShow: 3,
-           slidesToScroll: 3
-         }
        }
+   },
+   {
+     breakpoint: 480,
+     settings: {
+       slidesToShow: 3,
+       slidesToScroll: 3
+   }
+}
        /*,
        {
          breakpoint: 480,
@@ -179,12 +181,58 @@
            slidesToShow: 1,
            slidesToScroll: 1
          }
-       }*/
+     }*/
          // You can unslick at a given breakpoint now by adding:
          // settings: "unslick"
          // instead of a settings object
          ]
-       });
-     </script>
+     });
+
+ var marcadores = [];
+
+ function mapaGoogle() {
+
+  var localidades = [
+  ['Santi Soluciones', 42.603, -5.577],
+  ['Salamanca', 40.963, -5.669],
+  ['Zamora', 41.503, -5.744]
+  ];
+
+  var mapa = new google.maps.Map(document.getElementById('mapa'), {
+    zoom: 7,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+  var limites = new google.maps.LatLngBounds();
+
+  var infowindow = new google.maps.InfoWindow();
+
+  var marcador, i;
+
+  for (i = 0; i < localidades.length; i++) {
+
+    marcador = new google.maps.Marker({
+      position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
+      map: mapa
+  });
+
+    marcadores.push(marcador);
+
+    limites.extend(marcador.position);
+
+    google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
+      return function() {
+        infowindow.setContent(localidades[i][0]);
+        infowindow.open(mapa, marcador);
+    }
+})(marcador, i));
+}
+
+mapa.fitBounds(limites);
+
+}
+
+google.maps.event.addDomListener(window, 'load', mapaGoogle);
+</script>
 </body>
 </html>
