@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaisesTable extends Migration
+class CreateActividadCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreatePaisesTable extends Migration
      */
     public function up()
     {
-        Schema::create('paises', function (Blueprint $table) {
-            $table->bigIncrements('pkPais');
-            $table->string('nomPais');
+        Schema::create('categorias', function (Blueprint $table) {
+            $table->bigIncrements('pkActividadesCategoria');
+            $table->string('nomActividadesCategoria');
+            $table->string('descActividadesCategoria');
+            $table->string('esActivo');
             $table->string('creadoPor');
             $table->string('editadoPor');
             $table->timestamp('fechaCreado');
@@ -31,6 +33,6 @@ class CreatePaisesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paises');
+        Schema::dropIfExists('actividad_categorias');
     }
 }

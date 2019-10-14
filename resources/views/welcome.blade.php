@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+<<<<<<< HEAD
   @include('layouts.head')
   <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
   <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
@@ -41,8 +42,38 @@
   .slick-current {
       opacity: 1;
   }
+=======
+    @include('layouts.head')
+<<<<<<< HEAD
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
+    <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+>>>>>>> 63d7d5d2b04f60976980fe821fb8b91484761111
 
 </style>
+=======
+    
+    <style type="text/css">
+        .row{
+            margin-right: 0!important;
+            margin-left: 0!important;
+        }
+        @media (min-width: 1125px){
+            .jumbText{
+                margin: 7em 5em 0 6em;
+            }
+            .jumbotron{
+
+                min-height: 727px;
+            }
+            #cont{
+                padding: 0;
+            }
+        }
+        @media (max-width: 1124px){
+            .jumbText{
+                margin: 3em 0 0 0;
+>>>>>>> rama_valentin
 
 <style type="text/css">
 
@@ -206,6 +237,7 @@ img.responsive {
         </form>
         </div>
 
+<<<<<<< HEAD
             
 
 </div>
@@ -237,10 +269,79 @@ img.responsive {
 </div>
 </div>
 </div>
+=======
+<<<<<<< HEAD
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm" id="slider">
+              <div class="slider-area slider">
+                 <div class="slider variable-width myslider ">
+                    <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+>>>>>>> 63d7d5d2b04f60976980fe821fb8b91484761111
 </div>
 </div>
 <div class="row" style="background-color: #5193C3; height: 400px;">
     <center><p style="text-align: justify; width: 80%; font-size: 2vw; color: white; text-shadow: 4px 4px 8px black;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
+=======
+    </div>
+    <hr>
+    <div class="row">
+       <!--Grid column-->
+       <div class="col-lg-6 col-md-12 col-xl-6 hover11">
+        <a href="{{URL::to('/categoria/1')}}"><img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-responsive imgbase" alt=""
+         data-wow-delay="0.1s">
+         <h2 class="txt">Cursos</h2>
+     </a>
+ </div>
+ <div class="col-lg-6 col-md-12 col-xl-6 hover11">
+    <a href="{{URL::to('/categoria/2')}}">
+     <img src="https://img.freepik.com/vector-gratis/interior-aula-escuela-universidad-concepto-educativo-pizarra-tabla_1441-1694.jpg?size=626&ext=jpg" class="imgbase img-responsive" alt=""
+     data-wow-delay="0.2s">
+     <h2 class="txt">Clases</h2>
+ </a>
+</div>
+</div>
+<!--Grid column-->
+<div class="row">
+    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+        <a href="">
+         <img class="img-responsive imgbase mb-4" src="https://images.activityhero.com/activity_photo/31117/large/940baeac-7fd2-497a-85fb-737709d5b20b.jpg">
+         <h2 class="txt">Manualidades</h2>
+     </a>
+ </div>
+ <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+    <a href="">
+     <img class="img-fluid imgbase mb-4" src="http://assets.activityhero.com/home/39f6025c-988a-4473-bb57-3127529182ef.jpg">
+     <h2 class="txt">Banda</h2>
+ </a>
+</div>
+<div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
+    <a href="">
+     <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/94b6789b-c601-4f1e-825c-5bd25e4ac020.jpg">
+     <h2 class="txt">Mejores actividades del Año</h2>
+ </a>
+>>>>>>> rama_valentin
 </div>
 <hr>
 <center><h1>TOP ACTIVIDADES</h1></center>
