@@ -14,7 +14,12 @@ class CreateCuidadesTable extends Migration
     public function up()
     {
         Schema::create('cuidades', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('pkCiudad');
+            $table->string('nomCiudad');
+            $table->string('creadoPor');
+            $table->string('editadoPor');
+            $table->timestamp('fechaCreado');
+            $table->timestamp('fechaEditado');
             $table->timestamps();
         });
     }
