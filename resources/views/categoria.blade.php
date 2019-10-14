@@ -78,7 +78,6 @@
                     <a class="dropdown-item" href="#">Link 2</a>
                     <a class="dropdown-item" href="#">Link 3</a>
                 </div>
-<<<<<<< HEAD
             </div>
             <hr style="background-color: white;">
             <center>
@@ -91,51 +90,16 @@
             <div class="card" style="border-radius: 10px;">
                 <div class="row no-gutters">
                     <div class="card-header border-0">
-                        <a href="{{URL::to('/actividad/'.$ac->idActividad)}}">
-                            <img src="{{asset($ac->imagen)}}" alt="..." width="250px">
+                        <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}">
+                            <img src="{{asset($ac['imagen'])}}" alt="..." width="250px">
                         </a>
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            <h4 class="card-title">{{$ac->nombre}}</h4>
-                            <p class="card-text">{{$ac->descripcion}}</p>
-                            <a href="{{URL::to('/actividad/'.$ac->idActividad)}}" class="btn btn-primary">Link actividad</a>
+                            <h4 class="card-title">{{$ac['nombre']}}</h4>
+                            <p class="card-text">{{$ac['descripcion']}}</p>
+                            <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}" class="btn btn-primary">Link actividad</a>
                             <br>
-=======
-                <hr style="background-color: white;">
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
-                        Actividad
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
-                </div>
-                <hr style="background-color: white;">
-                <center>
-                    <button type="button" class="btn btn-outline-light">Clase</button>
-                    <button type="button" class="btn btn-outline-light">Curso</button>
-                </center>
-            </div>
-            <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-                @foreach($act as $ac)
-                <div class="card" style="border-radius: 10px;">
-                    <div class="row no-gutters">
-                        <div class="card-header border-0">
-                            <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}">
-                                <img src="{{asset($ac['imagen'])}}" alt="..." width="250px">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <div class="card-block px-2">
-                                <h4 class="card-title">{{$ac['nombre']}}</h4>
-                                <p class="card-text">{{$ac['descripcion']}}</p>
-                                <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}" class="btn btn-primary">Link actividad</a>
-                                <br>
-                            </div>
->>>>>>> rama_valentin
                         </div>
                     </div>
                 </div>

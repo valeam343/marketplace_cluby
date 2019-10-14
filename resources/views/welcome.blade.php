@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<<<<<<< HEAD
   @include('layouts.head')
   <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
   <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
@@ -42,38 +41,13 @@
   .slick-current {
       opacity: 1;
   }
-=======
-    @include('layouts.head')
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
-    <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
-    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
->>>>>>> 63d7d5d2b04f60976980fe821fb8b91484761111
+  @include('layouts.head')
+  <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
+  <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
+  <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
 
 </style>
-=======
-    
-    <style type="text/css">
-        .row{
-            margin-right: 0!important;
-            margin-left: 0!important;
-        }
-        @media (min-width: 1125px){
-            .jumbText{
-                margin: 7em 5em 0 6em;
-            }
-            .jumbotron{
 
-                min-height: 727px;
-            }
-            #cont{
-                padding: 0;
-            }
-        }
-        @media (max-width: 1124px){
-            .jumbText{
-                margin: 3em 0 0 0;
->>>>>>> rama_valentin
 
 <style type="text/css">
 
@@ -187,7 +161,7 @@ img.responsive {
   font-weight: bold;
   color: white;
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 6px 6px 10px black;
@@ -209,6 +183,12 @@ img.responsive {
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
+#formhead{
+    position: relative;
+}
+#categorias{
+    position: relative;
+}
 </style>
 </head>
 <body>
@@ -220,128 +200,61 @@ img.responsive {
       <img src="img/ManchasHome/mancha (3).svg" id="mancha3">
       <img src="img/ManchasHome/mancha (4).svg" id="mancha4">
       <div class="jumbText">
-        <center><img src="img/clubylogo.svg" style="width: 20%; opacity: .3"></center>
         <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
         <br>
         <br>
 
-        <div class="container" style="margin-left: 32%;">
-            <form class="form-inline">
-            <label class="sr-only" for="inlineFormInputName2"></label>
-            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Actividad">
-            <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
-            <div class="input-group mb-2 mr-sm-2">
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Ciudad">
+        <div class="row" id="formhead">
+            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
             </div>
-            <button type="submit" class="btn btn-outline-info btn-lg" style="color: white; border-color: white;">Empezar</button>
-        </form>
+            <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Actividad">
+            </div>
+            <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Ciudad">
+            </div>
+            <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
+                <button type="submit" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            </div>
         </div>
+        <center><img src="img/clubylogo.svg" style="width: 25%; opacity: .3"></center>
 
-<<<<<<< HEAD
-            
+    </div>
 
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-sm" id="slider">
-        <div class="slider-area slider">
-         <div class="slider variable-width myslider">
-          <div>
-            <img class="img-fluid" src="https://via.placeholder.com/250">
-        </div>
-        <div>
-            <img class="img-fluid" src="https://via.placeholder.com/250">
-        </div>
-        <div>
-            <img class="img-fluid" src="https://via.placeholder.com/250">
-        </div>
-        <div>
-            <img class="img-fluid" src="https://via.placeholder.com/250">
-        </div>
-        <div>
-            <img class="img-fluid" src="https://via.placeholder.com/250">
-        </div>
-        <div>
-            <img class="img-fluid" src="https://via.placeholder.com/250">
+    <div class="container-fluid" id="categorias">
+        <div class="row">
+          <div class="col-sm" id="slider">
+            <div class="slider-area slider">
+               <div class="slider variable-width myslider">
+                  <div>
+                    <img class="img-fluid" src="https://via.placeholder.com/250">
+                </div>
+                <div>
+                    <img class="img-fluid" src="https://via.placeholder.com/250">
+                </div>
+                <div>
+                    <img class="img-fluid" src="https://via.placeholder.com/250">
+                </div>
+                <div>
+                    <img class="img-fluid" src="https://via.placeholder.com/250">
+                </div>
+                <div>
+                    <img class="img-fluid" src="https://via.placeholder.com/250">
+                </div>
+                <div>
+                    <img class="img-fluid" src="https://via.placeholder.com/250">
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</div>
-</div>
-=======
-<<<<<<< HEAD
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm" id="slider">
-              <div class="slider-area slider">
-                 <div class="slider variable-width myslider ">
-                    <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                  </div>
-                  <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                  </div>
-                  <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                  </div>
-                  <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                  </div>
-                  <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                  </div>
-                  <div>
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
->>>>>>> 63d7d5d2b04f60976980fe821fb8b91484761111
 </div>
 </div>
 <div class="row" style="background-color: #5193C3; height: 400px;">
     <center><p style="text-align: justify; width: 80%; font-size: 2vw; color: white; text-shadow: 4px 4px 8px black;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
-=======
-    </div>
-    <hr>
-    <div class="row">
-       <!--Grid column-->
-       <div class="col-lg-6 col-md-12 col-xl-6 hover11">
-        <a href="{{URL::to('/categoria/1')}}"><img src="https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/05/06/summercamp-bestcamps-illo_h.jpg?itok=LNo_jPTs" class="img-responsive imgbase" alt=""
-         data-wow-delay="0.1s">
-         <h2 class="txt">Cursos</h2>
-     </a>
- </div>
- <div class="col-lg-6 col-md-12 col-xl-6 hover11">
-    <a href="{{URL::to('/categoria/2')}}">
-     <img src="https://img.freepik.com/vector-gratis/interior-aula-escuela-universidad-concepto-educativo-pizarra-tabla_1441-1694.jpg?size=626&ext=jpg" class="imgbase img-responsive" alt=""
-     data-wow-delay="0.2s">
-     <h2 class="txt">Clases</h2>
- </a>
-</div>
-</div>
-<!--Grid column-->
-<div class="row">
-    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-        <a href="">
-         <img class="img-responsive imgbase mb-4" src="https://images.activityhero.com/activity_photo/31117/large/940baeac-7fd2-497a-85fb-737709d5b20b.jpg">
-         <h2 class="txt">Manualidades</h2>
-     </a>
- </div>
- <div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-    <a href="">
-     <img class="img-fluid imgbase mb-4" src="http://assets.activityhero.com/home/39f6025c-988a-4473-bb57-3127529182ef.jpg">
-     <h2 class="txt">Banda</h2>
- </a>
-</div>
-<div class="col-md-6 col-lg-4 col-xl-3 mb-4 hover11">
-    <a href="">
-     <img class="img-fluid imgbase mb-4" src="https://assets.activityhero.com/home/94b6789b-c601-4f1e-825c-5bd25e4ac020.jpg">
-     <h2 class="txt">Mejores actividades del Año</h2>
- </a>
->>>>>>> rama_valentin
+
 </div>
 <hr>
 <center><h1>TOP ACTIVIDADES</h1></center>
@@ -426,13 +339,13 @@ img.responsive {
         },
         dataType: "json",
         success: function(data){
-           var resp = $.map(data,function(obj){
+         var resp = $.map(data,function(obj){
             return obj.nombre;
         }); 
 
-           response(resp);
-       }
-   });
+         response(resp);
+     }
+ });
     },
     minLength: 1
 });
@@ -440,8 +353,8 @@ img.responsive {
 </script>
 <script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
- $('.myslider').slick({
-   dots: false,
+   $('.myslider').slick({
+     dots: false,
        //variableWidth: true,
        infinite: true,
        speed: 300,
@@ -451,21 +364,21 @@ img.responsive {
        autoplaySpeed: 3000,
        responsive: [
        {
-         breakpoint: 600,
-         settings: {
-           slidesToShow: 4,
-           slidesToScroll: 4,
-           infinite: true,
-           dots: false
-       }
-   },
-   {
-     breakpoint: 480,
-     settings: {
-       slidesToShow: 3,
-       slidesToScroll: 3
-   }
-}
+           breakpoint: 600,
+           settings: {
+             slidesToShow: 4,
+             slidesToScroll: 4,
+             infinite: true,
+             dots: false
+         }
+     },
+     {
+       breakpoint: 480,
+       settings: {
+         slidesToShow: 3,
+         slidesToScroll: 3
+     }
+ }
        /*,
        {
          breakpoint: 480,
