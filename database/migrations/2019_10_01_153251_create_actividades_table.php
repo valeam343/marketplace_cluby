@@ -14,16 +14,18 @@ class CreateActividadesTable extends Migration
     public function up()
     {
         Schema::create('actividades', function (Blueprint $table) {
-            $table->bigIncrements('idActividad');
-            $table->unsignedBigInteger('idCategoria');
-            $table->string('nombre');
-            $table->string('descripcion');
-            $table->string('imagen');
-            $table->string('city');
-            $table->double('lat');
-            $table->double('long');
-            $table->string('telefono');
-            $table->foreign('idCategoria')->references('idCategoria')->on('categorias');
+            $table->bigIncrements('pkActividad');
+            $table->string('nomActividad');
+            $table->string('desActividad');
+            $table->string('edadMinimaActividad');
+            $table->string('edadMaximaActividad');
+            $table->string('reqsActividad');
+            $table->string('referenciaPrecioActividad');
+            $table->string('keywordsActividad');
+            $table->string('creadoPor');
+            $table->string('editadoPor');
+            $table->timestamp('fechaCreado');
+            $table->timestamp('fechaEditado');
             $table->timestamps();
         });
     }

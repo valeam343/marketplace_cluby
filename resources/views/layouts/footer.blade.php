@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
 <div style="height: 63px;">
 
 </div>
@@ -30,11 +30,6 @@
 	</div>
 	<div class="col-lg-5 col-md-5 col-xl-5 mb-5">
 		<form>
-			<!--<div class="form-group">
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-				<small id="emailHelp" class="form-text text-muted">No compartirémos tu información con terceros.</small>
-			</div>
-			<button type="submit" class="btn btn-outline-info">Registrar</button>-->
 			<div class="input-group mb-3" style="border-radius: 5px;border: 2px solid black">
 			  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
 			  <div class="input-group-append">
@@ -45,4 +40,3 @@
 	</div>
 </div>
 </footer>
-</div>
