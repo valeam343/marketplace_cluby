@@ -118,38 +118,35 @@
           <div class="row">
             <div class="col-sm" id="slider">
               <div class="slider-area slider">
-               <div class="slider variable-width myslider ">
-                <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
+                 <div class="slider variable-width myslider ">
+                    <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
+                  <div>
+                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                  </div>
               </div>
           </div>
       </div>
   </div>
 </div>
 </div>
-<footer>
-   @include('layouts.footer')
-</footer>
-</div>
 <script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
- $('.myslider').slick({
-   dots: false,
+   $('.myslider').slick({
+     dots: false,
        //variableWidth: true,
        infinite: true,
        speed: 300,
@@ -159,21 +156,21 @@
        autoplaySpeed: 3000,
        responsive: [
        {
-         breakpoint: 600,
-         settings: {
-           slidesToShow: 4,
-           slidesToScroll: 4,
-           infinite: true,
-           dots: false
-       }
-   },
-   {
-     breakpoint: 480,
-     settings: {
-       slidesToShow: 3,
-       slidesToScroll: 3
-   }
-}
+           breakpoint: 600,
+           settings: {
+             slidesToShow: 4,
+             slidesToScroll: 4,
+             infinite: true,
+             dots: false
+         }
+     },
+     {
+       breakpoint: 480,
+       settings: {
+         slidesToShow: 3,
+         slidesToScroll: 3
+     }
+ }
        /*,
        {
          breakpoint: 480,
@@ -188,51 +185,52 @@
          ]
      });
 
- var marcadores = [];
+   var marcadores = [];
 
- function mapaGoogle() {
+   function mapaGoogle() {
 
-  var localidades = [
-  ['Santi Soluciones', 42.603, -5.577],
-  ['Salamanca', 40.963, -5.669],
-  ['Zamora', 41.503, -5.744]
-  ];
+      var localidades = [
+      ['Santi Soluciones', 42.603, -5.577],
+      ['Salamanca', 40.963, -5.669],
+      ['Zamora', 41.503, -5.744]
+      ];
 
-  var mapa = new google.maps.Map(document.getElementById('mapa'), {
-    zoom: 7,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-});
+      var mapa = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 7,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
-  var limites = new google.maps.LatLngBounds();
+      var limites = new google.maps.LatLngBounds();
 
-  var infowindow = new google.maps.InfoWindow();
+      var infowindow = new google.maps.InfoWindow();
 
-  var marcador, i;
+      var marcador, i;
 
-  for (i = 0; i < localidades.length; i++) {
+      for (i = 0; i < localidades.length; i++) {
 
-    marcador = new google.maps.Marker({
-      position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
-      map: mapa
-  });
+        marcador = new google.maps.Marker({
+          position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
+          map: mapa
+      });
 
-    marcadores.push(marcador);
+        marcadores.push(marcador);
 
-    limites.extend(marcador.position);
+        limites.extend(marcador.position);
 
-    google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
-      return function() {
-        infowindow.setContent(localidades[i][0]);
-        infowindow.open(mapa, marcador);
+        google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
+          return function() {
+            infowindow.setContent(localidades[i][0]);
+            infowindow.open(mapa, marcador);
+        }
+    })(marcador, i));
     }
-})(marcador, i));
-}
 
-mapa.fitBounds(limites);
+    mapa.fitBounds(limites);
 
 }
 
 google.maps.event.addDomListener(window, 'load', mapaGoogle);
 </script>
 </body>
+@include('layouts.footer')
 </html>
