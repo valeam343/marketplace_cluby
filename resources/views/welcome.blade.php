@@ -9,7 +9,7 @@
 <body>
     @include('layouts.header')
     <div class="container-fluid" id="cont">
-      <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat;background-position: center;background-size: cover;position: relative; height: 750px;">
+      <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
         <img src="img/ManchasHome/mancha (1).svg" id="mancha1">
         <img src="img/ManchasHome/mancha (2).svg" id="mancha2">
         <img src="img/ManchasHome/mancha (3).svg" id="mancha3">
@@ -33,9 +33,17 @@
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
           </div>
       </div>
-      <center><img src="img/clubylogo.svg" style="width: 20%; opacity: .3"></center>
+      <center><img src="img/clubylogo.svg" style="width: 20%; opacity: .3;"></center>
   </div>
-  <div class="container-fluid" id="categorias">
+
+
+  <div class="row">
+      <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
+          </div>
+          <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+
+
+  <div class="container" id="categorias">
       <div class="row">
         <div class="col-sm" id="slider">
           <div class="slider-area slider">
@@ -63,6 +71,14 @@
   </div>
 </div>
 </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
+          </div>
+  </div>
+
+
+
+
 </div>
 <div class="row">
   <center><p style="text-align: justify; width: 70%; font-size: 2vw; text-shadow: 4px 4px 8px gray;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>

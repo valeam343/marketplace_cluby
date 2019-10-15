@@ -38,29 +38,33 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    max-width: 15%;
+    max-width: 20%;
     height: auto;
+    z-index: 1;
 }
 #mancha2{
     position: absolute;
     top: 0px;
     right: 0px;
-    max-width: 15%;
+    max-width: 20%;
     height: auto;
+    z-index: 1;
 }
 #mancha3{
     position: absolute;
     bottom: 0px;
     right: 0px;
-    max-width: 15%;
+    max-width: 25%;
     height: auto;
+    z-index: 1;
 }
 #mancha4{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    max-width: 15%;
+    max-width: 25%;
     height: auto;
+    z-index: 1;
 }
 .card{
     width: 100%;
@@ -132,7 +136,7 @@ img.responsive {
 }
 #categorias{
     position: absolute;
-    bottom: -40px;
+    top: -230px;
 }
 .checked {
     color: orange;
@@ -141,7 +145,7 @@ img.responsive {
     box-sizing: border-box;
 }
 .slider {
-    width: 90%;
+    width: 100%;
     margin: 100px auto;
 }
 .slick-slide {

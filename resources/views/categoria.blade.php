@@ -25,6 +25,7 @@
 </head>
 <body>
     @include('layouts.header')
+    <br>
     <div class="container-fluid">
         <center>
             @foreach($cat as $categoria)
@@ -91,14 +92,17 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0">
                         <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}">
-                            <img src="{{asset($ac['imagen'])}}" alt="..." width="250px">
+                            <img src="{{asset($ac['imagen'])}}" alt="..." width="300px">
                         </a>
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
                             <h4 class="card-title">{{$ac['nombre']}}</h4>
                             <p class="card-text">{{$ac['descripcion']}}</p>
-                            <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}" class="btn btn-primary">Link actividad</a>
+                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['city']}}</p>
+                            <p class="card-text">Edad</p>
+                            <p class="card-text">Precio</p>
+                            <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
                             <br>
                         </div>
                     </div>

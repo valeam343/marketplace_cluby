@@ -18,27 +18,9 @@
                             <div class="input-group-prepend">
                                 <img src="{{asset('img/search.svg')}}">
                             </div>
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" class="form-control" placeholder="Buscar actividad">
                         </div>
                     </form>
-                </div>  
-                <div class="navbar-nav ml-auto">
-                    <div class="d-flex">
-                        <div class="dropdown mr-1">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" style="color: white; font-size: 90%;">
-                                Perfil
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#" class="nav-item nav-link">Guardado</a>
-                    <a href="#" class="nav-item nav-link">Mensajes</a>
-                    <div style="border-left: 2px solid; color: white;"></div>
-                    <span>&nbsp;&nbsp;</span><img src="{{asset('img/shop.svg')}}" width="5%">
                 </div>
             </div>
         </div>    
@@ -61,7 +43,7 @@
             <p id="textoheader2"><strong>EN CLUBY</strong></p>
         </div>
         <br>
-        <center><button type="submit" class="btn btn-outline-info btn-lg" style="color: white; border-color: white;">Empezar</button>&nbsp;<button type="submit" class="btn btn-outline-info btn-lg" style="color: white; border-color: white;">Más Información</button></center>
+        <center><button type="submit" class="btn btn-outline-light btn-lg">Empezar</button>&nbsp;<button type="submit" class="btn btn-outline-light btn-lg">Más Información</button></center>
         <br>
         <br>
         <br>
