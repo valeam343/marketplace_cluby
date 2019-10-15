@@ -1,7 +1,12 @@
 <style type="text/css">
   .navbar{
     padding: 0;
+
   }
+  .row{
+        margin-right: 0!important;
+        margin-left: 0!important;
+    }
   input[type=text]:focus:not([readonly]) + label {
               color: white; 
           }

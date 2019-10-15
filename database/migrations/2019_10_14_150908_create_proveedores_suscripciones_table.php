@@ -15,14 +15,12 @@ class CreateProveedoresSuscripcionesTable extends Migration
     {
         Schema::create('proveedoresSuscripciones', function (Blueprint $table) {
             $table->bigIncrements('pkProveedorSuscripcion');
-            $table->unsignedBigInteger('idProveedores');
             $table->timestamp('inicioSuscripcion');
             $table->timestamp('finSuscripcion');
             $table->string('creadoPor');
             $table->string('editadoPor');
             $table->timestamp('fechaCreado');
             $table->timestamp('fechaEditado');
-            $table->foreign('idProveedores')->references('pkProveedor')->on('proveedores');
             $table->timestamps();
         });
     }

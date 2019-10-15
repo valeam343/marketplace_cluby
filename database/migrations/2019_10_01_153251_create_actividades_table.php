@@ -17,10 +17,10 @@ class CreateActividadesTable extends Migration
             $table->bigIncrements('pkActividad');
             $table->string('nomActividad');
             $table->string('desActividad');
-            $table->string('edadMinimaActividad');
-            $table->string('edadMaximaActividad');
+            $table->smallInteger('edadMinimaActividad');
+            $table->smallInteger('edadMaximaActividad');
             $table->string('reqsActividad');
-            $table->string('referenciaPrecioActividad');
+            $table->float('referenciaPrecioActividad',8,2);
             $table->string('keywordsActividad');
             $table->string('creadoPor');
             $table->string('editadoPor');

@@ -14,10 +14,10 @@ class CreateActividadCategoriasTable extends Migration
     public function up()
     {
         Schema::create('categorias', function (Blueprint $table) {
-            $table->bigIncrements('pkActividadesCategoria');
+            $table->bigIncrements('pkCategoria');
             $table->string('nomActividadesCategoria');
             $table->string('descActividadesCategoria');
-            $table->string('esActivo');
+            $table->boolean('esActivo');
             $table->string('creadoPor');
             $table->string('editadoPor');
             $table->timestamp('fechaCreado');
@@ -33,6 +33,6 @@ class CreateActividadCategoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividad_categorias');
+        Schema::dropIfExists('categorias');
     }
 }

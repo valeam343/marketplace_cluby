@@ -16,7 +16,7 @@ class CreateEvaluacionesTable extends Migration
         Schema::create('evaluaciones', function (Blueprint $table) {
             $table->bigIncrements('pkEvaluacion');
             $table->string('comEvaluacion');
-            $table->string('evaluacion');
+            $table->float('evaluacion',4,2);
             $table->string('creadoPor');
             $table->string('editadoPor');
             $table->timestamp('fechaCreado');

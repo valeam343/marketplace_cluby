@@ -23,8 +23,8 @@ class CreateProveedoresSucursalesTable extends Migration
             $table->string('colProveedorSucursal');
             $table->string('munProveedorSucursal');
             $table->string('estadoProveedorSucursal');
-            $table->string('cpProveedorSucursal');
-            $table->string('esActivo');
+            $table->smallInteger('cpProveedorSucursal');
+            $table->boolean('esActivo');
             $table->string('emailProveedorSucursal');
             $table->string('telProveedorSucursal');
             $table->double('latitud');
@@ -33,7 +33,7 @@ class CreateProveedoresSucursalesTable extends Migration
             $table->string('editadoPor');
             $table->timestamp('fechaCreado');
             $table->timestamp('fechaEditado');
-            $table->foreign('idActividadGrupos')->references('pkActividadGrupos')->on('actividadesGrupos');
+            $table->foreign('idActividadGrupos')->references('pkActividadesGrupos')->on('actividadesGrupos');
             $table->timestamps();
         });
     }
