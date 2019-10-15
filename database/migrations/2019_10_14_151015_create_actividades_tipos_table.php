@@ -19,10 +19,9 @@ class CreateActividadesTiposTable extends Migration
             $table->string('nomActividadesTipo');
             $table->string('creadoPor');
             $table->string('editadoPor');
-            $table->timestamp('fechaCreado');
-            $table->timestamp('fechaEditado');
+            $table->timestamp('fechaCreado')->useCurrent();
+            $table->timestamp('fechaEditado')->useCurrent();
             $table->foreign('idActividad')->references('pkActividad')->on('actividades');
-            $table->timestamps();
         });
     }
 

@@ -19,9 +19,8 @@ class CreateEvaluacionesTable extends Migration
             $table->float('evaluacion',4,2);
             $table->string('creadoPor');
             $table->string('editadoPor');
-            $table->timestamp('fechaCreado');
-            $table->timestamp('fechaEditado');
-            $table->timestamps();
+            $table->timestamp('fechaCreado')->useCurrent();
+            $table->timestamp('fechaEditado')->useCurrent();
         });
     }
 

@@ -25,10 +25,9 @@ class CreateActividadesGruposHorariosTable extends Migration
             $table->string('domingo');
             $table->string('creadoPor');
             $table->string('editadoPor');
-            $table->timestamp('fechaCreado');
-            $table->timestamp('fechaEditado');
+            $table->timestamp('fechaCreado')->useCurrent();
+            $table->timestamp('fechaEditado')->useCurrent();
             $table->foreign('idActividadesGrupos')->references('pkActividadesGrupos')->on('actividadesGrupos');
-            $table->timestamps();
         });
     }
 

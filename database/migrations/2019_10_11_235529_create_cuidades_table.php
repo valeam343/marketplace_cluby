@@ -18,9 +18,8 @@ class CreateCuidadesTable extends Migration
             $table->string('nomCiudad');
             $table->string('creadoPor');
             $table->string('editadoPor');
-            $table->timestamp('fechaCreado');
-            $table->timestamp('fechaEditado');
-            $table->timestamps();
+            $table->timestamp('fechaCreado')->useCurrent();
+            $table->timestamp('fechaEditado')->useCurrent();
         });
     }
 

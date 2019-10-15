@@ -18,9 +18,8 @@ class CreatePaisesTable extends Migration
             $table->string('nomPais');
             $table->string('creadoPor');
             $table->string('editadoPor');
-            $table->timestamp('fechaCreado');
-            $table->timestamp('fechaEditado');
-            $table->timestamps();
+            $table->timestamp('fechaCreado')->useCurrent();
+            $table->timestamp('fechaEditado')->useCurrent();
         });
     }
 
