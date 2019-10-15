@@ -87,7 +87,6 @@ img.responsive {
 }
 .hover11:hover img{
     opacity: .5;
-
 }
 .hover11:hover .txt{
     visibility: visible;
@@ -124,17 +123,16 @@ img.responsive {
 #fixedbutton:hover{
     border: 2px solid black;
 }
-
 #fixedbutton{
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 #formhead{
     position: relative;
-    top: 20px;
 }
 #categorias{
-    position: relative;
+    position: absolute;
+    bottom: -40px;
 }
 .checked {
     color: orange;

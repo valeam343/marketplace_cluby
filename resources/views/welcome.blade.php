@@ -5,12 +5,11 @@
   <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
   <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
   <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
-
 </head>
 <body>
     @include('layouts.header')
     <div class="container-fluid" id="cont">
-      <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat;background-position: center;background-size: cover;position: relative;">
+      <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat;background-position: center;background-size: cover;position: relative; height: 750px;">
         <img src="img/ManchasHome/mancha (1).svg" id="mancha1">
         <img src="img/ManchasHome/mancha (2).svg" id="mancha2">
         <img src="img/ManchasHome/mancha (3).svg" id="mancha3">
@@ -19,7 +18,6 @@
           <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
           <br>
           <br>
-
           <div class="row" id="formhead">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
             </div>
@@ -35,48 +33,44 @@
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
           </div>
       </div>
-      <center><img src="img/clubylogo.svg" style="width: 25%; opacity: .3"></center>
-
+      <center><img src="img/clubylogo.svg" style="width: 20%; opacity: .3"></center>
   </div>
-
   <div class="container-fluid" id="categorias">
       <div class="row">
         <div class="col-sm" id="slider">
           <div class="slider-area slider">
-           <div class="slider variable-width myslider">
-            <div>
-              <img class="img-fluid" src="https://via.placeholder.com/250">
-          </div>
-          <div>
-              <img class="img-fluid" src="https://via.placeholder.com/250">
-          </div>
-          <div>
-              <img class="img-fluid" src="https://via.placeholder.com/250">
-          </div>
-          <div>
-              <img class="img-fluid" src="https://via.placeholder.com/250">
-          </div>
-          <div>
-              <img class="img-fluid" src="https://via.placeholder.com/250">
-          </div>
-          <div>
-              <img class="img-fluid" src="https://via.placeholder.com/250">
+             <div class="slider variable-width myslider">
+                <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
           </div>
       </div>
   </div>
 </div>
 </div>
 </div>
-</div>
-<div class="row" style="background-color: #5193C3; height: 400px;">
-  <center><p style="text-align: justify; width: 80%; font-size: 2vw; color: white; text-shadow: 4px 4px 8px black;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
-
+<div class="row">
+  <center><p style="text-align: justify; width: 70%; font-size: 2vw; text-shadow: 4px 4px 8px gray;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
 </div>
 <hr>
 <center><h1>TOP ACTIVIDADES</h1></center>
 <br>
 <div class="container">
-
   <div class="row">
     @foreach ($arr as $cat)
     <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
@@ -96,16 +90,12 @@
 </div>
 @endforeach
 </div>
-
 </div>
 <div id="mybutton">
   <a href="#nab"><img src="/img/up.png" id="fixedbutton" class="img-fluid" style="height: auto; width: 8%;"></a> 
 </div>
-
-
 </div>
 @include('layouts.footer')
-
 <script type="text/javascript">
     $.ajaxSetup({
       headers: {
@@ -136,12 +126,9 @@
         $("#idrow").html('');
         $("#idspace").html('')
     }
-
 });
-
     $(document).ready(function() {
       $( "#search" ).autocomplete({
-
         source: function(request, response) {
           $.ajax({
             url: "{{url('searchs')}}",
@@ -150,13 +137,13 @@
           },
           dataType: "json",
           success: function(data){
-             var resp = $.map(data,function(obj){
+           var resp = $.map(data,function(obj){
               return obj.nombre;
           }); 
 
-             response(resp);
-         }
-     });
+           response(resp);
+       }
+   });
       },
       minLength: 1
   });
@@ -164,8 +151,8 @@
 </script>
 <script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
-   $('.myslider').slick({
-     dots: false,
+ $('.myslider').slick({
+   dots: false,
        //variableWidth: true,
        infinite: true,
        speed: 300,
@@ -175,21 +162,21 @@
        autoplaySpeed: 3000,
        responsive: [
        {
-         breakpoint: 600,
-         settings: {
-           slidesToShow: 4,
-           slidesToScroll: 4,
-           infinite: true,
-           dots: false
-       }
-   },
-   {
-     breakpoint: 480,
-     settings: {
-       slidesToShow: 3,
-       slidesToScroll: 3
-   }
-}
+           breakpoint: 600,
+           settings: {
+             slidesToShow: 4,
+             slidesToScroll: 4,
+             infinite: true,
+             dots: false
+         }
+     },
+     {
+       breakpoint: 480,
+       settings: {
+         slidesToShow: 3,
+         slidesToScroll: 3
+     }
+ }
        /*,
        {
          breakpoint: 480,

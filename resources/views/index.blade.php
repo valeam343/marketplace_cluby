@@ -5,9 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/css/index.css')}}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #460056; height: 56px;">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #460056;">
         <div class="container-fluid">
-            <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>cluby</strong></h4></a>
+            <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><img src="{{asset('img/logotexto.svg')}}" width="30%"></a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,7 +25,7 @@
                 <div class="navbar-nav ml-auto">
                     <div class="d-flex">
                         <div class="dropdown mr-1">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" style="color: white; font-size: 100%;">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" style="color: white; font-size: 90%;">
                                 Perfil
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">

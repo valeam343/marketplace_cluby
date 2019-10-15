@@ -11,11 +11,9 @@
 input[type=text]:focus:not([readonly]) + label {
   color: white; 
 }
-
 input[type=text]:focus:not([readonly]) {
   border-bottom: 1px solid white;
-  box-shadow: 0 1px 0 0 white; 
-
+  box-shadow: 0 1px 0 0 white;
 }
 a.nav-item.nav-link{
     max-height: 29px;
@@ -23,8 +21,7 @@ a.nav-item.nav-link{
 </style>
 <nav class="navbar navbar-expand-md navbar-dark mb-3" id="nab" style="background-color: #2e4da0;">
   <div class="container-fluid">
-    <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><h4><strong>cluby</strong></h4></a>
-
+    <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><img src="{{asset('img/logotexto.svg')}}" width="30%"></a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
   </button>
