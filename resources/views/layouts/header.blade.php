@@ -4,9 +4,15 @@
 
   }
   .row{
+<<<<<<< HEAD
         margin-right: 0!important;
         margin-left: 0!important;
     }
+=======
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
+>>>>>>> 472680d58d216f3bfa1799039f24e6557289ed9a
   input[type=text]:focus:not([readonly]) + label {
               color: white; 
           }

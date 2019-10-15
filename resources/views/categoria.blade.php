@@ -106,11 +106,9 @@
             </div>
             <hr>
             @endforeach
-
         </div>
         <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
             <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
-
             </div>
         </div>
     </div>
@@ -121,7 +119,6 @@
             document.getElementById('valuex').innerText = value;
         }
     });
-
     $('#slider').slider({
         slide: function (e, value) {
             document.getElementById('value').innerText = value;
@@ -129,40 +126,28 @@
     });
     $('#datepicker').datepicker();
 </script>
-
 <script>
     var marcadores = [];
-
     function mapaGoogle() {
-
       var localidades = [
       ['Santi Soluciones', 42.603, -5.577],
       ['Salamanca', 40.963, -5.669],
       ['Zamora', 41.503, -5.744]
       ];
-
       var mapa = new google.maps.Map(document.getElementById('mapa'), {
         zoom: 7,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-
       var limites = new google.maps.LatLngBounds();
-
       var infowindow = new google.maps.InfoWindow();
-
       var marcador, i;
-
       for (i = 0; i < localidades.length; i++) {
-
         marcador = new google.maps.Marker({
           position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
           map: mapa
       });
-
         marcadores.push(marcador);
-
         limites.extend(marcador.position);
-
         google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
           return function() {
             infowindow.setContent(localidades[i][0]);
@@ -170,13 +155,9 @@
         }
     })(marcador, i));
     }
-
     mapa.fitBounds(limites);
-
 }
-
 google.maps.event.addDomListener(window, 'load', mapaGoogle);
-
 </script>
 </body>
 @include('layouts.footer')
