@@ -12,10 +12,14 @@ class homeController extends Controller
 			
 			$client = new \GuzzleHttp\Client();
 			$request = $client->get('https://apicluby.azurewebsites.net/actividades/');
+			$requestCategoria = $client->get('https://apicluby.azurewebsites.net/categorias/');
 			$response = $request->getBody();
 			$content = $response->getContents();
+			$responseCategoria = $requestCategoria->getBody();
+			$contentCategoria = $responseCategoria->getContents();
 			$arr = json_decode($content, TRUE);
-			return view('welcome', compact('arr'));
+			$arrCategoria = json_decode($contentCategoria, TRUE);
+			return view('welcome', compact('arr', 'arrCategoria'));
 		} catch (Exception $e) {
 			echo "Exception: ".$e->getMessage();
 		}
