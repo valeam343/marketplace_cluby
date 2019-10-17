@@ -22,7 +22,7 @@
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
             </div>
             <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Actividad">
+              <input type="text" class="form-control mb-2 mr-sm-2" name="search" id="search" placeholder="Actividad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
               <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Ciudad">
@@ -91,16 +91,16 @@
     @foreach ($arr as $cat)
     <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
       <div class="card">
-        <a href="{{URL::to('actividad/'.$cat['idActividad'])}}"><img style="height: 200px;" src="{{asset($cat['imagen'])}}" class="responsive"></a>
+        <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}"><img style="height: 200px;" src="#" class="responsive"></a>
         <div class="card-body">
-          <h5 class="card-title">{{$cat['nombre'] }}</h5>
-          <p class="card-text">{{$cat['descripcion']}}</p>
+          <h5 class="card-title">{{$cat['nomActividad'] }}</h5>
+          <p class="card-text">{{$cat['desActividad']}}</p>
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star"></span>
           <span class="fa fa-star"></span>
-          <a href="{{URL::to('actividad/'.$cat['idActividad'])}}" class="btn btn-primary">Go somewhere</a>
+          <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">Go somewhere</a>
       </div>
   </div>
 </div>
@@ -118,6 +118,16 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
+    /**var route = "{{ url('searchs') }}";
+        $('#search').typeahead({
+            source:  function (term, process) {
+            return $.get(route, { term: term }, function (data) {
+                    return process(data);
+                });
+            }
+        });**/
+
+    /**
     $('#search').on('keyup', function(){
       $value =$(this).val();
       if($value != ''){
@@ -142,7 +152,8 @@
         $("#idrow").html('');
         $("#idspace").html('')
     }
-});
+});**/
+    
     $(document).ready(function() {
       $( "#search" ).autocomplete({
         source: function(request, response) {
@@ -193,17 +204,6 @@
          slidesToScroll: 3
      }
  }
-       /*,
-       {
-         breakpoint: 480,
-         settings: {
-           slidesToShow: 1,
-           slidesToScroll: 1
-         }
-     }*/
-         // You can unslick at a given breakpoint now by adding:
-         // settings: "unslick"
-         // instead of a settings object
          ]
      });
  </script>

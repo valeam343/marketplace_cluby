@@ -11,7 +11,7 @@ class homeController extends Controller
 		try {
 			
 			$client = new \GuzzleHttp\Client();
-			$request = $client->get('http://192.168.1.73:8000/actividades');
+			$request = $client->get('https://apicluby.azurewebsites.net/actividades/');
 			$response = $request->getBody();
 			$content = $response->getContents();
 			$arr = json_decode($content, TRUE);
@@ -22,14 +22,14 @@ class homeController extends Controller
 		
 	}
 
-	/*public function filtrar2(Request $request){
+	public function filtrar2(Request $request){
 		$search = $request->get('term');
 
 		$result = \App\actividad::where('nombre', 'LIKE', '%'. $search. '%')->get();
 
 		return response()->json($result);
 	}
-	*/
+	
 	/*
 	public function filtrar(Request $request){
 		try {
