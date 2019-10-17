@@ -8,10 +8,10 @@ class actividadController extends Controller
 {
     //
 
-    public function show($nombre){
+    public function show($id){
 
     	$client = new \GuzzleHttp\Client();
-        $request = $client->get('http://192.168.1.73:8000/actividades/'.$nombre);
+        $request = $client->get('https://apicluby.azurewebsites.net/actividades/'.$id);
         $response = $request->getBody();
         $content = $response->getContents();
         $act = json_decode($content, TRUE);
