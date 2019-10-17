@@ -2,7 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   @include('layouts.head')
-  <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
   <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
   <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBUqmvY7XlADAbFLiCVIMplOoCqz4UCejI"></script>
@@ -72,7 +71,7 @@
                 <h1><strong>{{$ac['nomActividad']}}</strong></h1>
                 <br>
                 <h3><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h3>
-                <p>{{$ac['city']}}</p>
+                <p>{{$ac['ciudad']}}</p>
                 <hr>
                 @endforeach
                 <h3><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h3>
@@ -132,7 +131,6 @@
 </div>
 </div>
 </div>
-<script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
  $('.myslider').slick({
    dots: false,

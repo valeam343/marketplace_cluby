@@ -2,8 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   @include('layouts.head')
-  <link rel="stylesheet" type="text/css" href="{{asset('/css/slick.css')}}">
-  <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+
   <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
 </head>
 <body>
@@ -176,7 +175,7 @@
   });
   });
 </script>
-<script src="{{asset('/js/slick.js')}}" type="text/javascript"></script>
+
 <script type="text/javascript">
  $('.myslider').slick({
    dots: false,
