@@ -28,11 +28,12 @@
     <br>
     <div class="container-fluid">
         <center>
-            @foreach($cat as $categoria)
+            
             <h1><strong>
-                {{$categoria['nombre']}}
+            @if(!empty($categoria))
+                {{$categoria}}
+            @endif
             </strong></h1>
-            @endforeach
         </center>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px;">
@@ -87,22 +88,22 @@
             </center>
         </div>
         <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-            @foreach($act as $ac)
+            @foreach($arrCategoria as $ac)
             <div class="card" style="border-radius: 10px;">
                 <div class="row no-gutters">
                     <div class="card-header border-0">
-                        <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}">
-                            <img src="{{asset($ac['imagen'])}}" alt="..." width="300px">
+                        <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
+                            <img src="#" alt="..." width="300px">
                         </a>
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            <h4 class="card-title">{{$ac['nombre']}}</h4>
-                            <p class="card-text">{{$ac['descripcion']}}</p>
-                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['city']}}</p>
+                            <h4 class="card-title">{{$ac['nomActividad']}}</h4>
+                            <p class="card-text">{{$ac['desActividad']}}</p>
+                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
                             <p class="card-text">Edad</p>
                             <p class="card-text">Precio</p>
-                            <a href="{{URL::to('/actividad/'.$ac['idActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
+                            <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
                             <br>
                         </div>
                     </div>

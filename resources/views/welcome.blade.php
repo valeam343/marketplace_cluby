@@ -49,9 +49,9 @@
              <div class="slider variable-width myslider">
               @foreach ($arrCategoria as $categoria)
               <div>
-                <a href="{{URL::to('actividad/'.$categoria['pkCategoria'])}}">
+                <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
                   <img class="img-fluid" src="https://via.placeholder.com/250">
-                  <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">h{{$categoria['nomCategoria']}}</h5></center>
+                  <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
                 </a>
               </div>
               @endforeach
@@ -139,6 +139,8 @@
   speed: 300,
   slidesToShow: 5,
   slidesToScroll: 5,
+  autoplay: true,
+  autoplaySpeed: 3000,
   responsive: [
     {
       breakpoint: 1024,
