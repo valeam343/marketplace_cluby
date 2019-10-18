@@ -24,7 +24,7 @@
               <input type="text" class="form-control mb-2 mr-sm-2" name="search" id="search" placeholder="Actividad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Ciudad">
+              <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
               <button type="submit" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
@@ -47,24 +47,14 @@
         <div class="col-sm" id="slider">
           <div class="slider-area slider">
              <div class="slider variable-width myslider">
-                <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
+              @foreach ($arrCategoria as $categoria)
               <div>
+                <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
                   <img class="img-fluid" src="https://via.placeholder.com/250">
+                  <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
+                </a>
               </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
+              @endforeach
           </div>
       </div>
   </div>
@@ -117,93 +107,92 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-    /**var route = "{{ url('searchs') }}";
-        $('#search').typeahead({
-            source:  function (term, process) {
-            return $.get(route, { term: term }, function (data) {
-                    return process(data);
-                });
-            }
-        });**/
 
-    /**
-    $('#search').on('keyup', function(){
-      $value =$(this).val();
-      if($value != ''){
-        $.ajax({ 
-          type : 'get',
-          url  : '{{URL::to('search')}}',
-          data : {'search' : $value},
-          success: function(data){
-                    //console.log(data);
-                    $("#idspace").html('<br style = "height: 117px;">');
-                    var newurl = "";
-                    var ur = "{{URL::to('/actividad/1')}}";
-                    $.each(data, function(key,value){
-                      newurl += value.replace(':url', ur);
-                      $("#idrow").html(newurl);
-                  })
-                },error: function (data){
-                    console.log("error: ", data);
-                }
-            });
-    }else{
-        $("#idrow").html('');
-        $("#idspace").html('')
-    }
-});**/
-    
-    $(document).ready(function() {
-      $( "#search" ).autocomplete({
-        source: function(request, response) {
-          $.ajax({
-            url: "{{url('searchs')}}",
-            data: {
-              term : request.term
-          },
-          dataType: "json",
-          success: function(data){
-           var resp = $.map(data,function(obj){
-              return obj.nombre;
-          }); 
-
-           response(resp);
-       }
+     $(document).ready(function() {
+       $( "#search" ).autocomplete({
+         source: function(request, response) {
+           $.ajax({
+             url: "{{url('searchs')}}",
+             data: {
+               term : request.term
+           },
+           dataType: "json",
+           success: function(data){
+            var resp = $.map(data,function(obj){
+               return obj.nomActividad || obj.nomCategoria;
+           }); 
+            response(resp);
+        }
+    });
+       },
+       minLength: 1
    });
-      },
-      minLength: 1
-  });
-  });
+
+           $( "#searchCiudad" ).autocomplete({
+             source: function(request, response) {
+               $.ajax({
+                 url: "{{url('search')}}",
+                 data: {
+                   term : request.term
+               },
+               dataType: "json",
+               success: function(data){
+                var resp = $.map(data,function(obj){
+
+                   return {label : obj.estado + ' | '+obj.ciudad}
+               }); 
+                response(resp);
+            }
+        });
+           },
+           minLength: 1
+       });
+   });
 </script>
 
 <script type="text/javascript">
  $('.myslider').slick({
-   dots: false,
-       //variableWidth: true,
-       infinite: true,
-       speed: 300,
-       slidesToShow: 5,
-       slidesToScroll: 5,
-       autoplay: true,
-       autoplaySpeed: 3000,
-       responsive: [
-       {
-           breakpoint: 600,
-           settings: {
-             slidesToShow: 4,
-             slidesToScroll: 4,
-             infinite: true,
-             dots: false
-         }
-     },
-     {
-       breakpoint: 480,
-       settings: {
-         slidesToShow: 3,
-         slidesToScroll: 3
-     }
- }
-         ]
+   arrows: false,
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        dots: false
+      }
+    },
+    {
+      breakpoint: 770,
+      settings:{
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
      });
  </script>
 </body>
