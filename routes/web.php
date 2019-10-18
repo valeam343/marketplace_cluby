@@ -22,7 +22,7 @@ Route::get('categoria', function () {
     return view('categoria');
 });
 
-Route::post('filtro', 'categoriaController@filtroEnInicio');
+Route::get('filtro/', 'categoriaController@filtroEnInicio');
 
 Route::get('index', function () {
     return view('index');
