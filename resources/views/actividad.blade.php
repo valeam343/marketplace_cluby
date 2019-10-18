@@ -55,7 +55,7 @@
         <div class="row">
             @foreach ($act as $ac) 
             <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
-                <img src="#" class="img-fluid" alt="..." width="100%">
+                <img src="{{asset($ac['imagen'])}}" class="img-fluid" alt="..." width="100%">
                 <br>
                 <br>
                 <h3><strong>Descripción</strong></h3>

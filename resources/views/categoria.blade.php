@@ -93,7 +93,7 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img src="#" alt="..." width="300px">
+                            <img src="{{asset($ac['imagen'])}}" alt="..." width="300px">
                         </a>
                     </div>
                     <div class="col">
