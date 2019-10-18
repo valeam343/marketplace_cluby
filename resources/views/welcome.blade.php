@@ -24,7 +24,7 @@
               <input type="text" class="form-control mb-2 mr-sm-2" name="search" id="search" placeholder="Actividad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Ciudad">
+              <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
               <button type="submit" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
@@ -108,27 +108,46 @@
     }
 });
 
-    $(document).ready(function() {
-      $( "#search" ).autocomplete({
-        source: function(request, response) {
-          $.ajax({
-            url: "{{url('searchs')}}",
-            data: {
-              term : request.term
-          },
-          dataType: "json",
-          success: function(data){
-           var resp = $.map(data,function(obj){
-              return obj.nombre;
-          }); 
-
-           response(resp);
-       }
+     $(document).ready(function() {
+       $( "#search" ).autocomplete({
+         source: function(request, response) {
+           $.ajax({
+             url: "{{url('searchs')}}",
+             data: {
+               term : request.term
+           },
+           dataType: "json",
+           success: function(data){
+            var resp = $.map(data,function(obj){
+               return obj.nomActividad || obj.nomCategoria;
+           }); 
+            response(resp);
+        }
+    });
+       },
+       minLength: 1
    });
-      },
-      minLength: 1
-  });
-  });
+
+           $( "#searchCiudad" ).autocomplete({
+             source: function(request, response) {
+               $.ajax({
+                 url: "{{url('search')}}",
+                 data: {
+                   term : request.term
+               },
+               dataType: "json",
+               success: function(data){
+                var resp = $.map(data,function(obj){
+
+                   return {label : obj.estado + ' | '+obj.ciudad}
+               }); 
+                response(resp);
+            }
+        });
+           },
+           minLength: 1
+       });
+   });
 </script>
 
 <script type="text/javascript">

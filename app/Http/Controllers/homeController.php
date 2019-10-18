@@ -25,11 +25,28 @@ class homeController extends Controller
 		}
 		
 	}
+	public function filtrar(Request $request){
+		try {
+			$search = $request->get('term');
+			$client = new \GuzzleHttp\Client();
+			$request = $client->get('https://apicluby.azurewebsites.net/filtrar/second/'.$search);
+			$response = $request->getBody();
+			$content = $response->getContents();
+			$result = json_decode($content);
+			return response()->json($result);
+		} catch (Exception $e) {
+			
+		}
+	}
 
 	public function filtrar2(Request $request){
 		$search = $request->get('term');
-
-		$result = \App\actividad::where('nombre', 'LIKE', '%'. $search. '%')->get();
+		$client = new \GuzzleHttp\Client();
+		$request = $client->get('https://apicluby.azurewebsites.net/filtrar/first/'.$search);
+		$response = $request->getBody();
+		$content = $response->getContents();
+		$result = json_decode($content);
+		///$result = \App\actividad::where('nombre', 'LIKE', '%'. $search. '%')->get();
 
 		return response()->json($result);
 	}

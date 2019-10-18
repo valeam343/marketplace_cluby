@@ -8,7 +8,7 @@ class categoriaController extends Controller
 {
     //
 
-    public function show($id){
+    /*public function show($id){
     	try {
            $client = new \GuzzleHttp\Client();
            $request = $client->get('https://apicluby.azurewebsites.net/actividades/'.$id);
@@ -24,7 +24,7 @@ class categoriaController extends Controller
        } catch (Exception $e) {
           echo "Exception: ".$e->getMessage();
       }
-  }
+  }*/
 
   public function actividadesPorCategoria($id){
     try {
