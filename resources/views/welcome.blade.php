@@ -21,13 +21,13 @@
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
             </div>
             <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <input type="text" class="form-control mb-2 mr-sm-2" name="search" id="search" placeholder="Actividad">
+              <input type="text" class="form-control" name="search" id="search" placeholder="Actividad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
               <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <button type="submit" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
+              <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
           </div>
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
           </div>
@@ -64,10 +64,6 @@
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
           </div>
   </div>
-
-
-
-
 </div>
 <div class="row">
   <center><p style="text-align: justify; width: 70%; font-size: 2vw; text-shadow: 4px 4px 8px gray;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
@@ -107,6 +103,23 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
+
+    $('#btnBuscar').click(function (){
+      var inputActividad  = $("#search").val();
+      var inputCiudad     = $("#searchCiudad").val();
+      var data            = "";
+      
+      $.ajax({
+        type:'POST',
+        url:"{{url('')}}",
+        data : {
+          actividad : inputActividad,
+          ciudad : inputCiudad
+        }
+        });
+    });
+
+
 
      $(document).ready(function() {
        $( "#search" ).autocomplete({

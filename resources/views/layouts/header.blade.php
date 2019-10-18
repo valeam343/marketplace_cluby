@@ -17,14 +17,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav">
-        <form >
-          <div class="input-group input-group-sm mb-3" style="margin-top: 10px;">
-            <div class="input-group-prepend">
-              <img src="{{asset('img/search.svg')}}">
-          </div>
-          <input type="text" class="form-control" placeholder="Buscar actividad" >
-      </div>
-  </form>
+       
 </div> 
 </div>
 </div> 
