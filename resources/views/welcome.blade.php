@@ -24,14 +24,7 @@
             <input type="text" class="form-control" name="search" id="search" placeholder="Actividad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-<<<<<<< HEAD
               <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Buscar</button>
-=======
-            <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad">
-          </div>
-          <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-            <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
->>>>>>> rama_valentin
           </div>
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
           </div>
@@ -70,21 +63,6 @@
     </div>
   </div>
   <div class="row">
-<<<<<<< HEAD
-    @foreach ($arr as $cat)
-    <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
-      <div class="card">
-        <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}"><img style="height: 200px;" src="#" class="responsive"></a>
-        <div class="card-body">
-          <h5 class="card-title">{{$cat['nomActividad'] }}</h5>
-          <p class="card-text">{{$cat['desActividad']}}</p>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">VER ACTIVIDAD</a>
-=======
     <center><p style="text-align: justify; width: 70%; font-size: 2vw; text-shadow: 4px 4px 8px gray;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
   </div>
   <hr>
@@ -107,7 +85,6 @@
             <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
->>>>>>> rama_valentin
       </div>
       @endforeach
     </div>
