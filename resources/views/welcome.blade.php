@@ -85,7 +85,7 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
-            <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">Go somewhere</a>
+            <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">Ver actividad</a>
           </div>
         </div>
       </div>
