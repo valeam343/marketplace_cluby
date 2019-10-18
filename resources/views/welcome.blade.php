@@ -27,7 +27,7 @@
               <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad">
           </div>
           <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
+              <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Buscar</button>
           </div>
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
           </div>
@@ -85,7 +85,7 @@
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star"></span>
           <span class="fa fa-star"></span>
-          <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">Go somewhere</a>
+          <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">VER ACTIVIDAD</a>
       </div>
   </div>
 </div>

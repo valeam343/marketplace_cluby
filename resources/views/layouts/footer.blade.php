@@ -33,7 +33,7 @@
 			<div class="input-group mb-3" style="border-radius: 5px;border: 2px solid black">
 			  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
 			  <div class="input-group-append">
-			    <button class="btn btn-raised btn-primary" type="button">Button</button>
+			    <button class="btn btn-raised btn-primary" type="button">Registrar</button>
 			  </div>
 			</div>
 		</form>
