@@ -129,8 +129,14 @@ img.responsive {
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-#formhead{
-    position: relative;
+#formhead input{
+    background-color: rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+    color: white;
+}
+#formhead.formhead{
+  padding-right: 2.5%;
+  padding-left: 5%;
 }
 #categorias{
     position: absolute;

@@ -26,8 +26,8 @@ class categoriaController extends Controller
       }
   }*/
 
-  public function actividadesPorCategoria($id){
-    try {
+    public function actividadesPorCategoria($id){
+      try {
         $client = new \GuzzleHttp\Client();
         $request = $client->get('https://apicluby.azurewebsites.net/categ/'.$id);
         $response = $request->getBody();
@@ -40,4 +40,19 @@ class categoriaController extends Controller
         echo "Exception:". $e->getMessage();
     }
 }
+
+    public function filtroEnInicio(Request $request){
+        try {
+            $actividad  = $request->input('actividad');
+            $ciudad     = $request->input('ciudad');
+            $client = new \GuzzleHttp\Client();
+            $request = $client->get('https://apicluby.azurewebsites.net/filtrar/first/'.$actividad);
+            $response = $request->getBody();
+            $content = $response->getContents();
+            $arrCategoria = json_decode($content, TRUE);
+            return view('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' =>'']);
+        } catch (Exception $e) {
+            echo "Exception: ".$e->getMessage();
+        }
+    }
 }
