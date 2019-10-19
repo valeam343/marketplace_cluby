@@ -6,71 +6,68 @@
   <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
 </head>
 <body>
-  @include('layouts.header')
-  <div class="container-fluid" id="cont">
-    <div class="jumbotron" style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
+
+  <header>
+    @include('layouts.header')
+    <div style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
       <img src="img/ManchasHome/mancha (1).svg" id="mancha1">
       <img src="img/ManchasHome/mancha (2).svg" id="mancha2">
       <img src="img/ManchasHome/mancha (3).svg" id="mancha3">
       <img src="img/ManchasHome/mancha (4).svg" id="mancha4">
-      <div class="jumbText">
         <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
-        <br>
-        <br>
-        <div class="row" id="formhead" style="padding-left: 30%;">
 
-          <div class="col-lg-8 col-md-8 col-xl-8 mb-2">
+        <div class="row justify-content-md-center" >
+          <div class="col-lg-8 col-md-8 col-xl-8" id="formSearch">
             <form method="get" action="/filtro">
               <div class="row">
                 <div class="col-md-5">
-                   <input type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white;">
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad" style="background-color: rgba(0, 0, 0, 0.1); color: white;">
-                </div>
-                <div class="col-md-2">
-                  <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
-                </div>
+                  <input type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
+                 ">
+               </div>
+               <div class="col-md-5">
+                <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
               </div>
-            </form>
-          </div>
-
+              <div class="col-md-2" >
+                <button type="submit" id="btnBuscar" class="btn btn-info btn-md">Empezar</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <center><img src="img/clubylogo.svg" style="width: 20%; opacity: .3;"></center>
-      </div>
+        <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
+      
+    </div>
+    <center><img src="img/clubylogo.svg" style=" z-index: 3; width: 25%; opacity: .3; position: absolute; top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);"></center>
 
 
-      <div class="row">
-        <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-        </div>
-        <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
-
-
-          <div class="container" id="categorias">
-            <div class="row">
-              <div class="col-sm" id="slider">
-                <div class="slider-area slider">
-                 <div class="slider variable-width myslider">
-                  @foreach ($arrCategoria as $categoria)
-                  <div>
-                    <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
-                      <img class="img-fluid" src="{{asset($categoria['imagen'])}}">
-                      <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
-                    </a>
-                  </div>
-                  @endforeach
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xl-12 mb-2">
+        <!--<div class="container" id="categorias">-->
+          <div class="row">
+            <div class="col-sm" id="slider">
+              <div class="slider-area slider">
+               <div class="slider variable-width myslider">
+                @foreach ($arrCategoria as $categoria)
+                <div>
+                  <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
+                    <img class="img-fluid" src="{{asset($categoria['imagen'])}}">
+                    <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
+                  </a>
                 </div>
+                @endforeach
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
+        <!--</div>-->
       </div>
     </div>
   </div>
+</header>
+<div class="container" id="cont">
   <div class="row">
-    <center><p style="text-align: justify; width: 70%; font-size: 2vw; text-shadow: 4px 4px 8px gray;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
+    <center><p style="text-align: justify; font-size: 2em;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
   </div>
   <hr>
   <center><h1>TOP ACTIVIDADES</h1></center>
@@ -84,14 +81,18 @@
           <div class="card-body">
             <h5 class="card-title">{{$cat['nomActividad']}}</h5>
             <p class="card-text">{{$cat['desActividad']}}</p>
+            
+          </div>
+          <div class="card-footer">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
-            <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-primary">Ver actividad</a>
+            <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}" class="btn btn-outline-primary">Ver actividad</a>
           </div>
         </div>
+
       </div>
       @endforeach
     </div>
