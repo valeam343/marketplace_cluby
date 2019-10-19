@@ -17,6 +17,7 @@
         <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
         <br>
         <br>
+<<<<<<< HEAD
         <div class="row" id="formhead">
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
           </div>
@@ -30,7 +31,26 @@
               <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Buscar</button>
           </div>
           <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+=======
+        <div class="row" id="formhead" style="padding-left: 30%;">
+
+          <div class="col-lg-8 col-md-8 col-xl-8 mb-2">
+            <form method="get" action="/filtro">
+              <div class="row">
+                <div class="col-md-5">
+                   <input type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white;">
+                </div>
+                <div class="col-md-5">
+                  <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad" style="background-color: rgba(0, 0, 0, 0.1); color: white;">
+                </div>
+                <div class="col-md-2">
+                  <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Empezar</button>
+                </div>
+              </div>
+            </form>
+>>>>>>> rama_valentin
           </div>
+
         </div>
         <center><img src="img/clubylogo.svg" style="width: 20%; opacity: .3;"></center>
       </div>
@@ -50,7 +70,7 @@
                   @foreach ($arrCategoria as $categoria)
                   <div>
                     <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
-                      <img class="img-fluid" src="https://via.placeholder.com/250">
+                      <img class="img-fluid" src="{{asset($categoria['imagen'])}}">
                       <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
                     </a>
                   </div>
@@ -103,20 +123,7 @@
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-/*
-  $('#btnBuscar').click(function (){
-    var inputActividad  = $("#search").val();
-    var inputCiudad     = $("#searchCiudad").val();
-    var data            = "";
 
-    $.ajax({
-      url: "{{url('filtro')}}",
-      type: "GET",
-      data: {actividad: inputActividad, ciudad: inputCiudad}
-   })
-  });
-
-*/
 
   $(document).ready(function() {
    $( "#search" ).autocomplete({
@@ -148,8 +155,7 @@
          dataType: "json",
          success: function(data){
           var resp = $.map(data,function(obj){
-
-           return {label : obj.estado + ' | '+obj.ciudad}
+           return obj.ciudad;
          }); 
           response(resp);
         }
