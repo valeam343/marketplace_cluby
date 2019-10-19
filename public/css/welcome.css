@@ -1,42 +1,9 @@
-    @media (min-width: 1125px){
-        .jumbText{
-          margin: 7em 5em 0 6em;
-      }
-      .jumbotron{
 
-          min-height: 727px;
-      }
-      #cont{
-          padding: 0em;
-      }
-  }
-  @media (max-width: 1124px){
-    .jumbText{
-      margin: 3em 0 0 0;
-
-  }
-  
-  #cont{
-      padding: 0em;
-  }
-
-}
-@media(max-width: 580px){
-    .jumbText{
-      margin: 2em 0 0 0;
-  }
-  .jumbotron{
-      min-height: 200px;
-  }
-  #cont{
-      padding: 0em;
-  }
-}
 #mancha1{
     position: absolute;
     top: 0px;
     left: 0px;
-    max-width: 20%;
+    max-width: 13%;
     height: auto;
     z-index: 1;
 }
@@ -44,7 +11,7 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    max-width: 20%;
+    max-width: 13%;
     height: auto;
     z-index: 1;
 }
@@ -52,7 +19,7 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    max-width: 25%;
+    max-width: 20%;
     height: auto;
     z-index: 1;
 }
@@ -60,7 +27,7 @@
     position: absolute;
     bottom: 0px;
     left: 0px;
-    max-width: 25%;
+    max-width: 20%;
     height: auto;
     z-index: 1;
 }
@@ -104,14 +71,24 @@ img.responsive {
     visibility: hidden;
 }
 .lead{
-    font-size: 3vw;
+    font-size: 34pt;
     font-weight: bold;
     color: white;
+    position: inherit;
+    padding-top: 10px;
+    z-index: 1;
+    /*transform: translate(-50%, -50%);*/
+    text-shadow: 6px 6px 10px black;
+}
+#formSearch{
     position: absolute;
-    top: 10%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 6px 6px 10px black;
+    padding: 3px 0 3px 0;
+    border-radius: 5px;
+    border: 2px solid white;
+    z-index: 1;
 }
 .form-control::-webkit-input-placeholder { color: white; 
     opacity: 0.5;
@@ -122,6 +99,7 @@ img.responsive {
     bottom: 5px;
     right: 5px; 
 }
+
 #fixedbutton:hover{
     border: 2px solid black;
 }
@@ -129,18 +107,10 @@ img.responsive {
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-#formhead input{
-    background-color: rgba(0, 0, 0, 0.1);
-    font-weight: 900;
-    color: white;
-}
-#formhead.formhead{
-  padding-right: 2.5%;
-  padding-left: 5%;
-}
+
 #categorias{
-    position: absolute;
-    top: -230px;
+    /*position: absolute;
+    top: -230px;*/
 }
 .checked {
     color: orange;
@@ -150,7 +120,7 @@ img.responsive {
 }
 .slider {
     width: 100%;
-    margin: 100px auto;
+    /*margin: 100px auto;*/
 }
 .slick-slide {
     margin: 0px 20px;

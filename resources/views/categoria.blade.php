@@ -23,8 +23,9 @@
         }
     </style>
 </head>
+<header>@include('layouts.header')</header>
 <body>
-    @include('layouts.header')
+    
     <br>
     <div class="container-fluid">
         <center>
@@ -36,7 +37,11 @@
             </strong></h1>
         </center>
         <div class="row">
+<<<<<<< HEAD
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; height: 600px;">
+=======
+            <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
+>>>>>>> rama_valentin
                 <br>
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
