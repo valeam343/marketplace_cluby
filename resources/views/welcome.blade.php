@@ -36,7 +36,7 @@
         <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
       
     </div>
-    <center><img src="img/clubylogo.svg" style=" z-index: 3; width: 25%; opacity: .3; position: absolute; top: 45%;
+    <center><img src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);"></center>
 
@@ -65,7 +65,9 @@
     </div>
   </div>
 </header>
-<div class="container" id="cont">
+
+<div class="container">
+  <hr>
   <div class="row">
     <center><p style="text-align: justify; font-size: 2em;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
   </div>

@@ -25,15 +25,15 @@
 </head>
 <header>@include('layouts.header')</header>
 <body>
-    
+
     <br>
     <div class="container-fluid">
         <center>
-            
+
             <h1><strong>
-            @if(!empty($categoria))
+                @if(!empty($categoria))
                 {{$categoria}}
-            @endif
+                @endif
             </strong></h1>
         </center>
         <div class="row">
@@ -68,11 +68,11 @@
                 </div>
                 <hr style="background-color: white;">
                 <div class="dropdown">
-                   <p>Edad</p>
+                 <p>Edad</p>
 
-               </div>
-               <hr style="background-color: white;">
-               <div class="dropdown">
+             </div>
+             <hr style="background-color: white;">
+             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
                     Actividad
                 </button>
@@ -92,19 +92,22 @@
             @foreach($arrCategoria as $ac)
             <div class="card" style="border-radius: 10px;">
                 <div class="row no-gutters">
-                    <div class="card-header border-0">
+                    <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img src="{{asset($ac['imagen'])}}" alt="..." width="300px">
+                            <img src="{{asset($ac['imagen'])}}" alt="..." style="height: 200px;
+                            width: 200px;
+                            object-fit: cover;">
                         </a>
+                       <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center> 
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            <h4 class="card-title">{{$ac['nomActividad']}}</h4>
+                            
                             <p class="card-text">{{$ac['desActividad']}}</p>
                             <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
-                            <p class="card-text">Edad</p>
-                            <p class="card-text">Precio</p>
-                            <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
+                            <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
+                            <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
+                            <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
                             <br>
                         </div>
                     </div>
