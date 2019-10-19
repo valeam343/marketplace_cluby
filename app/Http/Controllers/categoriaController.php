@@ -47,21 +47,23 @@ class categoriaController extends Controller
 
     public function filtroEnInicio(Request $request){
       try {
-        $actividad  = $request->input('actividad');
-        $ciudad     = $request->input('ciudad');
+        //$actividad  = $input['search'];
+        //$ciudad     = $input['searchCiudad'];
+        $actividad = $request->input('search');
+        $ciudad = $request->input('searchCiudad');
         $client = new \GuzzleHttp\Client();
-        $request = $client->get('https://apicluby.azurewebsites.net/categ/'.'1');
+        if($actividad != ''){
+          $request = $client->get('https://apicluby.azurewebsites.net/filtrar/first/'.$actividad);
+        }else{
+          $request = $client->get('https://apicluby.azurewebsites.net/filtrar/second/'.$ciudad);
+        }
+        
         $response = $request->getBody();
         $content = $response->getContents();
         $arrCategoria = json_decode($content, TRUE);
-            //return redirect('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' =>'none']);
-            //return response()->json(['url' => url('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' =>'none'])]);
-            //return Redirect::route('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' =>'none']);
 
-           // return redirect()->view('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' =>'none'])->render();
-        return redirect()->action(
-          'categoriaController@index', ['arr' => $arrCategoria, 'con' => 'none']
-        );
+         return view('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' => ' ']);
+        
       } catch (Exception $e) {
         echo "Exception: ".$e->getMessage();
       }
