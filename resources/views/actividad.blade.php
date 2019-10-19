@@ -76,23 +76,25 @@
                 <h3><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h3>
                 <p>{{$ac['ciudad']}}</p>
                 <hr>
-                @endforeach
+               
                 <h3><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h3>
+                <P>Entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</P>
                 <hr>
                 <h3><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Lugar</h3>
                 <hr>
                 <h3><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h3>
+                @endforeach
+                @if(!empty($grp))
+                @foreach($grp as $grupo)
+                <p>Disponible de {{$grupo['fInicialActividadesGrupos']}} a {{$grupo['fFinalActividadesGrupos']}}</p>
+                @endforeach
+                @endif
                 <input id="datepicker" width="100%"/>
                 <script>
                     $('#datepicker').datepicker();
                 </script>
                 <hr>
-                <h3><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h3>
-                <input id="datepicker1" width="100%"/>
-                <script>
-                    $('#datepicker1').datepicker();
-                </script>
-                <hr>
+                
                 <h3>MAPA</h3>
                 <div id="mapa"></div>
                 <hr>
@@ -102,6 +104,7 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
+                
                 <hr>
             </div>
         </div>
