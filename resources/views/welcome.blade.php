@@ -17,7 +17,14 @@
         <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
 
         <div class="row justify-content-md-center" >
-          <div class="col-lg-8 col-md-8 col-xl-8" id="formSearch">
+          <div class="col-lg-8 col-md-8 col-xl-8" id="formSearch" style = "position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 3px 0 3px 0;
+        border-radius: 5px;
+        border: 2px solid white;
+        z-index: 1;">
             <form method="get" action="/filtro">
               <div class="row">
                 <div class="col-md-5">
