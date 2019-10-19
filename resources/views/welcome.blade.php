@@ -17,21 +17,6 @@
         <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
         <br>
         <br>
-<<<<<<< HEAD
-        <div class="row" id="formhead">
-          <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-          </div>
-          <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-            <input type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white;">
-          </div>
-          <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-            <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad" style="background-color: rgba(0, 0, 0, 0.1); color: white;">
-          </div>
-          <div class="col-lg-2 col-md-2 col-xl-2 mb-2">
-              <button type="submit" id="btnBuscar" class="btn btn-outline-info btn-md" style="color: white; border-color: white;">Buscar</button>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-=======
         <div class="row" id="formhead" style="padding-left: 30%;">
 
           <div class="col-lg-8 col-md-8 col-xl-8 mb-2">
@@ -48,7 +33,6 @@
                 </div>
               </div>
             </form>
->>>>>>> rama_valentin
           </div>
 
         </div>
