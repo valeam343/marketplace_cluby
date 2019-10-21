@@ -100,7 +100,6 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-<<<<<<< HEAD
                             <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
                             width: 200px;
                             object-fit: cover; border-radius: 5px 0 0 5px;">
@@ -110,15 +109,7 @@
                     <div class="col">
                         <div class="card-block px-2">
                             <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
-=======
-                            <img src="{{asset($ac['imagen'])}}" alt="..." data-location="Location 1" style="height: 200px; width: 200px; object-fit: cover;">
-                        </a>
-                        <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center> 
-                    </div>
-                    <div class="col">
-                        <div class="card-block px-2">
 
->>>>>>> rama_kabir
                             <p class="card-text">{{$ac['desActividad']}}</p>
                             <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
                             <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
