@@ -68,11 +68,11 @@
                 </div>
                 <hr style="background-color: white;">
                 <div class="dropdown">
-                 <p>Edad</p>
+                   <p>Edad</p>
 
-             </div>
-             <hr style="background-color: white;">
-             <div class="dropdown">
+               </div>
+               <hr style="background-color: white;">
+               <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
                     Actividad
                 </button>
@@ -94,15 +94,13 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img src="{{asset($ac['imagen'])}}" alt="..." style="height: 200px;
-                            width: 200px;
-                            object-fit: cover;">
+                            <img src="{{asset($ac['imagen'])}}" alt="..." data-location="Location 1" style="height: 200px; width: 200px; object-fit: cover;">
                         </a>
-                       <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center> 
+                        <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center> 
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            
+
                             <p class="card-text">{{$ac['desActividad']}}</p>
                             <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
                             <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
@@ -117,6 +115,18 @@
             @endforeach
         </div>
         <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            <ul>
+  <li>
+    <a href="#" data-location="Location 1">Location 1</a>
+  </li>
+  <li>
+    <a href="#" data-location="Location 2">Location 2</a>
+  </li>
+  <li>
+    <a href="#" data-location="Location 3">Location 3</a>
+  </li>
+</ul>
+
             <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
             </div>
         </div>
@@ -135,38 +145,120 @@
     });
     $('#datepicker').datepicker();
 </script>
-<script>
-    var marcadores = [];
+
+
+<script type="text/javascript">
+
+    var gmarcadors = [];
     function mapaGoogle() {
-      var localidades = [
-      ['Santi Soluciones', 42.603, -5.577],
-      ['Salamanca', 40.963, -5.669],
-      ['Zamora', 41.503, -5.744]
-      ];
-      var mapa = new google.maps.Map(document.getElementById('mapa'), {
-        zoom: 7,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-      var limites = new google.maps.LatLngBounds();
-      var infowindow = new google.maps.InfoWindow();
-      var marcador, i;
-      for (i = 0; i < localidades.length; i++) {
-        marcador = new google.maps.Marker({
-          position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
-          map: mapa
-      });
-        marcadores.push(marcador);
-        limites.extend(marcador.position);
-        google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
-          return function() {
-            infowindow.setContent(localidades[i][0]);
-            infowindow.open(mapa, marcador);
+        var locations = [{
+            'name': 'Location 1',
+            'adress': 'León',
+            'location': {
+              'lat': 42.603,
+              'lon': -5.577
+            }
+        },
+        {
+            'name': 'Location 2',
+            'adress': 'Salamanca',
+            'location': {
+                'lat': 40.963,
+                'lon':  -5.669
+            }
+        },
+        {
+            'name': 'Location 3',
+            'adress': 'Zamora',
+            'location': {
+                'lat': 41.503,
+                'lon':  -5.744
+            }
         }
-    })(marcador, i));
+        ];
+        var mapa = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var limites = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+        var marcador, i;
+        for (var i = 0; i < locations.length; i++) {
+            gmarcadors[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),locations[i].name + "<br>" + locations[i].adress);
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 350
+            });
+        }       
+        function createmarcador(latlng, html, lable) {
+            var marcador = new google.maps.Marker({
+                position: latlng,
+                map: mapa,
+                icon: {
+                    url: 'data:image/svg+xml;charset=utf-8,' +
+                    encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+                    scaledSize: new google.maps.Size(44, 44),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(44, 44),
+                    labelOrigin: new google.maps.Point(22, 18),
+                },
+                label: {
+                    text: lable,
+                    color: "#fff",
+                }             
+             });
+            gmarcadors.push(marcador);
+            limites.extend(marcador.position);
+            marcador.setOpacity(.75);
+            google.maps.event.addListener(marcador, 'click', function() {
+                    infowindow.setContent(html);
+                    infowindow.open(mapa, marcador);
+            });
+                google.maps.event.addListener(mapa, 'click', function() {
+                infowindow.close();
+            });
+    return marcador;
+        }
+        mapa.fitBounds(limites);
     }
-    mapa.fitBounds(limites);
-}
+function myclick(i) {
+  google.maps.event.trigger(gmarcadors[i], 'click');
+};
 google.maps.event.addDomListener(window, 'load', mapaGoogle);
+$('a').on('click', function(e) {
+  e.preventDefault();
+  var $this = $(this),
+    loc = $this.data('location');
+  // ----- Var 2 Wit wrap initialize function
+  myclick(loc);
+});
+
+$('img').hover(
+    function() {
+        var $this = $(this),
+        loc = $this.data('location');
+        console.log(loc);
+        gmarcadors[loc].setIcon({
+            url: 'data:image/svg+xml;charset=utf-8,' +
+            encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="red" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+            scaledSize: new google.maps.Size(44, 44),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(44, 44),
+            labelOrigin: new google.maps.Point(22, 18),
+        })
+    },
+    function() {
+        var $this = $(this),
+        loc = $this.data('location');
+        gmarcadors[loc].setIcon({
+            url: 'data:image/svg+xml;charset=utf-8,' +
+            encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+            scaledSize: new google.maps.Size(44, 44),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(44, 44),
+            labelOrigin: new google.maps.Point(22, 18),
+        });
+    }
+);
 </script>
 </body>
 @include('layouts.footer')
