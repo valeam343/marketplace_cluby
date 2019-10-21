@@ -4,11 +4,13 @@
 </div>
 <hr>
 <footer>
-<div class="row" style="background-color: #e5e5e5;">
+<div class="row" style="background-color: #e5e5e5;margin-right: 0;
+    margin-left: 0;">
 	<br>
 	<br>
 </div>
-<div class="row" style="background-color: #e5e5e5;">
+<div class="row" style="background-color: #e5e5e5;margin-right: 0;
+    margin-left: 0;">
 	<div class="col-lg-1 col-md-1 col-xl-1 mb-1">
 	</div>
 	<div class="col-lg-2 col-md-2 col-xl-2 mb-2">

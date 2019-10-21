@@ -61,8 +61,6 @@
                 <img src="{{asset($ac['imagen'])}}" class="img-fluid" alt="..." width="100%">
                 <br>
                 <br>
-                <h3><strong>Descripción</strong></h3>
-                <p>{{$ac['desActividad']}}</p>
                 <h5><strong>Evaluacion General</strong></h5>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -71,16 +69,18 @@
                 <span class="fa fa-star"></span>
             </div>
             <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
-                <h1><strong>{{$ac['nomActividad']}}</strong></h1>
+                <h1><strong>{{ucwords($ac['nomActividad'])}}</strong></h1>
                 <br>
-                <h3><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h3>
-                <p>{{$ac['ciudad']}}</p>
+                <h4  width="2%">Descripción</h4>
+                <p>{{ucwords($ac['desActividad'])}}</p>
+                <h4><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h4>
+                <p>{{ucwords($ac['ciudad'])}}</p>
                 <hr>
-               
-                <h3><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h3>
+                <h4><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h4>
                 <P>Entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</P>
                 <hr>
-                <h3><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Lugar</h3>
+                <h3><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Ubicación</h3>
+                <p>{{ucwords($ac['ciudad'])}} en {{$ac['estado']}}</p>
                 <hr>
                 <h3><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h3>
                 @endforeach
