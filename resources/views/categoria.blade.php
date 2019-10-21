@@ -10,6 +10,11 @@
     crossorigin=""></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBUqmvY7XlADAbFLiCVIMplOoCqz4UCejI"></script>
     <style type="text/css">
+        @media(max-width: 420px){
+            .responsive{
+                width: 100%!important;
+            }
+        }
         div.gj-slider{
             width: 100%!important;
             z-index: 2!important;
@@ -32,7 +37,7 @@
 
             <h1><strong>
                 @if(!empty($categoria))
-                {{$categoria}}
+                {{ucwords($categoria)}}
                 @endif
             </strong></h1>
         </center>
@@ -89,20 +94,21 @@
             </center>
         </div>
         <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
+            <div class="overflow-auto" style="max-height: 600px;">
             @foreach($arrCategoria as $ac)
             <div class="card" style="border-radius: 10px;">
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img src="{{asset($ac['imagen'])}}" alt="..." style="height: 200px;
+                            <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
                             width: 200px;
-                            object-fit: cover;">
+                            object-fit: cover; border-radius: 5px 0 0 5px;">
                         </a>
-                       <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center> 
+                       
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
-                            
+                            <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
                             <p class="card-text">{{$ac['desActividad']}}</p>
                             <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
                             <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
@@ -115,6 +121,7 @@
             </div>
             <hr>
             @endforeach
+        </div>
         </div>
         <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
             <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
