@@ -35,11 +35,8 @@
         <center>
             <h1><strong>
                 @if(!empty($categoria))
-<<<<<<< HEAD
                 {{ucwords($categoria)}}
-=======
-                    {{ucwords($categoria)}}
->>>>>>> rama_kabir
+
                 @endif
             </strong></h1>
         </center>
@@ -82,27 +79,6 @@
                     <button type="button" class="btn btn-outline-light">Curso</button>
                 </center>
             </div>
-<<<<<<< HEAD
-            <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-                @foreach($arrCategoria as $ac)
-                <div class="card" style="border-radius: 10px;">
-                    <div class="row no-gutters">
-                        <div class="card-header border-0" style="padding: 0;">
-                            <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
-                                <img id="imageLink" src="{{asset($ac['imagen'])}}" alt="..." data-location="Location 1" style="height: 250px; width: 250px; object-fit: cover;">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <div class="card-block px-2">
-                                <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center>
-                                <p class="card-text">{{ucfirst($ac['desActividad'])}}</p>
-                                <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{ucwords($ac['ciudad'])}}</p>
-                                <p class="card-text">De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</p>
-                                <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
-                                <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
-                                <br>
-                            </div>
-=======
             <hr style="background-color: white;">
             <center>
                 <button type="button" class="btn btn-outline-light">Clase</button>
@@ -131,7 +107,6 @@
                             <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
                             <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
                             <br>
->>>>>>> rama_valentin
                         </div>
                     </div>
                 </div>
@@ -145,7 +120,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript">
         $('#sliderx').slider({
             slide: function (e, value) {
