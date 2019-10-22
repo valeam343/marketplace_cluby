@@ -29,9 +29,14 @@
                   <input type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
                  ">
                </div>
-               <div class="col-md-5">
-                <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
-              </div>
+               <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">Ciudad</button>
+                    <div class="dropdown-menu">
+                        @foreach($arrCategoria as $ac)
+                            <a class="dropdown-item" href="#">{{ucwords($ac['ciudad'])}}</a>
+                        @endforeach
+                    </div>
+                </div>
               <div class="col-md-2" >
                 <button type="submit" id="btnBuscar" class="btn btn-info btn-md">Empezar</button>
               </div>
