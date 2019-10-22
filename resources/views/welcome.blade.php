@@ -30,7 +30,7 @@
                  ">
                </div>
                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">Ciudad</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">Ciudad</button>
                     <div class="dropdown-menu">
                         @foreach($arrCategoria as $ac)
                             <a class="dropdown-item" href="#">{{ucwords($ac['ciudad'])}}</a>
