@@ -78,37 +78,6 @@
                     <button type="button" class="btn btn-outline-light">Curso</button>
                 </center>
             </div>
-<<<<<<< HEAD
-            <hr style="background-color: white;">
-            <center>
-                <button type="button" class="btn btn-outline-light">Clase</button>
-                <button type="button" class="btn btn-outline-light">Curso</button>
-            </center>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
-            <div class="overflow-auto" style="max-height: 600px;">
-            @foreach($arrCategoria as $ac)
-            <div class="card" style="border-radius: 10px;">
-                <div class="row no-gutters">
-                    <div class="card-header border-0" style="padding: 0;">
-                        <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img class="responsive" data-location="Location 1" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
-                            width: 200px;
-                            object-fit: cover; border-radius: 5px 0 0 5px;">
-                        </a>
-                       
-                    </div>
-                    <div class="col">
-                        <div class="card-block px-2">
-                            <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
-
-                            <p class="card-text">{{$ac['desActividad']}}</p>
-                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
-                            <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
-                            <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
-                            <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
-                            <br>
-=======
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
                 @foreach($arrCategoria as $ac)
                 <div class="card" style="border-radius: 10px;">
@@ -128,36 +97,16 @@
                                 <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
                                 <br>
                             </div>
->>>>>>> rama_kabir
                         </div>
                     </div>
                 </div>
                 <hr>
                 @endforeach
             </div>
-<<<<<<< HEAD
-            <hr>
-            @endforeach
-        </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-            <ul>
-  <li>
-    <a href="#" data-location="Location 1">Location 1</a>
-  </li>
-  <li>
-    <a href="#" data-location="Location 2">Location 2</a>
-  </li>
-  <li>
-    <a href="#" data-location="Location 3">Location 3</a>
-  </li>
-</ul>
 
-            <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
-=======
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
                 <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;"></div>
->>>>>>> rama_kabir
+
             </div>
         </div>
     </div>
@@ -273,57 +222,6 @@
             });
         });
     </script>
-=======
-</div>
-<script type="text/javascript">
-    $('#sliderx').slider({
-        slide: function (e, value) {
-            document.getElementById('valuex').innerText = value;
-        }
-    });
-    $('#slider').slider({
-        slide: function (e, value) {
-            document.getElementById('value').innerText = value;
-        }
-    });
-    $('#datepicker').datepicker();
-</script>
-
-
-<script>
-    var marcadores = [];
-    function mapaGoogle() {
-      var localidades = [
-      ['Santi Soluciones', 42.603, -5.577],
-      ['Salamanca', 40.963, -5.669],
-      ['Zamora', 41.503, -5.744]
-      ];
-      var mapa = new google.maps.Map(document.getElementById('mapa'), {
-        zoom: 7,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-      var limites = new google.maps.LatLngBounds();
-      var infowindow = new google.maps.InfoWindow();
-      var marcador, i;
-      for (i = 0; i < localidades.length; i++) {
-        marcador = new google.maps.Marker({
-          position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
-          map: mapa
-      });
-        marcadores.push(marcador);
-        limites.extend(marcador.position);
-        google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
-          return function() {
-            infowindow.setContent(localidades[i][0]);
-            infowindow.open(mapa, marcador);
-        }
-    })(marcador, i));
-    }
-    mapa.fitBounds(limites);
-}
-google.maps.event.addDomListener(window, 'load', mapaGoogle);
-</script>
->>>>>>> dd8ff0ee29d5b12d96e34619ebcfcf42e8a1914a
 </body>
 @include('layouts.footer')
 </html>
