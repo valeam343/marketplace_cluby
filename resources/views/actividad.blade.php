@@ -55,7 +55,7 @@
         <div class="row">
             @foreach ($act as $ac) 
             <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
-                <img src="{{asset($ac['rutaImagen'])}}" class="img-fluid" alt="..." width="100%">
+                <img src="{{asset($ac['rutaimagen'])}}" class="img-fluid" alt="..." width="100%">
                 <br>
                 <br>
                 <h5><strong>Evaluacion General</strong></h5>
@@ -106,14 +106,15 @@
                 <div class="col-sm" id="slider">
                     <div class="slider-area slider">
                         <div class="slider variable-width myslider">
-                            @foreach ($arrCategoria as $categoria)
+                            <!--
+                            
                                 <div>
-                                    <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
-                                        <img class="img-fluid" src="{{asset($categoria['imagen'])}}">
-                                        <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{ucwords($categoria['nomCategoria'])}}</h5></center>
+                                    <a href="#">
+                                        <img class="img-fluid" src="#">
+                                        <center><h5 style="font-weight:bold; color: white; padding-top: 5px; "></h5></center>
                                     </a>
                                 </div>
-                            @endforeach
+                        -->
                         </div>
                     </div>
                 </div>
