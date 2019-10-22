@@ -30,26 +30,28 @@
 </head>
 <header>@include('layouts.header')</header>
 <body>
+
     <br>
     <div class="container-fluid">
         <center>
+
             <h1><strong>
                 @if(!empty($categoria))
                 {{ucwords($categoria)}}
-
                 @endif
             </strong></h1>
         </center>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
                 <br>
-                <br>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">Ciudad</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
+                        Locación
+                    </button>
                     <div class="dropdown-menu">
-                        @foreach($arrCategoria as $ac)
-                            <a class="dropdown-item" href="#">{{ucwords($ac['ciudad'])}}</a>
-                        @endforeach
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </div>
                 <hr style="background-color: white;">
@@ -71,13 +73,19 @@
                 </div>
                 <hr style="background-color: white;">
                 <div class="dropdown">
-                   <p>Edad</p>
-               </div>
-               <hr style="background-color: white;">
-                <center>
-                    <button type="button" class="btn btn-outline-light">Clase</button>
-                    <button type="button" class="btn btn-outline-light">Curso</button>
-                </center>
+                 <p>Edad</p>
+
+             </div>
+             <hr style="background-color: white;">
+             <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
+                    Actividad
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
             </div>
             <hr style="background-color: white;">
             <center>
@@ -110,127 +118,63 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                @endforeach
             </div>
-
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;"></div>
-
+            <hr>
+            @endforeach
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        $('#sliderx').slider({
-            slide: function (e, value) {
-                document.getElementById('valuex').innerText = value;
-            }
-        });
-        $('#slider').slider({
-            slide: function (e, value) {
-                document.getElementById('value').innerText = value;
-            }
-        });
-        $('#datepicker').datepicker();
-    </script>
-    <script type="text/javascript">
-        var gmarcadors = [];
-        function mapaGoogle() {
-            var locations = [{
-                'name': 'Location 1',
-                'adress': 'León',
-                'location': {
-                    'lat': 42.603,
-                    'lon': -5.577
-                }
-            },
-            {
-                'name': 'Location 2',
-                'adress': 'Salamanca',
-                'location': {
-                    'lat': 40.963,
-                    'lon':  -5.669
-                }
-            },
-            {
-                'name': 'Location 3',
-                'adress': 'Zamora',
-                'location': {
-                    'lat': 41.503,
-                    'lon':  -5.744
-                }
-            }];
-            var mapa = new google.maps.Map(document.getElementById('mapa'), {
-                zoom: 8,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            var limites = new google.maps.LatLngBounds();
-            var infowindow = new google.maps.InfoWindow();
-            var marcador, i;
-            for (var i = 0; i < locations.length; i++) {
-                gmarcadors[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),locations[i].name + "<br>" + locations[i].adress);
-                var infowindow = new google.maps.InfoWindow({
-                    maxWidth: 350
-                });
-            }       
-            function createmarcador(latlng, html, lable) {
-                var marcador = new google.maps.Marker({
-                    position: latlng,
-                    map: mapa,
-                    icon: {
-                        url: 'data:image/svg+xml;charset=utf-8,' +
-                        encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
-                        scaledSize: new google.maps.Size(44, 44),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(44, 44),
-                        labelOrigin: new google.maps.Point(22, 18),
-                    },
-                    label: {
-                        text: lable,
-                        color: "#fff",
-                    }             
-                });
-                gmarcadors.push(marcador);
-                limites.extend(marcador.position);
-                marcador.setOpacity(.75);
-                google.maps.event.addListener(marcador, 'click', function() {
-                    infowindow.setContent(html);
-                    infowindow.open(mapa, marcador);
-                });
-                google.maps.event.addListener(mapa, 'click', function() {
-                    infowindow.close();
-                });
-                return marcador;
-            }
-            mapa.fitBounds(limites);
+</div>
+<script type="text/javascript">
+    $('#sliderx').slider({
+        slide: function (e, value) {
+            document.getElementById('valuex').innerText = value;
         }
-        google.maps.event.addDomListener(window, 'load', mapaGoogle);
-        $('img').hover(
-            function() {
-                var $this = $(this),
-                loc = $this.data('location');
-                gmarcadors[loc].setIcon({
-                url: 'data:image/svg+xml;charset=utf-8,' +
-                encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="red" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
-                scaledSize: new google.maps.Size(44, 44),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(44, 44),
-                labelOrigin: new google.maps.Point(22, 18),
-            })
-        },
-        function() {
-            var $this = $(this),
-            loc = $this.data('location');
-            gmarcadors[loc].setIcon({
-                url: 'data:image/svg+xml;charset=utf-8,' +
-                encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
-                scaledSize: new google.maps.Size(44, 44),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(44, 44),
-                labelOrigin: new google.maps.Point(22, 18),
-            });
-        });
-    </script>
+    });
+    $('#slider').slider({
+        slide: function (e, value) {
+            document.getElementById('value').innerText = value;
+        }
+    });
+    $('#datepicker').datepicker();
+</script>
+<script>
+    var marcadores = [];
+    function mapaGoogle() {
+      var localidades = [
+      ['Santi Soluciones', 42.603, -5.577],
+      ['Salamanca', 40.963, -5.669],
+      ['Zamora', 41.503, -5.744]
+      ];
+      var mapa = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 7,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+      var limites = new google.maps.LatLngBounds();
+      var infowindow = new google.maps.InfoWindow();
+      var marcador, i;
+      for (i = 0; i < localidades.length; i++) {
+        marcador = new google.maps.Marker({
+          position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
+          map: mapa
+      });
+        marcadores.push(marcador);
+        limites.extend(marcador.position);
+        google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
+          return function() {
+            infowindow.setContent(localidades[i][0]);
+            infowindow.open(mapa, marcador);
+        }
+    })(marcador, i));
+    }
+    mapa.fitBounds(limites);
+}
+google.maps.event.addDomListener(window, 'load', mapaGoogle);
+</script>
 </body>
 @include('layouts.footer')
 </html>
