@@ -58,7 +58,7 @@
                 <div>
                   <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
                     <img class="img-fluid" src="{{asset($categoria['imagen'])}}" style="border-radius: 5px;">
-                    <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
+                    <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{ucwords($categoria['nomCategoria'])}}</h5></center>
                   </a>
                 </div>
                 @endforeach
@@ -87,8 +87,8 @@
         <div class="card">
           <a href="{{URL::to('actividad/'.$cat['nomActividad'])}}"><img style="height: 200px;" src="#" class="responsive"></a>
           <div class="card-body">
-            <h5 class="card-title">{{$cat['nomActividad']}}</h5>
-            <p class="card-text">{{$cat['desActividad']}}</p>
+            <h5 class="card-title">{{ucwords($cat['nomActividad'])}}</h5>
+            <p class="card-text">{{ucfirst($cat['desActividad'])}}</p>
             
           </div>
           <div class="card-footer">
