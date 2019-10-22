@@ -82,6 +82,7 @@
                     <button type="button" class="btn btn-outline-light">Curso</button>
                 </center>
             </div>
+<<<<<<< HEAD
             <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
                 @foreach($arrCategoria as $ac)
                 <div class="card" style="border-radius: 10px;">
@@ -101,6 +102,36 @@
                                 <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
                                 <br>
                             </div>
+=======
+            <hr style="background-color: white;">
+            <center>
+                <button type="button" class="btn btn-outline-light">Clase</button>
+                <button type="button" class="btn btn-outline-light">Curso</button>
+            </center>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
+            <div class="overflow-auto" style="max-height: 600px;">
+            @foreach($arrCategoria as $ac)
+            <div class="card" style="border-radius: 10px;">
+                <div class="row no-gutters">
+                    <div class="card-header border-0" style="padding: 0;">
+                        <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
+                            <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
+                            width: 200px;
+                            object-fit: cover; border-radius: 5px 0 0 5px;">
+                        </a>
+                       
+                    </div>
+                    <div class="col">
+                        <div class="card-block px-2">
+                            <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
+                            <p class="card-text">{{$ac['desActividad']}}</p>
+                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['estadoProveedor']}}</p>
+                            <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
+                            <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
+                            <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
+                            <br>
+>>>>>>> rama_valentin
                         </div>
                     </div>
                 </div>

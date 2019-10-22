@@ -137,6 +137,7 @@
     <hr>
 >>>>>>> rama_kabir
     <div class="row">
+<<<<<<< HEAD
         <center><p style="text-align: justify; font-size: 2em;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
     </div>
     <hr>
@@ -163,6 +164,25 @@
                 </div>
             </div>
             @endforeach
+=======
+      @foreach ($arr as $cat)
+      <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
+        <div class="card">
+          <a href="{{URL::to('actividad/'.$cat['nomActividad'])}}"><img style="height: 200px;" src="#" class="responsive"></a>
+          <div class="card-body">
+            <h5 class="card-title">{{$cat['nomActividad']}}</h5>
+            <p class="card-text">{{$cat['desActividad']}}</p>
+            
+          </div>
+          <div class="card-footer">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <a href="{{URL::to('actividad/'.$cat['nomActividad'])}}" class="btn btn-outline-primary">Ver actividad</a>
+          </div>
+>>>>>>> rama_valentin
         </div>
     </div>
     <div id="mybutton">
