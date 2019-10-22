@@ -104,7 +104,6 @@
             </div>
         </div>
         <div class="container-fluid">
-<<<<<<< HEAD
             <div class="row">
                 <div class="col-sm" id="slider">
                     <div class="slider-area slider">
@@ -124,34 +123,6 @@
             </div>
         </div>
     </div>
-=======
-          <div class="row">
-            <div class="col-sm" id="slider">
-              <div class="slider-area slider">
-               <div class="slider variable-width myslider ">
-                <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-              <div>
-                  <img class="img-fluid" src="https://via.placeholder.com/250">
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
->>>>>>> b1ad1490577eadc103c98e2213ab95f7082ec78a
 </div>
 </div>
 <script type="text/javascript">
