@@ -92,8 +92,7 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-<<<<<<< HEAD
-                            <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
+                            <img class="responsive" data-location="Location 1" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
                             width: 200px;
                             object-fit: cover; border-radius: 5px 0 0 5px;">
                         </a>
@@ -102,15 +101,7 @@
                     <div class="col">
                         <div class="card-block px-2">
                             <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
-=======
-                            <img src="{{asset($ac['imagen'])}}" alt="..." data-location="Location 1" style="height: 200px; width: 200px; object-fit: cover;">
-                        </a>
-                        <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center> 
-                    </div>
-                    <div class="col">
-                        <div class="card-block px-2">
 
->>>>>>> rama_kabir
                             <p class="card-text">{{$ac['desActividad']}}</p>
                             <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
                             <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
@@ -170,6 +161,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <script type="text/javascript">
         $('#sliderx').slider({
             slide: function (e, value) {
@@ -281,6 +273,57 @@
             });
         });
     </script>
+=======
+</div>
+<script type="text/javascript">
+    $('#sliderx').slider({
+        slide: function (e, value) {
+            document.getElementById('valuex').innerText = value;
+        }
+    });
+    $('#slider').slider({
+        slide: function (e, value) {
+            document.getElementById('value').innerText = value;
+        }
+    });
+    $('#datepicker').datepicker();
+</script>
+
+
+<script>
+    var marcadores = [];
+    function mapaGoogle() {
+      var localidades = [
+      ['Santi Soluciones', 42.603, -5.577],
+      ['Salamanca', 40.963, -5.669],
+      ['Zamora', 41.503, -5.744]
+      ];
+      var mapa = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 7,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+      var limites = new google.maps.LatLngBounds();
+      var infowindow = new google.maps.InfoWindow();
+      var marcador, i;
+      for (i = 0; i < localidades.length; i++) {
+        marcador = new google.maps.Marker({
+          position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
+          map: mapa
+      });
+        marcadores.push(marcador);
+        limites.extend(marcador.position);
+        google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
+          return function() {
+            infowindow.setContent(localidades[i][0]);
+            infowindow.open(mapa, marcador);
+        }
+    })(marcador, i));
+    }
+    mapa.fitBounds(limites);
+}
+google.maps.event.addDomListener(window, 'load', mapaGoogle);
+</script>
+>>>>>>> dd8ff0ee29d5b12d96e34619ebcfcf42e8a1914a
 </body>
 @include('layouts.footer')
 </html>
