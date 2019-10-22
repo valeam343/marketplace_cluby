@@ -138,66 +138,116 @@
 </div>
 </div>
 <script type="text/javascript">
- $('.myslider').slick({
-   dots: false,
-       //variableWidth: true,
-       infinite: true,
-       speed: 300,
-       slidesToShow: 5,
-       slidesToScroll: 5,
-       autoplay: true,
-       autoplaySpeed: 3000,
-       responsive: [
-       {
-         breakpoint: 600,
-         settings: {
-           slidesToShow: 4,
-           slidesToScroll: 4,
-           infinite: true,
-           dots: false
-       }
-   },
-   {
-     breakpoint: 480,
-     settings: {
-       slidesToShow: 3,
-       slidesToScroll: 3
-   }
-}
-]
-});
- var marcadores = [];
- function mapaGoogle() {
-  var localidades = [
-  ['Santi Soluciones', 42.603, -5.577],
-  ['Salamanca', 40.963, -5.669],
-  ['Zamora', 41.503, -5.744]
-  ];
-  var mapa = new google.maps.Map(document.getElementById('mapa'), {
-    zoom: 7,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-});
-  var limites = new google.maps.LatLngBounds();
-  var infowindow = new google.maps.InfoWindow();
-  var marcador, i;
-  for (i = 0; i < localidades.length; i++) {
-    marcador = new google.maps.Marker({
-      position: new google.maps.LatLng(localidades[i][1], localidades[i][2]),
-      map: mapa
-  });
-    marcadores.push(marcador);
-    limites.extend(marcador.position);
-    google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
-      return function() {
-        infowindow.setContent(localidades[i][0]);
-        infowindow.open(mapa, marcador);
-    }
-})(marcador, i));
-}
-mapa.fitBounds(limites);
-}
-google.maps.event.addDomListener(window, 'load', mapaGoogle);
+    $('.myslider').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                infinite: true,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+        }
+        ]
+    });
 </script>
+<script type="text/javascript">
+    var gmarcadors = [];
+    function mapaGoogle() {
+        var locations = [{
+            'name': 'Location 1',
+            'adress': 'León',
+            'location': {
+                'lat': 42.603,
+                'lon': -5.577
+            }
+        }];
+        var mapa = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var limites = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+        var marcador, i;
+        for (var i = 0; i < locations.length; i++) {
+            gmarcadors[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),locations[i].name + "<br>" + locations[i].adress);
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 350
+            });
+        }       
+        function createmarcador(latlng, html, lable) {
+            var marcador = new google.maps.Marker({
+                position: latlng,
+                map: mapa,
+                icon: {
+                   url: 'data:image/svg+xml;charset=utf-8,' +
+                   encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+                   scaledSize: new google.maps.Size(44, 44),
+                   origin: new google.maps.Point(0, 0),
+                   anchor: new google.maps.Point(44, 44),
+                   labelOrigin: new google.maps.Point(22, 18),
+               },
+               label: {
+                text: lable,
+                color: "#fff",
+            }             
+        });
+            gmarcadors.push(marcador);
+            limites.extend(marcador.position);
+            marcador.setOpacity(.75);
+            google.maps.event.addListener(marcador, 'click', function() {
+                infowindow.setContent(html);
+                infowindow.open(mapa, marcador);
+            });
+            google.maps.event.addListener(mapa, 'click', function() {
+                infowindow.close();
+            });
+            return marcador;
+        }
+        mapa.fitBounds(limites);
+    }
+    google.maps.event.addDomListener(window, 'load', mapaGoogle);
+    $('img').hover(
+        function() {
+            var $this = $(this),
+            loc = $this.data('location');
+            gmarcadors[loc].setIcon({
+                url: 'data:image/svg+xml;charset=utf-8,' +
+                encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="red" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+                scaledSize: new google.maps.Size(44, 44),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(44, 44),
+                labelOrigin: new google.maps.Point(22, 18),
+            })
+        },
+        function() {
+            var $this = $(this),
+            loc = $this.data('location');
+            gmarcadors[loc].setIcon({
+                url: 'data:image/svg+xml;charset=utf-8,' +
+                encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+                scaledSize: new google.maps.Size(44, 44),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(44, 44),
+                labelOrigin: new google.maps.Point(22, 18),
+            });
+        });
+    </script>
 </body>
 @include('layouts.footer')
 </html>
