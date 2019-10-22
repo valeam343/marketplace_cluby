@@ -78,7 +78,7 @@
                 <div class="card" style="border-radius: 10px;">
                     <div class="row no-gutters">
                         <div class="card-header border-0" style="padding: 0;">
-                            <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
+                            <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
                                 <img id="imageLink" src="{{asset($ac['imagen'])}}" alt="..." data-location="Location 1" style="height: 250px; width: 250px; object-fit: cover;">
                             </a>
                         </div>
@@ -89,7 +89,7 @@
                                 <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
                                 <p class="card-text">De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</p>
                                 <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
-                                <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
+                                <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
                                 <br>
                             </div>
                         </div>
