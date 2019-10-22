@@ -100,7 +100,7 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
+                            <img class="responsive" data-location="Location 1" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
                             width: 200px;
                             object-fit: cover; border-radius: 5px 0 0 5px;">
                         </a>
