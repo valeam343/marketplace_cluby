@@ -5,37 +5,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
 </head>
 <body>
-<<<<<<< HEAD
-
-  <header>
-    @include('layouts.header')
-    <div style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
-      <img src="img/ManchasHome/mancha (1).svg" id="mancha1">
-      <img src="img/ManchasHome/mancha (2).svg" id="mancha2">
-      <img src="img/ManchasHome/mancha (3).svg" id="mancha3">
-      <img src="img/ManchasHome/mancha (4).svg" id="mancha4">
-        <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
-
-        <div class="row justify-content-md-center" style="margin-right: 0;
-    margin-left: 0;">
-          <div class="col-lg-8 col-md-8 col-xl-8" id="formSearch" style = "position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;">
-            <form method="get" action="/filtro">
-              <div class="row" style="margin-right: 0; margin-left: 0;">
-                <div class="col-md-5">
-                  <input type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
-                 ">
-               </div>
-               <div class="col-md-5">
-                <input type="text" class="form-control" id="searchCiudad" name="searchCiudad" placeholder="Ciudad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
-              </div>
-              <div class="col-md-2" >
-                <button type="submit" id="btnBuscar" class="btn btn-info btn-md">Empezar</button>
-              </div>
-=======
     <header>
         @include('layouts.header')
         <div style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
@@ -71,34 +40,9 @@
                         </div>
                     </div>
                 </form>
->>>>>>> rama_kabir
             </div>
             <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
         </div>
-<<<<<<< HEAD
-        <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
-      
-    </div>
-    <center><img src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;
-    left: 50%;
-    transform: translate(-50%, -45%);"></center>
-
-
-    <div class="row" style="margin-right: 0;
-    margin-left: 0;">
-      <div class="col-lg-12 col-md-12 col-xl-12 mb-2">
-        <!--<div class="container" id="categorias">-->
-          <div class="row" style="margin-right: 0; margin-left: 0;">
-            <div class="col-sm" id="slider">
-              <div class="slider-area slider">
-               <div class="slider variable-width myslider">
-                @foreach ($arrCategoria as $categoria)
-                <div>
-                  <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
-                    <img class="img-fluid" src="{{asset($categoria['imagen'])}}" style="border-radius: 5px;">
-                    <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
-                  </a>
-=======
         <center><img src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;left: 50%; transform: translate(-50%, -45%);"></center>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12 mb-2">
@@ -117,25 +61,12 @@
                             </div>
                         </div>
                     </div>
->>>>>>> rama_kabir
                 </div>
             </div>
         </div>
     </div>
 </header>
 <div class="container">
-<<<<<<< HEAD
-  <hr>
-  <div class="row">
-    <center><p style="text-align: justify; font-size: 22pt;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
-  </div>
-  <hr>
-  <center><h1>TOP ACTIVIDADES</h1></center>
-  <br>
-  <div class="container">
-=======
-    <hr>
->>>>>>> rama_kabir
     <div class="row">
         <center><p style="text-align: justify; font-size: 2em;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
     </div>

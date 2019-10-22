@@ -35,11 +35,7 @@
         <center>
             <h1><strong>
                 @if(!empty($categoria))
-<<<<<<< HEAD
-                {{ucwords($categoria)}}
-=======
                     {{ucwords($categoria)}}
->>>>>>> rama_kabir
                 @endif
             </strong></h1>
         </center>
@@ -109,12 +105,11 @@
             </div>
 
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;"></div>
-
+                <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
+                </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript">
         $('#sliderx').slider({
             slide: function (e, value) {
