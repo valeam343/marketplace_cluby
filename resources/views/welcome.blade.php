@@ -30,10 +30,10 @@
                  ">
                </div>
                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">Ciudad</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-md" data-toggle="dropdown" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">Ciudad</button>
                     <div class="dropdown-menu">
-                        @foreach($arrCategoria as $ac)
-                            <a class="dropdown-item" href="#">{{ucwords($ac['ciudad'])}}</a>
+                        @foreach($arr as $ac)
+                            <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
                         @endforeach
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                <div class="slider variable-width myslider">
                 @foreach ($arrCategoria as $categoria)
                 <div>
-                  <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
+                  <a href="{{URL::to('categoria/'.$categoria['nomCategoria'])}}">
                     <img class="img-fluid" src="{{asset($categoria['imagen'])}}" style="border-radius: 5px;">
                     <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{ucwords($categoria['nomCategoria'])}}</h5></center>
                   </a>
@@ -90,7 +90,7 @@
       @foreach ($arr as $cat)
       <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
         <div class="card">
-          <a href="{{URL::to('actividad/'.$cat['nomActividad'])}}"><img style="height: 200px;" src="#" class="responsive"></a>
+          <a href="{{URL::to('actividad/'.$cat['nomActividad'])}}"><img style="height: 200px;" src="{{asset($cat['rutaimagen'])}}" class="responsive"></a>
           <div class="card-body">
             <h5 class="card-title">{{ucwords($cat['nomActividad'])}}</h5>
             <p class="card-text">{{ucfirst($cat['desActividad'])}}</p>
