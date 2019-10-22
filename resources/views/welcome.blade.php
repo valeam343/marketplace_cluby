@@ -78,11 +78,7 @@
            <div class="slider variable-width myslider">
             @foreach ($arrCategoria as $categoria)
             <div>
-<<<<<<< HEAD
-              <a href="{{URL::to('categoria/'.$categoria['nomCategoria'])}}">
-=======
               <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
->>>>>>> b1ad1490577eadc103c98e2213ab95f7082ec78a
                 <img class="img-fluid" src="{{asset($categoria['imagen'])}}" style="border-radius: 5px;">
                 <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
               </a>
