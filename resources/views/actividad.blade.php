@@ -161,8 +161,8 @@
             'name': 'Location 1',
             'adress': 'León',
             'location': {
-                'lat': 42.603,
-                'lon': -5.577
+                'lat': {{$ac['latitud']}},
+                'lon': {{$ac['longitud']}}
             }
         }];
         var mapa = new google.maps.Map(document.getElementById('mapa'), {

@@ -137,7 +137,7 @@
         $('#datepicker').datepicker();
     </script>
    <script type="text/javascript">
-        var gmarcadors = [];
+        var gmakers = [];
         function mapaGoogle() {
             var locations = [{
                 'name': 'Location 1',
@@ -155,7 +155,7 @@
             var infowindow = new google.maps.InfoWindow();
             var marcador, i;
             for (var i = 0; i < locations.length; i++) {
-                gmarcadors[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),locations[i].name + "<br>" + locations[i].adress);
+                gmakers[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),locations[i].name + "<br>" + locations[i].adress);
                 var infowindow = new google.maps.InfoWindow({
                     maxWidth: 350
                 });
@@ -177,7 +177,7 @@
                         color: "#fff",
                     }             
                 });
-                gmarcadors.push(marcador);
+                gmakers.push(marcador);
                 limites.extend(marcador.position);
                 marcador.setOpacity(.75);
                 google.maps.event.addListener(marcador, 'click', function() {
@@ -196,7 +196,7 @@
             function() {
                 var $this = $(this),
                 loc = $this.data('location');
-                gmarcadors[loc].setIcon({
+                gmakers[loc].setIcon({
                 url: 'data:image/svg+xml;charset=utf-8,' +
                 encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="red" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
                 scaledSize: new google.maps.Size(44, 44),
@@ -208,7 +208,7 @@
         function() {
             var $this = $(this),
             loc = $this.data('location');
-            gmarcadors[loc].setIcon({
+            gmakers[loc].setIcon({
                 url: 'data:image/svg+xml;charset=utf-8,' +
                 encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
                 scaledSize: new google.maps.Size(44, 44),
