@@ -55,7 +55,7 @@
         <div class="row">
             @foreach ($act as $ac) 
             <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
-                <img src="{{asset($ac['imagen'])}}" class="img-fluid" alt="..." width="100%">
+                <img src="{{asset($ac['rutaImagen'])}}" class="img-fluid" alt="..." width="100%">
                 <br>
                 <br>
                 <h5><strong>Evaluacion General</strong></h5>
@@ -68,6 +68,7 @@
             <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
                 <h1><strong>{{ucwords($ac['nomActividad'])}}</strong></h1>
                 <br>
+<<<<<<< HEAD
                 <h4><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h4>
                 <p>{{$ac['ciudad']}}</p>
                 <hr>
@@ -75,6 +76,17 @@
                 <P>De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</P>
                 <hr>
                 <h4><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Lugar</h4>
+=======
+                <h4  width="2%">Descripción</h4>
+                <p>{{ucwords($ac['desActividad'])}}</p>
+                <h4><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h4>
+                
+                <hr>
+                <h4><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h4>
+                <P>Entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</P>
+                <hr>
+                <h3><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Ubicación</h3>
+>>>>>>> c0606fb5725ccefad63efd9d486b9ca02dc88b83
                 <hr>
                 <h4><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h4>
                 @endforeach
