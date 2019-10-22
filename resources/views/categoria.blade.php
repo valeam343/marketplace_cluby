@@ -115,6 +115,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
                 <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
                 </div>
