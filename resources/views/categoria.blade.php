@@ -90,7 +90,7 @@
                 <button type="button" class="btn btn-outline-light">Curso</button>
             </center>
         </div>
-        <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
+       <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
             <div class="overflow-auto" style="max-height: 600px;">
             @foreach($arrCategoria as $ac)
             <div class="card" style="border-radius: 10px;">
@@ -101,6 +101,7 @@
                             width: 200px;
                             object-fit: cover; border-radius: 5px 0 0 5px;">
                         </a>
+                       
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
@@ -115,7 +116,10 @@
                     </div>
                 </div>
             </div>
+            <hr>
             @endforeach
+        </div>
+        </div>
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
                 <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
                 </div>
@@ -135,8 +139,7 @@
         });
         $('#datepicker').datepicker();
     </script>
-    </script>
-    <script type="text/javascript">
+   <script type="text/javascript">
         var gmarcadors = [];
         function mapaGoogle() {
             var locations = [{
