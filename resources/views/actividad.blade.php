@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <header>
-        @include('layouts.head')
-    </header>
-    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBUqmvY7XlADAbFLiCVIMplOoCqz4UCejI"></script>
-    <style type="text/css">
-        .checked {
-            color: orange;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        .slider {
-            width: 90%;
-            margin: 100px auto;
-        }
-        .slick-slide {
-            margin: 0px 20px;
-        }
-        .slider.variable-width{
-            width:100%;
-        }
-        .slick-prev:before, .slick-next:before {
-            color: red;
-        }
-        .slick-slide img{
-            max-width: 100%;
-            width: auto!important;
-        }
-        .slick-slide {
-            transition: all ease-in-out .3s;
-            opacity: 1;
-        }
-        .slick-active {
-            opacity: 1;
-        }
-        .slick-current {
-            opacity: 1;
-        }
-        *{ margin:0;
-            padding: 0;
-        }
-        #mapa{
-            height: 400px;
-        }
-    </style>
+  
+  <header>
+    @include('layouts.head')
+  </header>
+  <!--<script type="text/javascript" src="{{asset('/js/rating.js')}}"></script>-->
+  <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBUqmvY7XlADAbFLiCVIMplOoCqz4UCejI"></script>
+  <style type="text/css">
+    .checked {
+      color: orange;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  .slider {
+      width: 90%;
+      margin: 100px auto;
+  }
+  .slick-slide {
+      margin: 0px 20px;
+  }
+  .slider.variable-width{
+      width:100%;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+      color: red;
+  }
+  .slick-slide img{
+      max-width: 100%;
+      width: auto!important;
+  }
+  .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: 1;
+  }
+  .slick-active {
+      opacity: 1;
+  }
+  .slick-current {
+      opacity: 1;
+  }
+  *{ margin:0;
+    padding: 0;
+}
+  #mapa{
+      height: 400px;
+  }
+</style>
 </head>
 <body>
     @include('layouts.header')
@@ -68,17 +71,16 @@
             <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
                 <h1><strong>{{ucwords($ac['nomActividad'])}}</strong></h1>
                 <br>
-                <h4  width="2%">Descripción</h4>
+                <h4>Descripción</h4>
                 <p>{{ucwords($ac['desActividad'])}}</p>
-                <h4><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h4>
-                
+                <h5><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h5>
                 <hr>
-                <h4><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h4>
-                <P>Entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</P>
+                <h5><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edades</h5>
+                <P>De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</P>
                 <hr>
-                <h3><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Ubicación</h3>
+                <h5><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Ubicación</h5>
                 <hr>
-                <h4><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h4>
+                <h5><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h5>
                 @endforeach
                 @if(!empty($grp))
                 @foreach($grp as $grupo)
@@ -102,6 +104,7 @@
             </div>
         </div>
         <div class="container-fluid">
+<<<<<<< HEAD
             <div class="row">
                 <div class="col-sm" id="slider">
                     <div class="slider-area slider">
@@ -121,6 +124,34 @@
             </div>
         </div>
     </div>
+=======
+          <div class="row">
+            <div class="col-sm" id="slider">
+              <div class="slider-area slider">
+               <div class="slider variable-width myslider ">
+                <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+              <div>
+                  <img class="img-fluid" src="https://via.placeholder.com/250">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+>>>>>>> b1ad1490577eadc103c98e2213ab95f7082ec78a
 </div>
 </div>
 <script type="text/javascript">
