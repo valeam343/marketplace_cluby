@@ -71,18 +71,16 @@
             <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
                 <h1><strong>{{ucwords($ac['nomActividad'])}}</strong></h1>
                 <br>
-                <h4  width="2%">Descripción</h4>
+                <h4>Descripción</h4>
                 <p>{{ucwords($ac['desActividad'])}}</p>
-                <h4><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h4>
-                
+                <h5><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;Ciudad</h5>
                 <hr>
-                <h4><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edad</h4>
-                <P>Entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</P>
+                <h5><img src="{{asset('img/emoti.svg')}}" width="2%">&nbsp;Edades</h5>
+                <P>De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</P>
                 <hr>
-                <h3><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Ubicación</h3>
-               
+                <h5><img src="{{asset('img/lugar.svg')}}" width="2%">&nbsp;Ubicación</h5>
                 <hr>
-                <h3><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h3>
+                <h5><img src="{{asset('img/calendar.svg')}}" width="2%">&nbsp;Fecha</h5>
                 @endforeach
                 @if(!empty($grp))
                 @foreach($grp as $grupo)
@@ -94,17 +92,14 @@
                     $('#datepicker').datepicker();
                 </script>
                 <hr>
-                
-                <h3>MAPA</h3>
                 <div id="mapa"></div>
                 <hr>
-                <h3>RESEÑAS</h3>
+                <h3>Reseñas</h3>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
-                
                 <hr>
             </div>
         </div>

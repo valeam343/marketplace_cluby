@@ -43,13 +43,13 @@
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
                 <br>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
-                        Locación
+                    <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">
+                        Ciudad
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
+                        @foreach($arrCategoria as $ac)
+                            <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
+                        @endforeach
                     </div>
                 </div>
                 <hr style="background-color: white;">
@@ -75,7 +75,7 @@
              </div>
              <hr style="background-color: white;">
              <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle text-light" data-toggle="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">
                     Actividad
                 </button>
                 <div class="dropdown-menu">
@@ -97,18 +97,15 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}">
-                            <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." style="height: 100%;
-                            width: 200px;
-                            object-fit: cover; border-radius: 5px 0 0 5px;">
+                            <img class="responsive" src="{{asset($ac['imagen'])}}" alt="..." data-location="Location 1" style="height: 100%; width: 200px; object-fit: cover; border-radius: 5px 0 0 5px;">
                         </a>
-                       
                     </div>
                     <div class="col">
                         <div class="card-block px-2">
                             <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
-                            <p class="card-text">{{$ac['desActividad']}}</p>
-                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['estadoProveedor']}}</p>
-                            <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
+                            <p class="card-text">{{ucfirst($ac['desActividad'])}}</p>
+                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{ucwords($ac['estadoProveedor'])}}</p>
+                            <p class="card-text">De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</p>
                             <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
                             <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
                             <br>
@@ -148,22 +145,6 @@
                 'location': {
                     'lat': 42.603,
                     'lon': -5.577
-                }
-            },
-            {
-                'name': 'Location 2',
-                'adress': 'Salamanca',
-                'location': {
-                    'lat': 40.963,
-                    'lon':  -5.669
-                }
-            },
-            {
-                'name': 'Location 3',
-                'adress': 'Zamora',
-                'location': {
-                    'lat': 41.503,
-                    'lon':  -5.744
                 }
             }];
             var mapa = new google.maps.Map(document.getElementById('mapa'), {
