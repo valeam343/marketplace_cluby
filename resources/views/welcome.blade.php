@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @include('layouts.head')
-    <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
+  @include('layouts.head')
+
+  <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
                 <button type="submit" id="btnBuscar" class="btn btn-info btn-md">Empezar</button>
               </div>
             </div>
-            <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
+          </form>
         </div>
         <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
       
@@ -60,12 +61,18 @@
                     <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
                   </a>
                 </div>
+                @endforeach
+              </div>
             </div>
+          </div>
         </div>
+        <!--</div>-->
+      </div>
     </div>
+  </div>
 </header>
+
 <div class="container">
-<<<<<<< HEAD
   <hr>
   <div class="row">
     <center><p style="text-align: justify; font-size: 22pt;">¡Hola! te damos la bienvenida a CLUBY, el Marketplace ideal para aquellos proveedores profesionales que desean ofrecer las mejores opciones académicas para la comunidad infantil local y para todos los padres de familia que buscan brindar a sus hijos clases extraescolares que complementan su desarrollo fisico y cognitivo de sus peques.</p></center>
@@ -74,9 +81,7 @@
   <center><h1>TOP ACTIVIDADES</h1></center>
   <br>
   <div class="container">
-
     <div class="row">
-
       @foreach ($arr as $cat)
       <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
         <div class="card">
@@ -95,101 +100,109 @@
             <a href="{{URL::to('actividad/'.$cat['nomActividad'])}}" class="btn btn-outline-primary">Ver actividad</a>
           </div>
         </div>
+
+      </div>
+      @endforeach
     </div>
-    <div id="mybutton">
-        <a href="#nab"><img src="/img/up.png" id="fixedbutton" class="img-fluid" style="height: auto; width: 8%;"></a> 
-    </div>
+  </div>
+  <div id="mybutton">
+    <a href="#nab"><img src="/img/up.png" id="fixedbutton" class="img-fluid" style="height: auto; width: 8%;"></a> 
+  </div>
 </div>
 @include('layouts.footer')
 <script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+
+  $(document).ready(function() {
+   $( "#search" ).autocomplete({
+     source: function(request, response) {
+       $.ajax({
+         url: "{{url('searchs')}}",
+         data: {
+           term : request.term
+         },
+         dataType: "json",
+         success: function(data){
+          var resp = $.map(data,function(obj){
+           return obj.nomActividad || obj.nomCategoria;
+         }); 
+          response(resp);
         }
-    });
-    $(document).ready(function() {
-        $( "#search" ).autocomplete({
-            source: function(request, response) {
-                $.ajax({
-                    url: "{{url('searchs')}}",
-                    data: {
-                        term : request.term
-                    },
-                    dataType: "json",
-                    success: function(data){
-                        var resp = $.map(data,function(obj){
-                            return obj.nomActividad || obj.nomCategoria;
-                        }); 
-                        response(resp);
-                    }
-                });
-            },
-            minLength: 1
-        });
-        $( "#searchCiudad" ).autocomplete({
-            source: function(request, response) {
-                $.ajax({
-                    url: "{{url('search')}}",
-                    data: {
-                        term : request.term
-                    },
-                    dataType: "json",
-                    success: function(data){
-                        var resp = $.map(data,function(obj){
-                            return obj.ciudad;
-                        }); 
-                        response(resp);
-                    }
-                    );
-            },
-            minLength: 1
-        });
-    });
+      });
+     },
+     minLength: 1
+   });
+
+   $( "#searchCiudad" ).autocomplete({
+     source: function(request, response) {
+       $.ajax({
+         url: "{{url('search')}}",
+         data: {
+           term : request.term
+         },
+         dataType: "json",
+         success: function(data){
+          var resp = $.map(data,function(obj){
+           return obj.ciudad;
+         }); 
+          response(resp);
+        }
+      });
+     },
+     minLength: 1
+   });
+ });
 </script>
+
 <script type="text/javascript">
-    $('.myslider').slick({
-        arrows: false,
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true,
-                dots: false
-            }
-        },
-        {
-            breakpoint: 770,
-            settings:{
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-        ]
-    });
+ $('.myslider').slick({
+   arrows: false,
+   dots: false,
+   infinite: true,
+   speed: 300,
+   slidesToShow: 5,
+   slidesToScroll: 5,
+   autoplay: true,
+   autoplaySpeed: 3000,
+   responsive: [
+   {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      infinite: true,
+      dots: false
+    }
+  },
+  {
+    breakpoint: 770,
+    settings:{
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: true,
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }
+  ]
+});
 </script>
 </body>
 </html>
