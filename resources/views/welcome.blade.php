@@ -85,7 +85,7 @@
       @foreach ($arr as $cat)
       <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px;">
         <div class="card">
-          <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}"><img style="height: 200px;" src="{{asset($cat['imagen'])}}" class="responsive"></a>
+          <a href="{{URL::to('actividad/'.$cat['pkActividad'])}}"><img style="height: 200px;" src="#" class="responsive"></a>
           <div class="card-body">
             <h5 class="card-title">{{$cat['nomActividad']}}</h5>
             <p class="card-text">{{$cat['desActividad']}}</p>
