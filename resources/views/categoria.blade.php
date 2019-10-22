@@ -110,7 +110,7 @@
                         <div class="card-block px-2">
                             <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
                             <p class="card-text">{{$ac['desActividad']}}</p>
-                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
+                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['estadoProveedor']}}</p>
                             <p class="card-text">Edades entre: {{$ac['edadMinimaActividad']}} - {{$ac['edadMaximaActividad']}}</p>
                             <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
                             <a href="{{URL::to('/actividad/'.$ac['pkActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
