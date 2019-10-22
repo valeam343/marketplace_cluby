@@ -28,14 +28,32 @@
             <input autocomplete="false" type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
             ">
           </div>
-          <div class="dropdown" style="">
+          <!--<div class="dropdown" style="">
             <button type="button" class="btn btn-primary dropdown-toggle text-light btn-md" data-toggle="dropdown" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0; margin: 0 15% 5px;">Ciudad</button>
             <div class="dropdown-menu">
               @foreach($arr as $ac)
               <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
               @endforeach
             </div>
-          </div>
+          </div>-->
+          <div class="col-md-5">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-2" style="padding-top: 10px;"><h6 style="color: white; font-weight: bold;">Ciudad</h6></div>
+              <div class="col-md-10">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+              
+              
+            </div>
+            </div>
           <div class="col-md-2" >
             <button type="submit" id="btnBuscar" class="btn btn-info btn-md">Empezar</button>
           </div>
