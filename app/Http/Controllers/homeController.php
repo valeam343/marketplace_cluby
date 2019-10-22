@@ -50,52 +50,42 @@ class homeController extends Controller
 
 		return response()->json($result);
 	}
-	
-	/*
-	public function filtrar(Request $request){
-		try {
-			if ($request->ajax()) {
-    			# code...
+	public function index($arr, $con){
 
-				$output = array();
+    return view('categoria')->with(['arrCategoria' => $arr])->with(['categoria' =>$con]);
+  }
+    public function actividadesPorCategoria($id){
+      try {
+        $client = new \GuzzleHttp\Client();
+        $request = $client->get('https://apicluby.azurewebsites.net/categ/'.$id);
+        $response = $request->getBody();
+        $content = $response->getContents();
+        $arrCategoria = json_decode($content, TRUE);
+        
+        return view('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' =>$arrCategoria[0]['nomCategoria']]);
 
-				$actividades = DB::table('actividades')->where('nombre','LIKE', '%'.$request->search."%")->get();
+      } catch (Exception $e) {
+        echo "Exception:". $e->getMessage();
+      }
+    }
 
-				if ($actividades) {
-    			# code...
-
-
-					foreach ($actividades as $key => $actividad) {
-    			# code...
-						$outputs = '<div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch" style="margin-top: 10px; margin-bottom: 10px;">
-						<div class="card">
-						<a href =":url">
-						<img src="'.$actividad->imagen.'" style="height: 200px;" class="responsive">
-						</a>
-						<div class="card-body">
-						<h5 class="card-title">'.$actividad->nombre.'</h5>
-						<p class="card-text">'.$actividad->descripcion.'</p>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star"></span>
-						<span class="fa fa-star"></span>
-						<center><a href="#" class="btn btn-primary">Go somewhere</a></center>
-						</div>
-						</div>
-						</div>';
-						array_push($output, $outputs);
-
-					}
-
-					return response($output);
-				}
-			}
-		} catch (Exception $e) {
-
-			return response()->json(['error'=> 'ERRORS: '.$e->getMessage()]);
-		}
-	}
-*/
+    public function filtroEnInicio(Request $request){
+      try {
+        $actividad = $request->input('search');
+        $ciudad = $request->input('searchCiudad');
+        $client = new \GuzzleHttp\Client();
+        if($actividad != ''){
+          $request = $client->get('https://apicluby.azurewebsites.net/filtrar/first/'.$actividad);
+        }else{
+          $request = $client->get('https://apicluby.azurewebsites.net/filtrar/second/'.$ciudad);
+        }
+        $response = $request->getBody();
+        $content = $response->getContents();
+        $arrCategoria = json_decode($content, TRUE);
+         return view('categoria')->with(['arrCategoria' => $arrCategoria])->with(['categoria' => ' ']);
+      } catch (Exception $e) {
+        echo "Exception: ".$e->getMessage();
+      }
+    }
 
 }

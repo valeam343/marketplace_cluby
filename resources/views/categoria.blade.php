@@ -35,7 +35,11 @@
         <center>
             <h1><strong>
                 @if(!empty($categoria))
+<<<<<<< HEAD
                 {{ucwords($categoria)}}
+=======
+                    {{ucwords($categoria)}}
+>>>>>>> rama_kabir
                 @endif
             </strong></h1>
         </center>
@@ -47,7 +51,7 @@
                     <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">Ciudad</button>
                     <div class="dropdown-menu">
                         @foreach($arrCategoria as $ac)
-                            <a class="dropdown-item" href="#">{{$ac['ciudad']}}</a>
+                            <a class="dropdown-item" href="#">{{ucwords($ac['ciudad'])}}</a>
                         @endforeach
                     </div>
                 </div>
@@ -90,8 +94,8 @@
                         <div class="col">
                             <div class="card-block px-2">
                                 <center><h4 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h4></center>
-                                <p class="card-text">{{$ac['desActividad']}}</p>
-                                <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{$ac['ciudad']}}</p>
+                                <p class="card-text">{{ucfirst($ac['desActividad'])}}</p>
+                                <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{ucwords($ac['ciudad'])}}</p>
                                 <p class="card-text">De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</p>
                                 <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
                                 <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
