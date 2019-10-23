@@ -3,9 +3,20 @@
 <head>
   @include('layouts.head')
   <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
+  <style type="text/css">
+    @media(max-width: 1125px){
+        #logo{
+            width: 38%!important;
+        }
+    }
+    @media(max-width: 900px){
+        #logo{
+            width: 70%!important;
+        }
+    }
+  </style>
 </head>
 <body>
-
   <header>
     @include('layouts.header')
     <div style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
@@ -14,7 +25,6 @@
       <img src="img/ManchasHome/mancha (3).svg" id="mancha3">
       <img src="img/ManchasHome/mancha (4).svg" id="mancha4">
       <center><h1 class="lead">¿Listo para iniciar la aventura?</h1></center>
-
       <div class="row justify-content-md-center" style="margin-right: 0;
       margin-left: 0;">
       <div class="col-lg-8 col-md-8 col-xl-8" id="formSearch" style = "position: absolute;
@@ -25,7 +35,7 @@
       <form method="get" action="/filtro">
         <div class="row" style="margin-right: 0; margin-left: 0;">
           <div class="col-md-5">
-            <input autocomplete="false" type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
+            <input autocomplete="false" type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
             ">
           </div>
           <!--<div class="dropdown" style="">
@@ -39,14 +49,13 @@
           <div class="col-md-5">
           <div class="form-group">
             <div class="row">
-              <div class="col-md-2" style="padding-top: 10px;"><h6 style="color: white; font-weight: bold;">Ciudad</h6></div>
               <div class="col-md-10">
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select class="form-control" id="exampleFormControlSelect1" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
+                  <option>Estado...</option>
+                  @foreach($arr as $cat)
+
+                  <option>{{$cat['estadoProveedor']}}</option>
+                  @endforeach()
                 </select>
               </div>
             </div>
@@ -63,7 +72,7 @@
     <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
 
   </div>
-  <center><img src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;
+  <center><img id="logo" src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;
   left: 50%;
   transform: translate(-50%, -45%);"></center>
 
