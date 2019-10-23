@@ -107,8 +107,6 @@
 <center><img id="logo" src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;
 left: 50%;
 transform: translate(-50%, -45%);"></center>
-
-
 <div class="row" style="margin-right: 0;
 margin-left: 0;">
 <div class="col-lg-12 col-md-12 col-xl-12 mb-2">
