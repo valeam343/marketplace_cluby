@@ -24,10 +24,6 @@
 <body>
   <header>
     @include('layouts.header')
-    <div class="row">
-      <div class="col-md-12">
-      </div>
-    </div>
     <div style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
       <img src="img/ManchasHome/mancha (1).svg" id="mancha1">
       <img src="img/ManchasHome/mancha (2).svg" id="mancha2">
@@ -103,6 +99,10 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+</div>
     </header>
     <div class="container">
       <hr>
