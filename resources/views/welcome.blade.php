@@ -104,7 +104,7 @@ transform: translate(-50%, -45%);"></center>
 margin-left: 0;">
 <div class="col-lg-12 col-md-12 col-xl-12 mb-2">
   <!--<div class="container" id="categorias">-->
-    <div class="row" style="margin-right: 0; margin-left: 0;">
+    <div class="row">
       <div class="col-sm" id="slider">
         <div class="slider-area slider">
          <div class="slider variable-width myslider">
@@ -112,8 +112,8 @@ margin-left: 0;">
           <div>
             <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
               <img class="img-fluid" src="{{asset($categoria['imagen'])}}" style="border-radius: 5px;">
-              <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
             </a>
+            <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
           </div>
           @endforeach
         </div>
@@ -195,7 +195,7 @@ margin-left: 0;">
     arrows: false,
     dots: false,
     infinite: true,
-    speed: 300,
+    speed: 260,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
