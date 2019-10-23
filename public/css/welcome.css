@@ -1,4 +1,6 @@
-
+.espacio{
+    height: 112px;
+}
 #mancha1{
     position: absolute;
     top: 0px;
@@ -94,7 +96,8 @@ img.responsive {
     text-align: right;
     position: fixed;
     bottom: 5px;
-    right: 5px; 
+    right: 5px;
+    z-index: 1; 
 }
 
 #fixedbutton:hover{

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+use Helper;
+
 class homeController extends Controller
 {
     //
@@ -23,7 +25,7 @@ class homeController extends Controller
 		} catch (Exception $e) {
 			echo "Exception: ".$e->getMessage();
 		}
-		
+
 	}
 	public function filtrar(Request $request){
 		try {
@@ -51,5 +53,25 @@ class homeController extends Controller
 		return response()->json($result);
 	}
 	
+	public function buscar(Request $request){
+		$search = $request->term;
+		$search = $request->get('term');
+		$client = new \GuzzleHttp\Client();
+		$request = $client->get('https://apicluby.azurewebsites.net/filtrar/first/'.$search);
+		$response = $request->getBody();
+		$content = $response->getContents();
+		$result = json_decode($content);
+		 foreach($result as $post)
+		            {
+		                
+		                $new_row['title']= $post->nomActividad;
+			            $new_row['image']= $post->rutaimagen;
+		                $new_row['url']= url('actividad/'.$post->nomActividad);
+		                
+		                $row_set[] = $new_row; //build an array
+		            }
+
+		    echo json_encode($row_set); 
+	}
 
 }
