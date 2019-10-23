@@ -4,6 +4,12 @@
   @include('layouts.head')
   <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
   <style type="text/css">
+    .slick-slide img {
+    height:200px!important;
+    }
+    .espacio{
+    height: 112px;
+    }
     @media(min-width: 1124px){
       #primerPanel{
         background-image: url('{{asset('vista/degardado bg.svg')}}');
