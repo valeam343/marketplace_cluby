@@ -5,7 +5,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('css/welcome.css')}}">
   <style type="text/css">
     .slick-slide img {
-    height:200px!important;
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
     }
     .espacio{
     height: 112px;
@@ -160,11 +162,11 @@ margin-left: 0;">
           </div>
         </div>
       </div>
-      <div id="mybutton">
-        <a href="#nab"><img src="/img/up.png" id="fixedbutton" class="img-fluid" style="height: auto; width: 8%;"></a> 
-      </div>
       @endforeach 
     </div>
+    <div id="mybutton">
+        <a href="#nab"><img src="/img/up.png" id="fixedbutton" class="img-fluid" style="height: auto; width: 8%;"></a> 
+      </div>
   </div>
 </div>
 
