@@ -12,8 +12,6 @@
 */
 
 Route::get('/','homeController@show');
-
-
 Route::get('search','homeController@filtrar')->name('search');
 Route::get('searchs','homeController@filtrar2')->name('searchs');
 Route::get('actividad/{id}','actividadController@show');
@@ -22,7 +20,7 @@ Route::get('categoria', function () {
     return view('categoria');
 });
 
-Route::get('filtro/', 'categoriaController@filtroEnInicio');
+Route::post('filtro/', 'categoriaController@filtroEnInicio');
 
 Route::get('index', function () {
     return view('index');

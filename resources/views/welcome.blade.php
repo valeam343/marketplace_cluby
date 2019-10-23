@@ -11,14 +11,23 @@
     }
     @media(max-width: 900px){
         #logo{
-            width: 70%!important;
+            width: 50%!important;
         }
     }
+    @media(max-width: 650px){
+        #logo{
+            width: 70%!important;
+        }
+    }   
   </style>
 </head>
 <body>
   <header>
     @include('layouts.header')
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
     <div style="background-image: url('{{asset('vista/degardado bg.svg')}}');background-repeat: no-repeat, repeat; background-position: center; background-size: cover; position: relative;">
       <img src="img/ManchasHome/mancha (1).svg" id="mancha1">
       <img src="img/ManchasHome/mancha (2).svg" id="mancha2">
@@ -32,35 +41,34 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;">
-      <form method="get" action="/filtro">
+      <form method="POST" action="/filtro">
+         {{ csrf_field() }}
         <div class="row" style="margin-right: 0; margin-left: 0;">
+          
           <div class="col-md-5">
-            <input autocomplete="false" type="text" class="form-control" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
+            <div class="form-group">
+              <div class="row">
+              <div class="col-md-12">
+            <input autocomplete="false" type="text" class="form-control{{ $errors->has('search') ? ' has-error' : '' }}" name="search" id="search" placeholder="Actividad" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;
             ">
+            <small class="text-white">&nbsp;<strong>{{ $errors->first('search') }}</strong></small>
           </div>
-          <!--<div class="dropdown" style="">
-            <button type="button" class="btn btn-primary dropdown-toggle text-light btn-md" data-toggle="dropdown" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0; margin: 0 15% 5px;">Ciudad</button>
-            <div class="dropdown-menu">
-              @foreach($arr as $ac)
-              <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
-              @endforeach
-            </div>
-          </div>-->
+        </div>
+          </div>
+          </div>
           <div class="col-md-5">
-          <div class="form-group">
+          <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
             <div class="row">
-              <div class="col-md-10">
-                <select class="form-control" id="exampleFormControlSelect1" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
-                  <option>Estado...</option>
+              <div class="col-md-12">
+                <select class="form-control" id="estado" name="estado" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
+                  <option disabled selected value>Estado...</option>
                   @foreach($arr as $cat)
-
-                  <option>{{$cat['estadoProveedor']}}</option>
+                  <option value="{{$cat['estadoProveedor']}}">{{$cat['estadoProveedor']}}</option>
                   @endforeach()
                 </select>
+                <small class="text-white">&nbsp;<strong>{{ $errors->first('estado') }}</strong></small>
               </div>
             </div>
-              
-              
             </div>
             </div>
           <div class="col-md-2" >
@@ -70,7 +78,6 @@
       </form>
     </div>
     <div style="display: block; float:right;  width:120px; height: 300px;">&nbsp;</div>
-
   </div>
   <center><img id="logo" src="img/clubylogo.svg" style=" z-index: initial; width: 25%; opacity: .3; position: absolute; top: 45%;
   left: 50%;
