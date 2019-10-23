@@ -33,11 +33,11 @@
     <br>
     <div class="container-fluid">
         <center>
-            <h1><strong>
+            <h3><strong>
                 @if(!empty($categoria))
                     {{ucwords($categoria)}}
                 @endif
-            </strong></h1>
+            </strong></h3>
         </center>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
@@ -136,7 +136,7 @@
         });
         $('#datepicker').datepicker();
     </script>
-   <script type="text/javascript">
+    <script type="text/javascript">
         var gmakers = [];
         function mapaGoogle() {
             var locations = [
