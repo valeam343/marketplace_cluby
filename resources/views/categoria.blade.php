@@ -10,11 +10,6 @@
     crossorigin=""></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBUqmvY7XlADAbFLiCVIMplOoCqz4UCejI"></script>
     <style type="text/css">
-        @media(max-width: 420px){
-            .responsive{
-                width: 100%!important;
-            }
-        }
         div.gj-slider{
             width: 100%!important;
             z-index: 2!important;
@@ -26,6 +21,9 @@
             color: white;
             border-bottom: 1px solid white;
         }
+        .textocards{
+            font-size: 12px;
+        }
     </style>
 </head>
 <header>@include('layouts.header')</header>
@@ -33,11 +31,11 @@
     <br>
     <div class="container-fluid">
         <center>
-            <h3><strong>
+            <h4><strong>
                 @if(!empty($categoria))
-                    {{ucwords($categoria)}}
+                {{ucwords($categoria)}}
                 @endif
-            </strong></h3>
+            </strong></h4>
         </center>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
@@ -48,7 +46,7 @@
                     </button>
                     <div class="dropdown-menu">
                         @foreach($arrCategoria as $ac)
-                            <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
+                        <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
                         @endforeach
                     </div>
                 </div>
@@ -71,10 +69,10 @@
                 </div>
                 <hr style="background-color: white;">
                 <div class="dropdown">
-                 <p>Edad</p>
-             </div>
-             <hr style="background-color: white;">
-             <div class="dropdown">
+                   <p>Edad</p>
+               </div>
+               <hr style="background-color: white;">
+               <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">
                     Actividad
                 </button>
@@ -86,123 +84,115 @@
             </div>
             <hr style="background-color: white;">
             <center>
-                <button type="button" class="btn btn-outline-light">Clase</button>
-                <button type="button" class="btn btn-outline-light">Curso</button>
+                <button type="button" class="btn btn-outline-light btn-sm">Clase</button>
+                <button type="button" class="btn btn-outline-light btn-sm">Curso</button>
             </center>
         </div>
-       <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
+        <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
             <div class="overflow-auto" style="max-height: 600px;">
-            @foreach($arrCategoria as $ac)
-            <div class="card" style="border-radius: 10px;">
-                <div class="row no-gutters">
-                    <div class="card-header border-0" style="padding: 0;">
-                        <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
-                            <img class="responsive" src="{{asset($ac['rutaimagen'])}}" alt="..." data-location="{{$ac['nomActividad']}}" style="height: 100%; width: 200px; object-fit: cover; border-radius: 5px 0 0 5px;">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <div class="card-block px-2">
-                            <h5 class="card-title" style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h5> 
-                            <p class="card-text">{{ucfirst($ac['desActividad'])}}</p>
-                            <p class="card-text"><img src="{{asset('img/pin.svg')}}" width="2%">&nbsp;{{ucwords($ac['estadoProveedor'])}}</p>
-                            <p class="card-text">De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años</p>
-                            <p class="card-text">Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
-                            <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm" style="margin-bottom: 10px;">Ver actividad</a>
-                            <br>
+                <div class="container-fluid">
+                    @foreach($arrCategoria as $ac)
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
+                                <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
+                                    <img class="img-fluid" src="{{asset($ac['rutaimagen'])}}" alt="..." data-location="{{$ac['nomActividad']}}" style="height: 130px; width: 180px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                                <h6 style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h6> 
+                                <p class="textocards">{{ucfirst($ac['desActividad'])}}</p>
+                                <p class="textocards"><img src="{{asset('img/pin.svg')}}" width="3%">&nbsp;{{ucwords($ac['estadoProveedor'])}}, De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años, Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
+                                <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
+                            </div>
                         </div>
-                    </div>
+                        <hr>
+                    @endforeach
                 </div>
             </div>
-            <hr>
-            @endforeach
         </div>
-        </div>
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
-                <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
-                </div>
+        <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
+            <div id="mapa" style="border-radius: 10px 0px 0px 10px; height: 600px;">
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        $('#sliderx').slider({
-            slide: function (e, value) {
-                document.getElementById('valuex').innerText = value;
-            }
-        });
-        $('#slider').slider({
-            slide: function (e, value) {
-                document.getElementById('value').innerText = value;
-            }
-        });
-        $('#datepicker').datepicker();
-    </script>
-    <script type="text/javascript">
-        var gmakers = [];
-        function mapaGoogle() {
-            var locations = [
-            @foreach($arrCategoria as $ac) {
-                
-                    'name': '{{$ac['nomActividad']}}',
-                    'adress': '{{$ac['estadoProveedor']}}',
-                    'location': {
-                        'lat': {{$ac['latitud']}},
-                        'lon': {{$ac['longitud']}}
-                    }
-                },
-            @endforeach
-            ];
-
-
-            var mapa = new google.maps.Map(document.getElementById('mapa'), {
-                zoom: 8,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            var limites = new google.maps.LatLngBounds();
-            var infowindow = new google.maps.InfoWindow();
-            var marcador, i;
-            for (var i = 0; i < locations.length; i++) {
-                gmakers[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon), locations[i].name + "<br>" + locations[i].adress);
-                var infowindow = new google.maps.InfoWindow({
-                    maxWidth: 350
-                });
-            }       
-            function createmarcador(latlng, html, lable) {
-                var marcador = new google.maps.Marker({
-                    position: latlng,
-                    map: mapa,
-                    icon: {
-                        url: 'data:image/svg+xml;charset=utf-8,' +
-                        encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
-                        scaledSize: new google.maps.Size(44, 44),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(44, 44),
-                        labelOrigin: new google.maps.Point(22, 18),
-                    },
-                    label: {
-                        text: lable,
-                        color: "#fff",
-                    }             
-                });
-                gmakers.push(marcador);
-                limites.extend(marcador.position);
-                marcador.setOpacity(.75);
-                google.maps.event.addListener(marcador, 'click', function() {
-                    infowindow.setContent(html);
-                    infowindow.open(mapa, marcador);
-                });
-                google.maps.event.addListener(mapa, 'click', function() {
-                    infowindow.close();
-                });
-                return marcador;
-            }
-            mapa.fitBounds(limites);
+</div>
+<script type="text/javascript">
+    $('#sliderx').slider({
+        slide: function (e, value) {
+            document.getElementById('valuex').innerText = value;
         }
-        google.maps.event.addDomListener(window, 'load', mapaGoogle);
-        $('img').hover(
-            function() {
-                var $this = $(this),
-                loc = $this.data('location');
-                gmakers[loc].setIcon({
+    });
+    $('#slider').slider({
+        slide: function (e, value) {
+            document.getElementById('value').innerText = value;
+        }
+    });
+    $('#datepicker').datepicker();
+</script>
+<script type="text/javascript">
+    var gmakers = [];
+    function mapaGoogle() {
+        var locations = [
+        @foreach($arrCategoria as $ac) {
+            'name': '{{$ac['nomActividad']}}',
+            'adress': '{{$ac['estadoProveedor']}}',
+            'location': {
+                'lat': {{$ac['latitud']}},
+                'lon': {{$ac['longitud']}}
+            }
+        },
+        @endforeach
+        ];
+        var mapa = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var limites = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+        var marcador, i;
+        for (var i = 0; i < locations.length; i++) {
+            gmakers[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon), locations[i].name + "<br>" + locations[i].adress);
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 350
+            });
+        }       
+        function createmarcador(latlng, html, lable) {
+            var marcador = new google.maps.Marker({
+                position: latlng,
+                map: mapa,
+                icon: {
+                    url: 'data:image/svg+xml;charset=utf-8,' +
+                    encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+                    scaledSize: new google.maps.Size(44, 44),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(44, 44),
+                    labelOrigin: new google.maps.Point(22, 18),
+                },
+                label: {
+                    text: lable,
+                    color: "#fff",
+                }             
+            });
+            gmakers.push(marcador);
+            limites.extend(marcador.position);
+            marcador.setOpacity(.75);
+            google.maps.event.addListener(marcador, 'click', function() {
+                infowindow.setContent(html);
+                infowindow.open(mapa, marcador);
+            });
+            google.maps.event.addListener(mapa, 'click', function() {
+                infowindow.close();
+            });
+            return marcador;
+        }
+        mapa.fitBounds(limites);
+    }
+    google.maps.event.addDomListener(window, 'load', mapaGoogle);
+    $('img').hover(
+        function() {
+            var $this = $(this),
+            loc = $this.data('location');
+            gmakers[loc].setIcon({
                 url: 'data:image/svg+xml;charset=utf-8,' +
                 encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="red" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
                 scaledSize: new google.maps.Size(44, 44),
