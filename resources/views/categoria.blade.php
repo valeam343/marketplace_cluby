@@ -97,7 +97,7 @@
                 <div class="row no-gutters">
                     <div class="card-header border-0" style="padding: 0;">
                         <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
-                            <img class="responsive" src="{{asset($ac['rutaimagen'])}}" alt="..." data-location="Location 1" style="height: 100%; width: 200px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                            <img class="responsive" src="{{asset($ac['rutaimagen'])}}" alt="..." data-location="{{$ac['nomActividad']}}" style="height: 100%; width: 200px; object-fit: cover; border-radius: 5px 0 0 5px;">
                         </a>
                     </div>
                     <div class="col">
@@ -139,14 +139,20 @@
    <script type="text/javascript">
         var gmakers = [];
         function mapaGoogle() {
-            var locations = [{
-                'name': 'Location 1',
-                'adress': 'León',
-                'location': {
-                    'lat': 42.603,
-                    'lon': -5.577
-                }
-            }];
+            var locations = [
+            @foreach($arrCategoria as $ac) {
+                
+                    'name': '{{$ac['nomActividad']}}',
+                    'adress': '{{$ac['estadoProveedor']}}',
+                    'location': {
+                        'lat': {{$ac['latitud']}},
+                        'lon': {{$ac['longitud']}}
+                    }
+                },
+            @endforeach
+            ];
+
+
             var mapa = new google.maps.Map(document.getElementById('mapa'), {
                 zoom: 8,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -155,7 +161,7 @@
             var infowindow = new google.maps.InfoWindow();
             var marcador, i;
             for (var i = 0; i < locations.length; i++) {
-                gmakers[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),locations[i].name + "<br>" + locations[i].adress);
+                gmakers[locations[i].name] = createmarcador(new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon), locations[i].name + "<br>" + locations[i].adress);
                 var infowindow = new google.maps.InfoWindow({
                     maxWidth: 350
                 });
