@@ -6,7 +6,8 @@
   <style type="text/css">
     .slick-slide img {
     width: 100%;
-    height: 15vw;
+    max-width: 225px;
+    height: 205px;
     object-fit: cover;
     }
     .espacio{
