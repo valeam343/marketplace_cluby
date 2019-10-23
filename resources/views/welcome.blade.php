@@ -118,11 +118,15 @@ margin-left: 0;">
         <div class="slider-area slider">
          <div class="slider variable-width myslider">
           @foreach ($arrCategoria as $categoria)
-          <div>
+          <div class="col">
+            <div class= "col-md-12">
+              <figure>
             <a href="{{URL::to('categoria/'.$categoria['pkCategoria'])}}">
               <img class="img-fluid" src="{{asset($categoria['imagen'])}}" style="border-radius: 5px;">
             </a>
-            <center><h5 style="font-weight:bold; color: white; padding-top: 5px; ">{{$categoria['nomCategoria']}}</h5></center>
+            <figcaption style="font-weight:bold; color: white; padding-top: 5px;">{{$categoria['nomCategoria']}}</figcaption>
+            </figure>
+            </div>
           </div>
           @endforeach
         </div>
