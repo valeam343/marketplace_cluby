@@ -64,7 +64,7 @@
   });
 </script>
 <nav class="navbar navbar-expand-lg navbar-dark" id="nab" style="background-color: #2e4da0;">
-  <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><img src="{{asset('img/logotexto.svg')}}" style="width: 40%;"></a>
+  <a href="{{URL::to('/')}}" class="navbar-brand mr-3"><img src="{{asset('img/logotexto.svg')}}" style="width: 50%;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon" style="color: white;"></span>
   </button>
