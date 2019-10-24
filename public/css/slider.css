@@ -1,0 +1,28 @@
+
+@media(min-width: 1124px){
+  #primerPanel{
+    background-image: url('{{asset('vista/degardado bg.svg')}}');
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 727px;
+}
+}
+@media(max-width: 1123px){
+  #logo{
+    width: 38%!important;
+    }
+}
+
+@media(max-width: 900px){
+  #logo{
+
+    width: 50%!important;
+}
+}
+@media(max-width: 650px){
+  #logo{
+    width: 70%!important;
+}
+}  
