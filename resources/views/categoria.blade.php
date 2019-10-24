@@ -36,76 +36,81 @@
                 {{ucwords($categoria)}}
                 @endif
             </strong></h4>
+            
         </center>
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
-                <br>
-                <div class="dropdown">
+
+            <div class="col-lg-3 col-md-3 col-xl-3 mb-3 collapse" id="demo" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
+
+                <form>
+                    <br>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">
+                            Ciudad
+                        </button>
+                        <div class="dropdown-menu">
+                            @foreach($arrCategoria as $ac)
+                            <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                    <hr style="background-color: white;">
+                    <div class="form-group">
+                        <p>Precio</p>
+                        <input id="sliderx" width="300" />
+                        Valor: <span id="valuex"></span>
+                    </div>
+                    <hr style="background-color: white;">
+                    <div class="form-group">
+                        <p>Horario</p>
+                        <input id="slider" width="300" />
+                        Valor: <span id="value"></span>
+                    </div>
+                    <hr style="background-color: white;">
+                    <div class="form-group">
+                        <p>Fecha</p>
+                        <input id="datepicker" width="100%" />
+                    </div>
+                    <hr style="background-color: white;">
+                    <div class="dropdown">
+                       <p>Edad</p>
+                   </div>
+                   <hr style="background-color: white;">
+                   <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">
-                        Ciudad
+                        Actividad
                     </button>
                     <div class="dropdown-menu">
-                        @foreach($arrCategoria as $ac)
-                        <a class="dropdown-item" href="#">{{ucwords($ac['estadoProveedor'])}}</a>
-                        @endforeach
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </div>
                 <hr style="background-color: white;">
-                <div class="form-group">
-                    <p>Precio</p>
-                    <input id="sliderx" width="300" />
-                    Valor: <span id="valuex"></span>
-                </div>
-                <hr style="background-color: white;">
-                <div class="form-group">
-                    <p>Horario</p>
-                    <input id="slider" width="300" />
-                    Valor: <span id="value"></span>
-                </div>
-                <hr style="background-color: white;">
-                <div class="form-group">
-                    <p>Fecha</p>
-                    <input id="datepicker" width="100%" />
-                </div>
-                <hr style="background-color: white;">
-                <div class="dropdown">
-                   <p>Edad</p>
-               </div>
-               <hr style="background-color: white;">
-               <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle text-light btn-sm" data-toggle="dropdown">
-                    Actividad
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Link 1</a>
-                    <a class="dropdown-item" href="#">Link 2</a>
-                    <a class="dropdown-item" href="#">Link 3</a>
-                </div>
-            </div>
-            <hr style="background-color: white;">
-            <center>
-                <button type="button" class="btn btn-outline-light btn-sm">Clase</button>
-                <button type="button" class="btn btn-outline-light btn-sm">Curso</button>
-            </center>
+                <center>
+                    <button type="button" class="btn btn-outline-light btn-sm">Clase</button>
+                    <button type="button" class="btn btn-outline-light btn-sm">Curso</button>
+                </center>
+            </form>
         </div>
         <div class="col-lg-6 col-md-6 col-xl-6 mb-6">
             <div class="overflow-auto" style="max-height: 600px;">
                 <div class="container-fluid">
                     @foreach($arrCategoria as $ac)
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
-                                <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
-                                    <img class="img-fluid" src="{{asset($ac['rutaimagen'])}}" alt="..." data-location="{{$ac['nomActividad']}}" style="height: 130px; width: 180px; object-fit: cover; border-radius: 5px 0 0 5px;">
-                                </a>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
-                                <h6 style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h6> 
-                                <p class="textocards">{{ucfirst($ac['desActividad'])}}</p>
-                                <p class="textocards"><img src="{{asset('img/pin.svg')}}" width="3%">&nbsp;{{ucwords($ac['estadoProveedor'])}}, De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años, Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
-                                <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
+                            <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}">
+                                <img class="img-fluid" src="{{asset($ac['rutaimagen'])}}" alt="..." data-location="{{$ac['nomActividad']}}" style="height: 130px; width: 180px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                            </a>
                         </div>
-                        <hr>
+                        <div class="col-lg-8 col-md-8 col-xl-8 mb-8">
+                            <h6 style="font-weight: bold;">{{ucwords($ac['nomActividad'])}}</h6> 
+                            <p class="textocards">{{ucfirst($ac['desActividad'])}}</p>
+                            <p class="textocards"><img src="{{asset('img/pin.svg')}}" width="3%">&nbsp;{{ucwords($ac['estadoProveedor'])}}, De {{$ac['edadMinimaActividad']}} a {{$ac['edadMaximaActividad']}} años, Precio: {{$ac['referenciaPrecioActividad'].' $'}}</p>
+                            <a href="{{URL::to('/actividad/'.$ac['nomActividad'])}}" class="btn btn-outline-info btn-sm">Ver actividad</a>
+                        </div>
+                    </div>
+                    <hr>
                     @endforeach
                 </div>
             </div>
@@ -115,6 +120,7 @@
             </div>
         </div>
     </div>
+    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo" style="position: fixed;bottom: 0px;left: 10px; z-index: 3;opacity: .6">filtrar</button>
 </div>
 <script type="text/javascript">
     $('#sliderx').slider({
