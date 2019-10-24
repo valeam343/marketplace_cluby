@@ -40,7 +40,7 @@
         </center>
         <div class="row">
 
-            <div class="col-lg-3 col-md-3 col-xl-3 mb-3 collapse" id="demo" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
+            <div class="col-lg-3 col-md-3 col-xl-3 mb-3 collapse show" id="demo" style="background-color: #460056; color: white; border-radius: 0px 10px 10px 0px; max-height: 600px;">
 
                 <form>
                     <br>
