@@ -13,15 +13,19 @@ class homeController extends Controller
 		try {
 			
 			$client = new \GuzzleHttp\Client();
-			$request = $client->get('https://apicluby.azurewebsites.net/actividades/');
-			$requestCategoria = $client->get('https://apicluby.azurewebsites.net/categorias/');
-			$response = $request->getBody();
-			$content = $response->getContents();
-			$responseCategoria = $requestCategoria->getBody();
-			$contentCategoria = $responseCategoria->getContents();
-			$arr = json_decode($content, TRUE);
-			$arrCategoria = json_decode($contentCategoria, TRUE);
-			return view('welcome', compact('arr', 'arrCategoria'));
+						$request = $client->get('https://apicluby.azurewebsites.net/actividades/');
+						$requestCategoria = $client->get('https://apicluby.azurewebsites.net/categorias/');
+						$requestCiudad = $client->get('https://apicluby.azurewebsites.net/ciudades');
+						$responseCiudad = $requestCiudad->getBody();
+						$response = $request->getBody();
+						$content = $response->getContents();
+						$contentCiudad = $responseCiudad->getContents();
+						$responseCategoria = $requestCategoria->getBody();
+						$contentCategoria = $responseCategoria->getContents();
+						$arr = json_decode($content, TRUE);
+						$arrCategoria = json_decode($contentCategoria, TRUE);
+						$arrCiudad = json_decode($contentCiudad, TRUE);
+						return view('welcome', compact('arr', 'arrCategoria', 'arrCiudad'));
 		} catch (Exception $e) {
 			echo "Exception: ".$e->getMessage();
 		}
