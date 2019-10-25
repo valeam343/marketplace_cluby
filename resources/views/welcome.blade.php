@@ -59,9 +59,9 @@
         <div class="row">
           <div class="col-md-12">
             <select class="form-control" id="estado" name="estado" style="background-color: rgba(0, 0, 0, 0.3); color: white; border-left: 6px solid purple; border-top: 0; border-right: 0;">
-              <option disabled selected value>Estado...</option>
-              @foreach($arr as $cat)
-              <option value="{{$cat['estadoProveedor']}}">{{$cat['estadoProveedor']}}</option>
+              <option disabled selected value>Ciudad...</option>
+              @foreach($arrCiudad as $ciudad)
+              <option value="{{$ciudad['nomCiudad']}}">{{$ciudad['nomCiudad']}}</option>
               @endforeach()
           </select>
           <small class="text-white">&nbsp;<strong>{{ $errors->first('estado') }}</strong></small>
