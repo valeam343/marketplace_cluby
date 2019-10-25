@@ -27,7 +27,6 @@
         }
     </style>
 </head>
-@include('layouts.header')
 <body>
     <div class="container-fluid"> 
         <div class="row">
@@ -44,7 +43,7 @@
                         <p style="font-size: 15pt; text-align: justify;">Establece la frecuencia que convenga (diaria, semanal o mensual), fija el precio y el tamaño del grupo, administra todos los detalles estés donde estés con nuestra cómoda aplicación móvil.</p>
                         <div style="height: 10px;"></div>
                         <strong><p style="text-align: center; font-size: 30pt; color: #2e4da0;">Estos son algunos beneficios que CLUBY te ofrece:</p></strong>
-                        <div style="height: 100px;"></div>
+                        <div style="height: 50px;"></div>
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-xl-3 mb-3">
                             </div>
