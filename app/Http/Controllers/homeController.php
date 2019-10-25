@@ -13,19 +13,19 @@ class homeController extends Controller
 		try {
 			
 			$client = new \GuzzleHttp\Client();
-			$request = $client->get('https://apicluby.azurewebsites.net/actividades/');
-			$requestCategoria = $client->get('https://apicluby.azurewebsites.net/categorias/');
-			$requestCiudad = $client->get('https://apicluby.azurewebsites.net/ciudades');
-			$responseCiudad = $requestCiudad->getBody();
-			$response = $request->getBody();
-			$content = $response->getContents();
-			$contentCiudad = $responseCiudad->getContents();
-			$responseCategoria = $requestCategoria->getBody();
-			$contentCategoria = $responseCategoria->getContents();
-			$arr = json_decode($content, TRUE);
-			$arrCategoria = json_decode($contentCategoria, TRUE);
-			$arrCiudad = json_decode($contentCiudad, TRUE);
-			return view('welcome', compact('arr', 'arrCategoria', 'arrCiudad'));
+						$request = $client->get('https://apicluby.azurewebsites.net/actividades/');
+						$requestCategoria = $client->get('https://apicluby.azurewebsites.net/categorias/');
+						$requestCiudad = $client->get('https://apicluby.azurewebsites.net/ciudades');
+						$responseCiudad = $requestCiudad->getBody();
+						$response = $request->getBody();
+						$content = $response->getContents();
+						$contentCiudad = $responseCiudad->getContents();
+						$responseCategoria = $requestCategoria->getBody();
+						$contentCategoria = $responseCategoria->getContents();
+						$arr = json_decode($content, TRUE);
+						$arrCategoria = json_decode($contentCategoria, TRUE);
+						$arrCiudad = json_decode($contentCiudad, TRUE);
+						return view('welcome', compact('arr', 'arrCategoria', 'arrCiudad'));
 		} catch (Exception $e) {
 			echo "Exception: ".$e->getMessage();
 		}
@@ -65,17 +65,17 @@ class homeController extends Controller
 		$response = $request->getBody();
 		$content = $response->getContents();
 		$result = json_decode($content);
-		foreach($result as $post)
-		{
-			
-			$new_row['title']= $post->nomActividad;
-			$new_row['image']= $post->rutaimagen;
-			$new_row['url']= url('actividad/'.$post->nomActividad);
-			
+		 foreach($result as $post)
+		            {
+		                
+		                $new_row['title']= $post->nomActividad;
+			            $new_row['image']= $post->rutaimagen;
+		                $new_row['url']= url('actividad/'.$post->nomActividad);
+		                
 		                $row_set[] = $new_row; //build an array
 		            }
 
-		            echo json_encode($row_set); 
-		        }
+		    echo json_encode($row_set); 
+	}
 
-		    }
+}

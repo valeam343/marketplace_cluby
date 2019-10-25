@@ -1,7 +1,4 @@
 
-<div class="espacio">
-
-</div>
 <footer>
 <div class="row" style="background-color: #e5e5e5;margin-right: 0;
     margin-left: 0;">
