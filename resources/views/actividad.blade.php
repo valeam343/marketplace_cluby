@@ -59,6 +59,10 @@
         p {
             font-size: 15pt;
         }
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -129,6 +133,44 @@
             <div class="col-lg-4 col-md-4 col-xl-4 mb-4">
                 <div id="mapa" style="height: 600px;"></div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xl-2 mb-2"></div>
+            <div class="col-lg-8 col-md-8 col-xl-8 mb-8" style="background-color: black;">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        @for ($i = 1; $i < count($arr); $i++)
+                        <li data-target="#demo" data-slide-to="{{$i}}"></li>
+                        @endfor
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{asset('img/lugar.svg')}}" style="width: 30%;">
+                            <div class="carousel-caption">
+                                <h3>Los Angeles</h3>
+                                <p>We had such a great time in LA!</p>
+                            </div>   
+                        </div>
+                        @foreach ($arr as $cat)
+                        <div class="carousel-item">
+                            <img src="{{asset($cat['rutaimagen'])}}" style="width: 30%;">
+                            <div class="carousel-caption">
+                                <h3>{{$cat['nomActividad']}}</h3>
+                                <p>{{$cat['desActividad']}}</p>
+                            </div>   
+                        </div>
+                        @endforeach
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xl-2 mb-2"></div>
         </div>
     </div>
     <div style="height: 50px;"></div>
