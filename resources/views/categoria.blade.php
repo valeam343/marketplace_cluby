@@ -24,10 +24,20 @@
         .textocards{
             font-size: 12px;
         }
+        .loadingpage {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 999999999;
+            background: url('{{asset('img/load.svg')}}') center no-repeat;
+        }
     </style>
 </head>
 <header>@include('layouts.header')</header>
 <body>
+    <div class="loadingpage"></div>
     <br>
     <div class="container-fluid">
         <center>
@@ -220,6 +230,11 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".loadingpage").fadeOut("slow");;
+        });
+</script>
 </body>
 @include('layouts.footer')
 </html>

@@ -78,6 +78,7 @@ select: function( event, ui ) {
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
             </li>
         </ul>
+        <a href="{{URL::to('/registro')}}" style="color: white;">¿Quieres promocionar una actividad?&nbsp;</a>
         <form class="form-inline my-2 my-lg-0">
             <div id="buscador">
                 <input class="form-control mr-sm-2" type="text" id="buscar" name="buscar" placeholder="Buscar" style="background-color: rgba(0, 0, 0, 0.1); color: white; border-color: #294590;"> 

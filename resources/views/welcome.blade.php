@@ -18,12 +18,19 @@
     position: relative;
     max-height: 727px!important;
 }
-
- 
+.loadingpage {
+ position: fixed;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ z-index: 999999999;
+ background: url('{{asset('img/load.svg')}}') center no-repeat;
+}
 </style>
-
 </head>
 <body>
+  <div class="loadingpage"></div>
   <header>
     @include('layouts.header')
     <div id="primerPanel">
@@ -230,6 +237,11 @@ margin-left: 0;">
 }
 }
 ]
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+  $(".loadingpage").fadeOut("slow");;
 });
 </script>
 </body>
